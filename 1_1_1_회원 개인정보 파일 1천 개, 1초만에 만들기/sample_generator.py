@@ -79,7 +79,7 @@ for i in range(NUM_SAMPLES):
     outfile.write("telephone : 010-" + str(time.time())[-4:] + "-" + str(time.time())[-6:-2] + '\n')
 
     # 결과물 파일에 무작위로 선정된 성별을 기재합니다.
-    outfile.write("sex : " + random.choice(["male", "female", "others"]))
+    outfile.write("sex : " + random.choice(["male", "female"]))
 
     # 결과물 파일 수정을 마무리합니다.
     outfile.close()
