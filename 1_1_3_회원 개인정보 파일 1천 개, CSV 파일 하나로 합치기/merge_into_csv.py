@@ -14,7 +14,8 @@ directory = "personal_info"
 outfile_name = "merged_ID.csv"
 
 # 결과물 파일을 생성합니다. 텅 빈 텍스트파일이 생성됩니다.
-out_file = open(outfile_name, 'w')
+# 인코딩을 utf8로 명시합니다. 이렇게 해야 한글이 깨지지 않습니다.
+out_file = open(outfile_name, 'w', encoding='utf8')
 
 # 11번째 줄에서 기재한 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)

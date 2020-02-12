@@ -61,7 +61,8 @@ for i in range(NUM_SAMPLES):
     filename = "personal_info/" + str(i) + "_" + name + ".txt"
 
     # 결과물 파일을 생성합니다. 텅 빈 파일이 생성됩니다.
-    outfile = open(filename, 'w')
+    # 인코딩을 utf8로 명시합니다. 이렇게 해야 한글이 깨지지 않습니다.
+    outfile = open(filename, 'w', encoding="utf8")
 
     # 결과물 파일에 이름을 기재합니다.
     outfile.write("name : " + name + "\n")
