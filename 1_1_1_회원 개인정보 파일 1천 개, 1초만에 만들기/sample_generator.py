@@ -31,7 +31,6 @@ def random_string(length):
     return result
 
 
-
 # 이름 생성에 사용할 샘플 글자들을 정의합니다.
 first_name_samples = "김이박최정강조윤장임"
 middle_name_samples = "민서예지도하주윤채현지"
