@@ -7,6 +7,7 @@ Last Modification : 2020.02.12.
 import time
 import random
 import os
+import pyexcel as px
 
 
 # 작업 시작 메시지를 출력합니다.
@@ -18,12 +19,11 @@ start_time = time.time()
 # 생성할 개인정보 파일 개수를 정의합니다.
 NUM_SAMPLES = 1000
 
-
 # 이메일 생성에 사용할 샘플 글자들을 정의합니다.
 alphabet_samples = "abcdefghizklmnopqrstuvwxyz1234567890"
 
 
-# 무작위로 생성된 영어 글자를 생성하는 함수입니다.
+# 무작위로 선택된 영어 글자를 생성하는 함수입니다.
 def random_string(length):
     result = ""
     for i in range(length):
@@ -50,7 +50,8 @@ def random_name():
 os.mkdir("personal_info")
 
 # 헤더를 정의합니다.
-header = ", ".join(["name", "age", "e-mail", "division", "telephone", "sex"]) + "\n"
+HEADER = ["name", "age", "e-mail", "division", "telephone", "sex"]
+
 
 # 개인정보 파일을 자동으로 생성하는 부분입니다.
 # NUM_SAMPLES 회수만큼 반복합니다.
@@ -60,34 +61,34 @@ for i in range(NUM_SAMPLES):
     name = random_name()
 
     # 결과물 파일의 이름을 정의합니다.
-    filename = "personal_info/" + str(i) + "_" + name + ".csv"
-    # 결과물 파일을 생성합니다. 텅 빈 파일이 생성됩니다.
-    outfile = open(filename, 'w')
+    filename = "personal_info/" + str(i) + "_" + name + ".xlsx"
 
-    # 결과물 파일에 헤더를 기재합니다.
-    outfile.write(header)
+    # 엑셀파일로 저장할 데이터를 담아 둘 리스트를 만듭니다.
+    contents = []
 
-    # 결과물 파일에 이름을 기재합니다.
-    outfile.write(name + ", ")
+    # 이름을 기재합니다.
+    contents.append(name)
 
-    # 결과물 파일에 무작위로 생성된 나이를 기재합니다.
-    outfile.write(str(time.time())[-2:] + ", ")
+    # 무작위로 생성된 나이를 기재합니다.
+    contents.append(str(time.time())[-2:])
 
-    # 결과물 파일에 무작위로 생성된 이메일을 기재합니다.
-    outfile.write(random_string(8) + "@bhban.com, ")
+    # 무작위로 생성된 이메일을 기재합니다.
+    contents.append(random_string(8) + "@bhban.com")
 
-    # 결과물 파일에 무작위로 생성된 부서명을 기재합니다.
-    outfile.write(random_string(3) + ", ")
+    # 무작위로 생성된 부서명을 기재합니다.
+    contents.append(random_string(3))
 
-    # 결과물 파일에 무작위로 생성된 핸드폰 번호를 기재합니다.
-    outfile.write("010-" + str(time.time())[-4:] + "-" + str(time.time())[-6:-2] + ', ')
+    # 무작위로 생성된 핸드폰 번호를 기재합니다.
+    contents.append("010-" + str(time.time())[-4:] + "-" + str(time.time())[-6:-2])
 
-    # 결과물 파일에 무작위로 선정된 성별을 기재합니다.
-    outfile.write(random.choice(["male", "female"]) )
+    # 무작위로 선정된 성별을 기재합니다.
+    contents.append(random.choice(["male", "female"]))
 
-    # 결과물 파일 수정을 마무리합니다.
-    outfile.close()
+    # 헤더와 데이터를 합쳐서 저장할 데이터를 완성합니다.
+    RESULT = [HEADER, contents]
 
+    # 완성된 엑셀파일을 저장합니다.
+    px.save_as(array=RESULT, dest_file_name=filename)
 
 # 작업 종료 메세지를 출력합니다.
 print("Process Done.")

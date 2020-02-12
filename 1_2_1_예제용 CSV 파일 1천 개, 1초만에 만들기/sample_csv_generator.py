@@ -18,12 +18,11 @@ start_time = time.time()
 # 생성할 개인정보 파일 개수를 정의합니다.
 NUM_SAMPLES = 1000
 
-
 # 이메일 생성에 사용할 샘플 글자들을 정의합니다.
 alphabet_samples = "abcdefghizklmnopqrstuvwxyz1234567890"
 
 
-# 무작위로 생성된 영어 글자를 생성하는 함수입니다.
+# 무작위로 선택된 영어 글자를 생성하는 함수입니다.
 def random_string(length):
     result = ""
     for i in range(length):
