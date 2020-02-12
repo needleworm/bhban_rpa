@@ -9,7 +9,7 @@ import os
 
 
 # 생성할 개인정보 파일 개수를 정의합니다.
-NUM_SAMPLES = 10000
+NUM_SAMPLES = 1000
 
 
 # 이메일 생성에 사용할 샘플 글자들을 정의합니다.
@@ -44,6 +44,9 @@ def random_name():
 os.mkdir("personal_info")
 
 
+# 작업 시작 메시지를 출력합니다.
+print("작업을 시작합니다.")
+
 # 개인정보 파일을 자동으로 생성하는 부분입니다.
 # NUM_SAMPLES 회수만큼 반복합니다.
 # 이를테면, NUM_SAMPLES가 100이면 무작위 개인정보 생성을 100회 반복합니다.
@@ -52,7 +55,7 @@ for i in range(NUM_SAMPLES):
     name = random_name()
 
     # 결과물 파일의 이름을 정의합니다.
-    filename = "personal_info/" + str(i) + name + ".txt"
+    filename = "personal_info/" + str(i) + "_" + name + ".txt"
 
     # 결과물 파일을 생성합니다. 텅 빈 파일이 생성됩니다.
     outfile = open(filename, 'w')
@@ -77,3 +80,7 @@ for i in range(NUM_SAMPLES):
 
     # 결과물 파일 수정을 마무리합니다.
     outfile.close()
+
+
+# 작업 종료 메세지를 출력합니다.
+print("작업이 종료되었습니다.")
