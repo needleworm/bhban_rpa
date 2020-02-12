@@ -45,7 +45,10 @@ os.mkdir("personal_info")
 
 
 # 작업 시작 메시지를 출력합니다.
-print("작업을 시작합니다.")
+print("Process Start.")
+
+# 시작 시점의 시간을 기록합니다.
+start_time = time.time()
 
 # 개인정보 파일을 자동으로 생성하는 부분입니다.
 # NUM_SAMPLES 회수만큼 반복합니다.
@@ -83,4 +86,8 @@ for i in range(NUM_SAMPLES):
 
 
 # 작업 종료 메세지를 출력합니다.
-print("작업이 종료되었습니다.")
+print("Process Done.")
+
+# 작업에 총 몇 초가 걸렸는지 출력합니다.
+end_time = time.time()
+print("The Job Took " + str(end_time - start_time) + " seconds.")
