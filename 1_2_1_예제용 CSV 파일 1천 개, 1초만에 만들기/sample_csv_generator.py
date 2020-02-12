@@ -60,6 +60,7 @@ for i in range(NUM_SAMPLES):
 
     # 결과물 파일의 이름을 정의합니다.
     filename = "personal_info/" + str(i) + "_" + name + ".csv"
+
     # 결과물 파일을 생성합니다. 텅 빈 파일이 생성됩니다.
     outfile = open(filename, 'w')
 

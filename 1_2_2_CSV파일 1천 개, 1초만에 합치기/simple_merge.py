@@ -6,10 +6,10 @@ Last Modification : 2020.02.12.
 """
 import time
 import os
+import sys
 
-
-# 하나로 합칠 파일들이 저장된 폴더 이름을 적어주세요.
-directory = "personal_info"
+# 하나로 합칠 파일들이 저장된 폴더 이름을 시스템으로부터 입력받습니다.
+directory = sys.argv[1]
 
 # 결과물 파일의 이름을 정의합니다.
 outfile_name = "simple_merged_ID.csv"
@@ -33,7 +33,7 @@ for filename in input_files:
     if ".csv" not in filename:
         continue
 
-    # 텍스트 파일이 맞다면, 파일을 읽어옵니다.
+    # csv 파일이 맞다면, 파일을 읽어옵니다.
     file = open(directory + "/" + filename)
 
     # 파일의 내용물을 문자열로 불러옵니다.
