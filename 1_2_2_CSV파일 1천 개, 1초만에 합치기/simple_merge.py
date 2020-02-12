@@ -6,11 +6,6 @@ Last Modification : 2020.02.12.
 import time
 import os
 
-# 작업 시작 메시지를 출력합니다.
-print("Process Start")
-
-# 시작 시점의 시간을 기록합니다.
-start_time = time.time()
 
 # 하나로 합칠 파일들이 저장된 폴더 이름을 적어주세요.
 directory = "personal_info"
@@ -25,6 +20,12 @@ out_file = open(outfile_name, 'w', encoding='utf8')
 # 11번째 줄에서 기재한 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
 
+# 작업 시작 메시지를 출력합니다.
+print("Process Start")
+
+# 시작 시점의 시간을 기록합니다.
+start_time = time.time()
+
 # 폴더의 내용물을 하나하나 불러와 합치는 작업을 수행합니다.
 # input_files에 저장된 파일 이름을 한 번에 하나씩 불러옵니다.
 for filename in input_files:
@@ -33,8 +34,7 @@ for filename in input_files:
         continue
 
     # 텍스트 파일이 맞다면, 파일을 읽어옵니다.
-    # 인코딩을 utf8로 명시합니다. 이렇게 해야 한글이 깨지지 않습니다.
-    file = open(directory + "/" + filename, encoding='utf8')
+    file = open(directory + "/" + filename)
 
     # 파일의 내용물을 문자열로 불러옵니다.
     content = file.read()

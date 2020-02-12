@@ -8,6 +8,12 @@ import random
 import os
 
 
+# 작업 시작 메시지를 출력합니다.
+print("Process Start.")
+
+# 시작 시점의 시간을 기록합니다.
+start_time = time.time()
+
 # 생성할 개인정보 파일 개수를 정의합니다.
 NUM_SAMPLES = 1000
 
@@ -42,13 +48,6 @@ def random_name():
 
 # 결과물을 저장할 폴더를 생성합니다.
 os.mkdir("personal_info")
-
-
-# 작업 시작 메시지를 출력합니다.
-print("Process Start.")
-
-# 시작 시점의 시간을 기록합니다.
-start_time = time.time()
 
 # 개인정보 파일을 자동으로 생성하는 부분입니다.
 # NUM_SAMPLES 회수만큼 반복합니다.

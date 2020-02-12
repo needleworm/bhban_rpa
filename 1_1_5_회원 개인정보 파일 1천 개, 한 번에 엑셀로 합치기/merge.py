@@ -5,6 +5,8 @@ Last Modification : 2020.02.12.
 """
 import time
 import os
+import pyexcel.cookbook as PC
+import sys
 
 # 작업 시작 메시지를 출력합니다.
 print("Process Start")
@@ -12,15 +14,18 @@ print("Process Start")
 # 시작 시점의 시간을 기록합니다.
 start_time = time.time()
 
-# 하나로 합칠 파일들이 저장된 폴더 이름을 적어주세요.
-directory = "personal_info"
+# 하나로 합칠 파일들이 저장된 폴더 이름을 시스템으로부터 입력받습니다..
+directory = sys.argv[1]
 
-# 결과물 파일의 이름을 정의합니다.
-outfile_name = "merged_ID.csv"
+# 임시로 생성할 결과물 파일의 이름을 정의합니다.
+temp_file_name = "temp.csv"
+
+# 최종 결과물 파일 이름을 정의합니다.
+outfile_name = "merged_ID.xlsx"
 
 # 결과물 파일을 생성합니다. 텅 빈 텍스트파일이 생성됩니다.
 # 인코딩을 utf8로 명시합니다. 이렇게 해야 한글이 깨지지 않습니다.
-out_file = open(outfile_name, 'w', encoding='utf8')
+temp_file = open(temp_file_name, 'w', encoding='utf8')
 
 # 11번째 줄에서 기재한 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
@@ -57,18 +62,24 @@ for filename in input_files:
     # 헤더를 파일에 입력합니다. 최초 1회만 실행됩니다.
     if not outfile_has_header:
         header = ", ".join(headers)
-        out_file.write(header)
+        temp_file.write(header)
         outfile_has_header = True
 
     # 결과물 파일에 내용물을 입력합니다.
     new_line = ", ".join(contents)
-    out_file.write("\n" + new_line)
+    temp_file.write("\n" + new_line)
 
     # 읽어온 파일을 종료합니다.
     file.close()
 
-# 결과물 파일을 종료합니다.
-out_file.close()
+# 임시 결과물 파일을 종료합니다.
+temp_file.close()
+
+# 임시로 저장된 결과물 파일을 엑셀형태로 변환합니다.
+PC.merge_all_to_a_book([temp_file_name], outfile_name)
+
+# 임시로 저장된 결과물을 삭제합니다.
+os.remove(temp_file_name)
 
 # 작업 종료 메시지를 출력합니다.
 print("Process Done.")
