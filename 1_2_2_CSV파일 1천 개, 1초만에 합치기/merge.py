@@ -1,24 +1,63 @@
+#-*-coding:euc-kr
 """
 Author : Byunghyun Ban
-Book : ì¼ë°˜ì¸ì„ ìœ„í•œ ì—…ë¬´ ìë™í™”
+Book : ÀÏ¹İÀÎÀ» À§ÇÑ ¾÷¹« ÀÚµ¿È­
 Last Modification : 2020.02.12.
 """
 import time
 import os
 
-
-# ì‘ì—… ì‹œì‘ ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+# ÀÛ¾÷ ½ÃÀÛ ¸Ş½ÃÁö¸¦ Ãâ·ÂÇÕ´Ï´Ù.
 print("Process Start")
 
-# ì‹œì‘ ì‹œì ì˜ ì‹œê°„ì„ ê¸°ë¡í•©ë‹ˆë‹¤.
+# ½ÃÀÛ ½ÃÁ¡ÀÇ ½Ã°£À» ±â·ÏÇÕ´Ï´Ù.
 start_time = time.time()
 
+# ÇÏ³ª·Î ÇÕÄ¥ ÆÄÀÏµéÀÌ ÀúÀåµÈ Æú´õ ÀÌ¸§À» Àû¾îÁÖ¼¼¿ä.
+directory = "personal_info"
 
+# °á°ú¹° ÆÄÀÏÀÇ ÀÌ¸§À» Á¤ÀÇÇÕ´Ï´Ù.
+outfile_name = "merged_ID.csv"
 
+# °á°ú¹° ÆÄÀÏÀ» »ı¼ºÇÕ´Ï´Ù. ÅÖ ºó ÅØ½ºÆ®ÆÄÀÏÀÌ »ı¼ºµË´Ï´Ù.
+out_file = open(outfile_name, 'w')
 
-# ì‘ì—… ì¢…ë£Œ ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+# Æú´õÀÇ ³»¿ë¹°À» ¿­¶÷ÇØ ¸ñ·ÏÀ» »ı¼ºÇÕ´Ï´Ù.
+input_files = os.listdir(directory)
+
+# Çì´õ¿Í °ü·ÃµÈ ºÒ¸®¾ğ º¯¼ö¸¦ Á¤ÀÇÇÕ´Ï´Ù. Çì´õ´Â ¿¢¼¿ÀÇ ¾ç½ÄÀÌ¶ó »ı°¢ÇÏ¸é µË´Ï´Ù.
+outfile_has_header = False
+
+# Æú´õÀÇ ³»¿ë¹°À» ÇÏ³ªÇÏ³ª ºÒ·¯¿Í ÇÕÄ¡´Â ÀÛ¾÷À» ¼öÇàÇÕ´Ï´Ù.
+# input_files¿¡ ÀúÀåµÈ ÆÄÀÏ ÀÌ¸§À» ÇÑ ¹ø¿¡ ÇÏ³ª¾¿ ºÒ·¯¿É´Ï´Ù.
+for filename in input_files:
+    # °£È¤ csv ÆÄÀÏÀÌ ¾Æ´Ñ ÆÄÀÏÀÌ ¼¯¿©ÀÖÀ» ¼ö ÀÖ½À´Ï´Ù. ÀÌ°É °É·¯³À´Ï´Ù.
+    if ".csv" not in filename:
+        continue
+
+    # ÅØ½ºÆ® ÆÄÀÏÀÌ ¸Â´Ù¸é, ÆÄÀÏÀ» ÀĞ¾î¿É´Ï´Ù.
+    file = open(directory + "/" + filename)
+
+    # Çì´õ¸¦ ºĞ¸®ÇÕ´Ï´Ù.
+    header = file.readline()
+
+    # Çì´õ¸¦ ÆÄÀÏ¿¡ ÀÔ·ÂÇÕ´Ï´Ù. ÃÖÃÊ 1È¸¸¸ ½ÇÇàµË´Ï´Ù.
+    if not outfile_has_header:
+        out_file.write(header.strip())
+        outfile_has_header = True
+
+    # °á°ú¹° ÆÄÀÏ¿¡ ³»¿ë¹°À» ÀÔ·ÂÇÕ´Ï´Ù.
+    out_file.write("\n" + file.read())
+
+    # ÀĞ¾î¿Â ÆÄÀÏÀ» Á¾·áÇÕ´Ï´Ù.
+    file.close()
+
+# °á°ú¹° ÆÄÀÏÀ» Á¾·áÇÕ´Ï´Ù.
+out_file.close()
+
+# ÀÛ¾÷ Á¾·á ¸Ş½ÃÁö¸¦ Ãâ·ÂÇÕ´Ï´Ù.
 print("Process Done.")
 
-# ì‘ì—…ì— ì´ ëª‡ ì´ˆê°€ ê±¸ë ¸ëŠ”ì§€ ì¶œë ¥í•©ë‹ˆë‹¤.
+# ÀÛ¾÷¿¡ ÃÑ ¸î ÃÊ°¡ °É·È´ÂÁö Ãâ·ÂÇÕ´Ï´Ù.
 end_time = time.time()
 print("The Job Took " + str(end_time - start_time) + " seconds.")

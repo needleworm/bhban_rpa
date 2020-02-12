@@ -1,10 +1,11 @@
+#-*-coding:utf-8
 """
 Author : Byunghyun Ban
 Book : 일반인을 위한 업무 자동화
 Last Modification : 2020.02.12.
 """
 
-import pyexcel.cookbook as PC
+import pyexcel.cookbook as pc
 import sys
 import time
 
@@ -20,7 +21,7 @@ start_time = time.time()
 input_file = sys.argv[1]
 result_file = sys.argv[2]
 
-PC.merge_all_to_a_book([input_file], result_file)
+pc.merge_all_to_a_book([input_file], result_file)
 
 # 작업 종료 메시지를 출력합니다.
 print("Process Done.")
