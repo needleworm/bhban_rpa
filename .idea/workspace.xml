@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f66a08-a636-4857-bd70-6909750c02e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/sample_csv_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/sample_csv_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/merge.py" beforeDir="false" afterPath="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/merge.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/simple_merge.py" beforeDir="false" afterPath="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/simple_merge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_1_5_회원 개인정보 파일 1천 개, CSV를 거쳐 엑셀 하나로 합치기/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/1_1_5_회원 개인정보 파일 1천 개, CSV를 거쳐 엑셀 하나로 합치기/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,24 +14,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/1_2_4_엑셀파일 1천 개, 순식간에 하나로 합치기/merge.py">
+        <entry file="file://$PROJECT_DIR$/1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자/anarchism.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="404">
-              <caret line="64" column="65" lean-forward="true" selection-start-line="64" selection-start-column="65" selection-end-line="64" selection-end-column="65" />
-              <folding>
-                <element signature="e#103#114#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1_2_3_예제용 엑셀파일 1천 개, 엔터키 한 번에 만들기/sample_xlxs_generator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-14">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+              <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
               <folding>
                 <element signature="e#103#114#0" expanded="true" />
               </folding>
@@ -89,6 +78,11 @@
         <option value="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/simple_merge.py" />
         <option value="$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/sample_csv_generator.py" />
         <option value="$PROJECT_DIR$/1_2_4_엑셀파일 1천 개, 순식간에 하나로 합치기/merge.py" />
+        <option value="$PROJECT_DIR$/1_2_4_엑셀파일 1천 개, 순식간에 하나로 합치기/README.md" />
+        <option value="$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/README.md" />
+        <option value="$PROJECT_DIR$/1_1_5_회원 개인정보 파일 1천 개, CSV를 거쳐 엑셀 하나로 합치기/README.md" />
+        <option value="$PROJECT_DIR$/1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자/README.md" />
+        <option value="$PROJECT_DIR$/1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자/anarchism.py" />
       </list>
     </option>
   </component>
@@ -103,6 +97,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,22 +108,7 @@
             <path>
               <item name="bhban_RPA" type="b2602c69:ProjectViewProjectNode" />
               <item name="bhban_RPA" type="462c0819:PsiDirectoryNode" />
-              <item name="1_1_2_회원 개인정보 파일 1천 개, 텍스트 파일 하나로 합치기" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bhban_RPA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bhban_RPA" type="462c0819:PsiDirectoryNode" />
-              <item name="1_1_3_회원 개인정보 파일 1천 개, CSV 파일 하나로 합치기" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bhban_RPA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bhban_RPA" type="462c0819:PsiDirectoryNode" />
-              <item name="1_1_5_회원 개인정보 파일 1천 개, CSV를 거쳐 엑셀 하나로 합치기" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bhban_RPA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bhban_RPA" type="462c0819:PsiDirectoryNode" />
-              <item name="1_1_6_회원 개인정보 파일 1천 개, 엑셀 파일 하나로 바로 합치기" type="462c0819:PsiDirectoryNode" />
+              <item name="1_1_4_개인정보 CSV 파일, 엑셀로 변환하기" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bhban_RPA" type="b2602c69:ProjectViewProjectNode" />
@@ -150,11 +130,15 @@
               <item name="bhban_RPA" type="462c0819:PsiDirectoryNode" />
               <item name="1_2_4_엑셀파일 1천 개, 순식간에 하나로 합치기" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="bhban_RPA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bhban_RPA" type="462c0819:PsiDirectoryNode" />
+              <item name="1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -193,7 +177,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="-8" width="1605" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.255903" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -239,16 +222,6 @@
     <entry file="file://$PROJECT_DIR$/1_1_4_회원 개인정보 파일 1천 개, 엑셀 파일로 변경하기/xlsxwriter.py" />
     <entry file="file://$PROJECT_DIR$/1_2_1_CSV파일 1천 개, 1초만에 합치기/README.md" />
     <entry file="file://$PROJECT_DIR$/1_1_4_회원 개인정보 파일 1천 개, 엑셀 파일로 합치기/merge_from_start.py" />
-    <entry file="file://$PROJECT_DIR$/1_1_5_회원 개인정보 파일 1천 개, CSV를 거쳐 엑셀 하나로 합치기/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="190">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1_2_1_CSV파일 1천 개, 1초만에 합치기/merge.py" />
     <entry file="file://$PROJECT_DIR$/1_2_1_CSV파일 1천 개, 1초만에 합치기/simple_merge.py" />
     <entry file="file://$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/personal_info/3_최도우.csv" />
@@ -290,31 +263,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="190">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1_1_6_회원 개인정보 파일 1천 개, 엑셀 파일 하나로 바로 합치기/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1_1_4_개인정보 CSV 파일, 엑셀로 변환하기/csv_to_xlsx.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#103#132#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -326,34 +279,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_2_3_예제용 엑셀파일 1천 개, 1초만에 만들기/sample_xlxs_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="e#103#114#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1_2_3_예제용 엑셀파일 1천 개, 엔터키 한 번에 만들기/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="76">
-            <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_3_예제용 엑셀파일 1천 개, 1초만에 만들기/sample_xlxs_generator.py" />
     <entry file="file://$PROJECT_DIR$/1_1_2_회원 개인정보 파일 1천 개, 텍스트 파일 하나로 합치기/merge_text_files.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -381,23 +307,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_3_예제용 엑셀파일 1천 개, 엔터키 한 번에 만들기/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="76">
+            <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="190">
+            <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="190">
+            <caret line="10" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/1_1_5_회원 개인정보 파일 1천 개, CSV를 거쳐 엑셀 하나로 합치기/merge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-342">
+        <state relative-caret-position="114">
           <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/sample_csv_generator.py">
+    <entry file="file://$PROJECT_DIR$/1_1_5_회원 개인정보 파일 1천 개, CSV를 거쳐 엑셀 하나로 합치기/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="95">
+            <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="152">
+            <caret line="8" selection-start-line="8" selection-end-line="8" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_4_엑셀파일 1천 개, 순식간에 하나로 합치기/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="114">
+            <caret line="6" column="51" lean-forward="true" selection-start-line="5" selection-end-line="6" selection-end-column="51" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_4_엑셀파일 1천 개, 순식간에 하나로 합치기/merge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+        <state relative-caret-position="713">
+          <caret line="64" column="65" selection-start-line="64" selection-start-column="65" selection-end-line="64" selection-end-column="65" />
+          <folding>
+            <element signature="e#103#114#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/simple_merge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="390">
           <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
           <folding>
             <element signature="e#103#114#0" expanded="true" />
@@ -407,7 +396,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/1_2_2_CSV파일 1천 개, 1초만에 합치기/merge.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="447">
           <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
           <folding>
             <element signature="e#103#114#0" expanded="true" />
@@ -417,7 +406,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/1_2_3_예제용 엑셀파일 1천 개, 엔터키 한 번에 만들기/sample_xlxs_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
+        <state relative-caret-position="589">
           <caret line="76" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="e#103#114#0" expanded="true" />
@@ -425,10 +414,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1_2_4_엑셀파일 1천 개, 순식간에 하나로 합치기/merge.py">
+    <entry file="file://$PROJECT_DIR$/1_2_1_예제용 CSV 파일 1천 개, 1초만에 만들기/sample_csv_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_1_4_개인정보 CSV 파일, 엑셀로 변환하기/csv_to_xlsx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="e#103#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1_2_5_무작위 엑셀 파일의 서식을 망가뜨리자/anarchism.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
-          <caret line="64" column="65" lean-forward="true" selection-start-line="64" selection-start-column="65" selection-end-line="64" selection-end-column="65" />
+          <caret line="69" column="25" lean-forward="true" selection-start-line="69" selection-start-column="25" selection-end-line="69" selection-end-column="25" />
           <folding>
             <element signature="e#103#114#0" expanded="true" />
           </folding>
