@@ -2,7 +2,7 @@
 
 ### 아래 명령어를 입력하면 코드가 실행됩니다.
 
->python noise.py <DIRECTORY\> <FACTOR\>
+>python resize.py <DIRECTORY\> <FACTOR\>
 
 <DIRECTORY\>에는 크기를 변환할 사진들이 저장된 폴더 이름을 기재합니다.
 
