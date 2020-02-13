@@ -37,7 +37,7 @@ destroy_them = input_files[:DESTROY_COUNT]
 # 총 3가지 재앙을 준비했습니다. 재앙을 일으키기 위한 카운트를 정합니다.
 # 카운트다운을 하다가 shift_1, shift_2가 되면 재앙의 종류가 바뀝니다.
 shift_1 = DESTROY_COUNT/3*2
-shift_2 = DESTROY_COUNT
+shift_2 = DESTROY_COUNT/3
 
 # 서식을 파괴할 파일들을 하나씩 읽어와 작업을 수행합니다.
 # destroy_them에 저장된 파일 이름을 한 번에 하나씩 불러옵니다.
@@ -57,21 +57,26 @@ for filename in destroy_them:
 
     # column 서식을 망가뜨리는게 가장 쉽습니다. column이 몇개인지 알아냅시다.
     num_columns = len(data_array[0])
+    # 무작위 열을 하나 망가뜨리기 위해 랜덤 숫자를 생성합니다.
+    victim = random.randint(0, num_columns - 1)
 
     # 첫 번째 재앙입니다.
     if DESTROY_COUNT > shift_1:
         # 무작위 열을 하나 지워버립니다.
-        file.delete_columns(random.randint(0, num_columns))
+        file.delete_columns([victim])
 
     # 두 번째 재앙입니다.
     elif DESTROY_COUNT > shift_2:
-        # 무작위 열을 하나 뽑아옵니다.
-        victim = file.column[random.randint(0, num_columns)]
-        for el in victim:
+        # 바꿔치기할 열을 만듭니다. 내용물을 모두 '고양이'로 채워버립니다. 야옹.
+        CAT = ["고양이" for i in range(file.number_of_rows())]
 
+        # 원래 엑셀 파일의 내용물과 고양이를 바꿔치기합니다. 야옹.
+        file.column[victim] = CAT
 
+    # 세 번째 재앙입니다.
     else:
-        pass
+        # 선택된 열을 복제해 붙여넣어 버립니다.
+        file.column += file.column[victim].copy()
 
     # 서식이 망가진 불쌍한 엑셀파일을 저장합니다.
     px.save_as(array=data_array, dest_file_name=directory + "/" + filename)
