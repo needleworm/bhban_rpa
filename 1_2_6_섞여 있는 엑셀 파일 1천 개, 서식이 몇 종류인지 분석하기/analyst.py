@@ -8,7 +8,6 @@ import time
 import os
 import pyexcel as px
 import sys
-import random
 
 # 작업 시작 메시지를 출력합니다.
 print("Process Start")
