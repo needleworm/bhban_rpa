@@ -37,11 +37,8 @@ for filename in input_files:
     if ".xlsx" not in filename:
         continue
 
-    # 엑셀 파일이 맞다면, 파일을 읽어옵니다.
-    file = px.get_sheet(file_name=directory + "/" + filename)
-
-    # 엑셀 파일을 리스트로 변환합니다.
-    data_array = file.array
+    # 엑셀 파일이 맞다면, 파일을 리스트 형태로 읽어옵니다.
+    data_array = px.get_array(file_name=directory + "/" + filename)
 
     # 헤더를 분리합니다.
     header = data_array[0]
