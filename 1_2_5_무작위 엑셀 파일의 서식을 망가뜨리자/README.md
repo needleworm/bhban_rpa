@@ -2,7 +2,7 @@
 
 ### 아래 명령어를 입력하면 코드가 실행됩니다.
 
->python anarchism.py <DIRECTORY\> <PERCENT\>
+>python anarchist.py <DIRECTORY\> <PERCENT\>
 
 <DIRECTORY\> 에는 공격 대상이 되는 파일들이 저장된 폴더 이름을 입력합니다.
 
