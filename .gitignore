@@ -1,6 +1,8 @@
 # 예제
 personal_info/
 
+# Pycharm
+.idea/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
