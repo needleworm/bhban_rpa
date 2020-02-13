@@ -27,7 +27,7 @@ os.mkdir("random_image")
 # 이를테면, NUM_SAMPLES가 100이면 랜덤 이미지 100개를 생성합니다.
 for i in range(NUM_SAMPLES):
     # 저장할 파일 이름을 정합니다. 현재 시각을 그대로 가져오죠.
-    name = str(time.time()) + ".png"
+    name = str(time.time())[-7:] + ".png"
 
     # 랜덤 이미지를 생성하기 위해 사이즈를 정의합니다. 사이즈마저도 랜덤입니다.
     Xdim, Ydim = np.random.randint(100, 400, size=2)
