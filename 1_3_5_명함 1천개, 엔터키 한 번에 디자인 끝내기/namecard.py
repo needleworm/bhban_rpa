@@ -137,7 +137,7 @@ for line in IDs:
     # 우측 여백을 10% 줍시다.
     x_offset = int(Xdim * 0.9 - infoFont.getsize(telephone)[0])
     # 상하 여백은 40%쯤 줍시다.
-    y_offset = int(Ydim * 0.6 - infoFont.getsize(telephone)[1])
+    y_offset = int(Ydim * 0.65 - infoFont.getsize(telephone)[1])
     # 명함에 이름을 삽입합니다.
     ImageDraw.Draw(namecard).text(xy=(x_offset, y_offset), text=telephone, font=infoFont, fill="black")
 
@@ -145,7 +145,7 @@ for line in IDs:
     # 우측 여백을 10% 줍시다.
     x_offset = int(Xdim * 0.9 - infoFont.getsize(e_mail)[0])
     # 상하 여백은 30%쯤 줍시다.
-    y_offset = int(Ydim * 0.7 - infoFont.getsize(e_mail)[1])
+    y_offset = int(Ydim * 0.75 - infoFont.getsize(e_mail)[1])
     # 명함에 이름을 삽입합니다.
     ImageDraw.Draw(namecard).text(xy=(x_offset, y_offset), text=e_mail, font=infoFont, fill="black")
 

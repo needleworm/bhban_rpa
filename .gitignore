@@ -3,6 +3,7 @@ personal_info/
 random_image/
 resized_image/
 squared_images/
+augmentation/
 
 # Pycharm
 .idea/
