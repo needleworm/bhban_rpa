@@ -50,6 +50,9 @@ for filename in input_files:
     # 변경된 이미지를 저장합니다.
     image.save("resized_image/" + filename)
 
+    # 이미지를 닫아줍니다.
+    image.close()
+
 # 작업 종료 메세지를 출력합니다.
 print("Process Done.")
 

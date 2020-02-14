@@ -41,6 +41,9 @@ for i in range(NUM_SAMPLES):
     # 결과물 파일을 저장합니다.
     result.save("random_image/"+name)
 
+    # 이미지를 닫아줍니다.
+    result.close()
+
 # 작업 종료 메세지를 출력합니다.
 print("Process Done.")
 
