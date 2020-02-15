@@ -26,8 +26,12 @@ if "augmentation" not in os.listdir():
 image = Image.open(image_filename)
 Xdim, Ydim = image.size
 
+# 저장된 파일 개수를 저장해 둘 카운터를 생성합니다.
+COUNT = 1
+
 # 일단 원본을 저장합니다. 2의 0승
-temp_new_file_name = str(time.time()) + ".png"
+temp_new_file_name = "%05d.png" %COUNT
+COUNT += 1
 image.save("augmentation/" + temp_new_file_name)
 image.close()
 
@@ -37,7 +41,8 @@ FILELIST = [temp_new_file_name]
 # 폴더 내의 이미지를 모두 읽어와 좌우대칭을 저장합니다. 2의 1승
 for i in range(len(FILELIST)):
     image = Image.open("augmentation/" + FILELIST[i])
-    new_temp_name = str(time.time()) + ".png"
+    new_temp_name = "%05d.png" %COUNT
+    COUNT += 1
     image = image.transpose(Image.FLIP_LEFT_RIGHT)
     image.save("augmentation/" + new_temp_name)
     image.close()
@@ -46,7 +51,8 @@ for i in range(len(FILELIST)):
 # 폴더 내의 이미지를 모두 읽어와 상하대칭을 저장합니다. 2의 2승
 for i in range(len(FILELIST)):
     image = Image.open("augmentation/" + FILELIST[i])
-    new_temp_name = str(time.time()) + ".png"
+    new_temp_name = "%05d.png" % COUNT
+    COUNT += 1
     image = image.transpose(Image.FLIP_TOP_BOTTOM)
     image.save("augmentation/" + new_temp_name)
     image.close()
@@ -55,7 +61,8 @@ for i in range(len(FILELIST)):
 # 폴더 내의 이미지를 모두 읽어와 흑백버전을 저장합니다. 2의 3승
 for i in range(len(FILELIST)):
     image = Image.open("augmentation/" + FILELIST[i])
-    new_temp_name = str(time.time()) + ".png"
+    new_temp_name = "%05d.png" % COUNT
+    COUNT += 1
     image = image.convert('1')
     image.save("augmentation/" + new_temp_name)
     image.close()
@@ -64,10 +71,15 @@ for i in range(len(FILELIST)):
 # 폴더 내의 이미지를 모두 읽어와 1도씩 회전합니다. 2의 3승 * 180
 for el in FILELIST:
     for i in range(180):
+        # 깔끔하게 1,000장만 만듭시다.
+        if COUNT > 1000:
+            break
         image = Image.open("augmentation/" + el)
         image = image.rotate(i+1)
         image = image.resize((Xdim, Ydim))
-        image.save("augmentation/" + str(time.time()) + ".png")
+        new_temp_name = "%05d.png" % COUNT
+        COUNT += 1
+        image.save("augmentation/" + new_temp_name)
         image.close()
 
 # 작업 종료 메세지를 출력합니다.
