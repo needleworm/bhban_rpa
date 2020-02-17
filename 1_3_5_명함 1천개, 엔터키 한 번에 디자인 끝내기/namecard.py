@@ -2,7 +2,7 @@
 """
 Author : Byunghyun Ban
 Book : 일반인을 위한 업무 자동화
-Last Modification : 2020.02.13.
+Last Modification : 2020.02.14.
 """
 import time
 import os
@@ -28,8 +28,9 @@ location = "경상북도 안동시 남후면 광음원당길36"
 url = "http://sangsang.farm"
 
 # 결과물을 저장할 폴더를 생성합니다.
-if "namecards" not in os.listdir():
-    os.mkdir("namecards")
+out_dir ="namecards"
+if out_dir not in os.listdir():
+    os.mkdir(out_dir)
 
 # 로고 파일을 불러옵니다.
 logo = Image.open(logo_filename)
@@ -73,7 +74,6 @@ image.paste(resized_logo, (int(Xdim * 0.1), int(Ydim * 0.1)))
 resized_logo.close()
 
 # 명함에 삽입할 폰트들을 결정합니다.
-# 폰트는 윈도우 기본 폰트 중 필자가 가장 좋아하는 calibri로 정했습니다.
 # 폰트 이름을 변경하시면 바뀝니다. 기본은 굴림입니다. 컴퓨터를 막 굴리기 때문입니다.
 # 이름은 큰 글자로 삽입합시다.
 nameFont = ImageFont.truetype("font/gulim.ttc", 70)
@@ -150,7 +150,7 @@ for line in IDs:
     ImageDraw.Draw(namecard).text(xy=(x_offset, y_offset), text=e_mail, font=infoFont, fill="black")
 
     # 완성된 명함을 저장합니다.
-    namecard.save("namecards/" + division + "_" + name + "_" + telephone + ".png")
+    namecard.save(out_dir + "/" + division + "_" + name + "_" + telephone + ".png")
 
     # 저장도 했으니 명함을 닫아줍니다.
     namecard.close()

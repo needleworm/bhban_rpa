@@ -22,7 +22,9 @@ directory = sys.argv[1]
 background_color = sys.argv[2]
 
 # 결과물을 저장할 폴더를 생성합니다.
-os.mkdir("squared_images")
+out_dir ="squared_images"
+if out_dir not in os.listdir():
+    os.mkdir(out_dir)
 
 # 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
@@ -60,7 +62,7 @@ for filename in input_files:
     new_image.paste(image, (x_offset, y_offset))
 
     # 변경된 이미지를 저장합니다.
-    new_image.save("squared_images/" + filename)
+    new_image.save(out_dir + "/" + filename)
 
     # 이미지들을 닫아줍니다.
     image.close()

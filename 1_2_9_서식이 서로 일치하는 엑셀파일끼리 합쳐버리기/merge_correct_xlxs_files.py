@@ -18,6 +18,12 @@ start_time = time.time()
 # 서식을 분석해 합칠 파일들이 저장된 폴더 이름을 시스템으로부터 입력받습니다.
 directory = sys.argv[1]
 
+# 결과물을 저장할 폴더를 생성합니다.
+out_dir ="merged_" + directory
+if out_dir not in os.listdir():
+    os.mkdir(out_dir)
+
+
 # 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
 
@@ -54,12 +60,9 @@ for filename in input_files:
     # 리스트에 데이터 값을 입력합니다.
     CONTENTS[index] += content
 
-# 합쳐진 파일을 저장할 폴더를 만듭니다.
-os.mkdir("MERGED_" + directory)
-
 # 합쳐진 데이터들을 각각 엑셀 파일로 저장합니다.
 for i in range(len(CONTENTS)):
-    px.save_as(array=CONTENTS[i], dest_file_name="MERGED_" + directory + "/" + str(i) + "_merged_File.xlsx")
+    px.save_as(array=CONTENTS[i], dest_file_name=out_dir + "/" + str(i) + "_merged_File.xlsx")
 
 # 작업 종료 메시지를 출력합니다.
 print("Process Done.")

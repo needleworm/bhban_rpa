@@ -22,7 +22,10 @@ directory = sys.argv[1]
 logo_filename = sys.argv[2]
 
 # 결과물을 저장할 폴더를 생성합니다.
-os.mkdir("images_with_logo")
+out_dir ="images_with_logo"
+if out_dir not in os.listdir():
+    os.mkdir(out_dir)
+
 
 # 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
@@ -69,7 +72,7 @@ for filename in input_files:
     image.paste(resized_logo, (int(Xdim/50), int(Ydim/50)))
 
     # 변경된 이미지를 저장합니다.
-    image.save("images_with_logo/" + filename)
+    image.save(out_dir + "/" + filename)
 
     # 이미지를 닫아 줍니다.
     image.close()

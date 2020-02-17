@@ -22,7 +22,10 @@ directory = sys.argv[1]
 percent = float(sys.argv[2])/100
 
 # 결과물을 저장할 폴더를 생성합니다.
-os.mkdir("resized_image")
+out_dir ="resized_image"
+if out_dir not in os.listdir():
+    os.mkdir(out_dir)
+
 
 # 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
@@ -48,7 +51,7 @@ for filename in input_files:
     image = image.resize((int(Xdim), int(Ydim)))
 
     # 변경된 이미지를 저장합니다.
-    image.save("resized_image/" + filename)
+    image.save(out_dir + "/" + filename)
 
     # 이미지를 닫아줍니다.
     image.close()

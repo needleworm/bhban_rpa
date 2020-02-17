@@ -20,7 +20,9 @@ start_time = time.time()
 NUM_SAMPLES = 1000
 
 # 결과물을 저장할 폴더를 생성합니다.
-os.mkdir("random_image")
+out_dir ="random_image"
+if out_dir not in os.listdir():
+    os.mkdir(out_dir)
 
 
 # NUM_SAMPLES 회수만큼 반복하며 그림을 생성합니다.
@@ -39,7 +41,7 @@ for i in range(NUM_SAMPLES):
     result = Image.fromarray(image)
 
     # 결과물 파일을 저장합니다.
-    result.save("random_image/"+name)
+    result.save(out_dir + "/" +name)
 
     # 이미지를 닫아줍니다.
     result.close()

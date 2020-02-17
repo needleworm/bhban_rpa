@@ -2,7 +2,7 @@
 """
 Author : Byunghyun Ban
 Book : 일반인을 위한 업무 자동화
-Last Modification : 2020.02.13.
+Last Modification : 2020.02.15.
 """
 import time
 import os
@@ -40,8 +40,9 @@ Xdim, Ydim = template.size
 url = "http://sangsang.farm"
 
 # 결과물을 저장할 폴더를 생성합니다.
-if "idcards" not in os.listdir():
-    os.mkdir("idcards")
+out_dir ="idcards"
+if out_dir not in os.listdir():
+    os.mkdir(out_dir)
 
 # 로고 파일을 불러옵니다.
 logo = Image.open(logo_filename)
@@ -86,7 +87,6 @@ template.paste(resized_logo, (int(Xdim * 0.1), int(Ydim * 0.95 - new_logo_y)))
 resized_logo.close()
 
 # 사원증에 삽입할 폰트들을 결정합니다.
-# 폰트는 윈도우 기본 폰트 중 필자가 가장 좋아하는 calibri로 정했습니다.
 # 폰트 이름을 변경하시면 바뀝니다. 기본은 굴림입니다. 컴퓨터를 막 굴리기 때문입니다.
 # 이름은 큰 글자로 삽입합시다.
 nameFont = ImageFont.truetype("font/gulim.ttc", 70)
@@ -147,7 +147,7 @@ for line in IDs:
     ImageDraw.Draw(idcard).text(xy=(x_offset, y_offset), text=division, font=infoFont, fill="black")
 
     # 완성된 사원증을 저장합니다.
-    idcard.save("idcards/" + PHOTOS[COUNT])
+    idcard.save(out_dir + "/" + PHOTOS[COUNT])
 
     # 저장도 했으니 명함을 닫아줍니다.
     idcard.close()
