@@ -1,14 +1,13 @@
 """
 Author : Byunghyun Ban
 Book : 일반인을 위한 업무 자동화
-GitHub : https://github.com/needleworm/pywinmacro
+https://brunch.co.kr/@needleworm/200
 """
 
 import win32api
 import win32con
 import win32gui
 import os
-import time
 
 # 라이브러리에서 사용할 키맵을 미리 세팅합니다.
 KEYMAP = {
@@ -60,6 +59,13 @@ KEYMAP = {
 }
 
 
+# 대문자 특수문자를 위한 딕셔너리입니다.
+UPPER_SPECIAL = {
+    "!": 1,    "@": 2,    "#": 3,    "$": 4,    "%": 5,    "^": 6,
+    "&": 7,    "*": 8,    "(": 9,    ")": 0,    "~": '`',    "|": '\\'
+}
+
+
 # 마우스를 특정위치로 이동시키는 함수
 def move_mouse(location):
     # location 을 입력받아 이 위치로 마우스를 이동시킵니다.
@@ -107,6 +113,7 @@ def key_press_once(key):
 
 
 # 글자 입력 (클립보드에 복사 후 붙여넣기)
+# 한글일 경우에만 사용하세요. 한글은 형태소 분해가 곤란하여 그렇습니다.
 def type_in(string):
     # 클립보드에 스트링을 집어넣습니다.
     os.system('echo ' + string + '| clip')
@@ -118,6 +125,18 @@ def type_in(string):
     key_off("control")
     key_off("v")
 
+
+# 영어, 숫자, 특수문자로 된 스트링을 바로 입력하는 함수입니다.
+def typinrg(string):
+    for el in string.strip():
+        if el.isupper():
+            key_on("shift")
+            key_press_once("el.lower")
+            key_off("shift")
+        elif el in UPPER_SPECIAL:
+            key_press_once(UPPER_SPECIAL[el])
+        else:
+            key_press_once("el")
 
 # 키를 계속 누르고 있도록 하는 함수입니다.
 def key_on(key):
@@ -186,15 +205,3 @@ def get_color(location):
     x, y = location
     # win32gui모듈로 색상값을 따 오고, 16진수로 변환하여 리턴합니다.
     return hex(win32gui.GetPixel(win32gui.GetDC(win32gui.GetActiveWindow()), x, y))
-
-
-# 특정 좌표의 색상이 원하는 색상이 될 때까지 작업을 중단하고 기다리는 함수입니다.
-def awake_when_color_match(location, color):
-    while get_color(location) != color:
-        time.sleep(0.1)
-
-
-# 특정 좌표의 색상이 지정된 색상과 달라질때까지 작업을 중단하고 기다리는 함수입니다.
-def awake_when_color_change(location, color):
-    while get_color(location) == color:
-        time.sleep(0.1)
