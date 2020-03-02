@@ -1,3 +1,9 @@
+"""
+Author : Byunghyun Ban
+Book : 일반인을 위한 업무 자동화
+Last Modification : 2020.02.18.
+"""
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
@@ -85,10 +91,10 @@ class PostCrawler:
         click(key1_location)
         # 키1의 내용물을 입력합니다.
         # 글자를 입력하면 화면에 타이핑해주는 type_in() 함수가 있다고 가정하고 코드를 짭니다.
-        type_in(key1)
+        type_in(key1.strip())
         # 같은 방법으로 키2를 입력합니다.
         click(key2_location)
-        type_in(key2)
+        type_in(key2.strip())
         # 로딩이 되기까지 잠시만 대기합니다. 오래된 컴퓨터에서는 여기서 대기가 필요하더군요.
         time.sleep(0.1)
         # 팝업창의 확인버튼을 클릭합니다.
@@ -126,7 +132,7 @@ def click(location):
 # Ctrl + V 를 입력해 붙여넣기 하겠습니다.
 def type_in(string):
     # os모듈을 활용합니다. clip 명령어를 사용하면 클립보드에 스트링을 입력할 수 있습니다.
-    os.system('echo ' + string.strip() + '| clip')
+    os.system('echo ' + string + '| clip')
     # Ctrl 키와 V 키를 누릅니다.
     win32api.keybd_event(0x11, 0, 0x00, 0)
     win32api.keybd_event(0x56, 0, 0x00, 0)
