@@ -20,10 +20,12 @@
 >http://it.chosun.com/site/data/html_dir/2019/11/23/2019112301220.html
 
 ## 사용 방법
-> python main.py <FEED_FILE\> <OUTPUT_DIR\>
+> python main.py <FEED_FILE\> <OUTPUT_DIR\> <SENDER2\>
 
-<FEED_FILE\>에는 우편등기번호와 수신인 이름이 기재된 CSV파일을 입력합니다.
+<FEED_FILE\>에는 우편등기번호가 기재된 CSV파일을 입력합니다.
 
 <OUTPUT_DIR\>에는 출력 결과물이 저장될 폴더명을 입력합니다.
+
+<SENDER2\>에는 발송인의 이름을 입력합니다. 두 번째 글자만 입력하면 됩니다.
 
 

@@ -2,7 +2,7 @@
 """
 Author : Byunghyun Ban
 Book : 일반인을 위한 업무 자동화
-Last Modification : 2020.02.17.
+Last Modification : 2020.02.18.
 """
 import post_crawler as pc
 import os
@@ -51,7 +51,7 @@ for line in csv:
     # CSV 파일이니까 컴마로 쪼갤 수 있습니다. 쪼개줍시다.
     # 만약 등기번호만 적혀 있다면 등기번호만 들어있는 리스트가 반환되고
     # 등기번호와 이름이 입력된 양식이라면 등기번호만 뽑혀나옵니다.
-    querry = line.strip().split(", ")[0]
+    querry = line.split(",")[0].strip()
 
     # 만약 쿼리에 '-' 가 입력되어 있다면 다듬어서 없애줍시다.
     if "-" in querry:

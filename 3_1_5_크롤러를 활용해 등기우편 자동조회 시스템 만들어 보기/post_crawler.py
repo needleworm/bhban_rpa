@@ -1,8 +1,11 @@
+"""
+Author : Byunghyun Ban
+Book : 일반인을 위한 업무 자동화
+Last Modification : 2020.02.18.
+"""
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-import time
-import win32api, win32con, win32gui
-import os
 
 
 # querry를 다듬어 URL로 만들어주는 함수입니다.
@@ -38,46 +41,3 @@ class PostCrawler:
         self.driver.get(url)
         # 스크린샷을 찍어서 저장합니다.
         self.driver.save_screenshot(out_dir + "/"+querry + ".png")
-
-
-def click(location):
-    x, y = location
-    win32api.SetCursorPos(location)
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, x, y, 0, 0)
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, x, y, 0, 0)
-
-
-def type_in(string):
-    command = 'echo ' + string.strip() + '| clip'
-    os.system(command)
-    win32api.keybd_event(0x11, 0, 0x00, 0)
-    win32api.keybd_event(0x56, 0, 0x00, 0)
-    win32api.keybd_event(0x11, 0, 0x02, 0)
-    win32api.keybd_event(0x56, 0, 0x02, 0)
-
-
-def get_color(location):
-    x, y = location
-    return hex(win32gui.GetPixel(win32gui.GetDC(win32gui.GetActiveWindow()), x, y))
-
-
-def redbox_based_sleep():
-    redbox_location = (385, 123)
-    while get_color(redbox_location) != "0x392ddd":
-        time.sleep(0.01)
-
-
-def redbox_based_awake():
-    redbox_location = (385, 123)
-    while get_color(redbox_location) == "0x392ddd":
-        time.sleep(0.1)
-
-
-def kill_error_page():
-    error_button = (390, 170)
-    quit_button = (400, 10)
-    time.sleep(1)
-    if get_color(error_button) != "0xffffff":
-        click(quit_button)
-        return True
-    return False
