@@ -21,7 +21,7 @@
  
  이 책의 예제는 아래와 같습니다.
  
- > python main.py twitter automation_bot <PS\> 675 187
+ > python main.py twitter bot_automation <PS\> 675 187
 
 ## 작동 원리
 (1) ID 입력창을 클릭한다
