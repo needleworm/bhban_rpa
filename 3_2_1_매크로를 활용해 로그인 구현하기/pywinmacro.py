@@ -62,7 +62,7 @@ KEYMAP = {
 # 대문자 특수문자를 위한 딕셔너리입니다.
 UPPER_SPECIAL = {
     "!": 1,    "@": 2,    "#": 3,    "$": 4,    "%": 5,    "^": 6,
-    "&": 7,    "*": 8,    "(": 9,    ")": 0,    "~": '`',    "|": '\\'
+    "&": 7,    "*": 8,    "(": 9,    ")": 0,    "_": "-",   "~": '`',    "|": '\\'
 }
 
 
@@ -134,7 +134,9 @@ def typinrg(string):
             key_press_once(el.lower())
             key_off("shift")
         elif el in UPPER_SPECIAL:
+            key_on("shift")
             key_press_once(UPPER_SPECIAL[el])
+            key_off("shift")
         else:
             key_press_once(el)
 

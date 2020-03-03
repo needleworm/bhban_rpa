@@ -4,6 +4,7 @@ random_image/
 resized_image/
 squared_images/
 augmentation/
+chromedriver.exe
 
 # Pycharm
 .idea/

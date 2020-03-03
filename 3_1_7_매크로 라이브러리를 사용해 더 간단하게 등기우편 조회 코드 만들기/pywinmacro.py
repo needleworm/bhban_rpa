@@ -62,7 +62,7 @@ KEYMAP = {
 # 대문자 특수문자를 위한 딕셔너리입니다.
 UPPER_SPECIAL = {
     "!": 1,    "@": 2,    "#": 3,    "$": 4,    "%": 5,    "^": 6,
-    "&": 7,    "*": 8,    "(": 9,    ")": 0,    "~": '`',    "|": '\\'
+    "&": 7,    "*": 8,    "(": 9,    ")": 0,    "_": "-",   "~": '`',    "|": '\\'
 }
 
 
@@ -128,22 +128,29 @@ def type_in(string):
 
 # 영어, 숫자, 특수문자로 된 스트링을 바로 입력하는 함수입니다.
 def typinrg(string):
-    for el in string.strip():
+    for el in string:
         if el.isupper():
             key_on("shift")
-            key_press_once("el.lower")
+            key_press_once(el.lower())
             key_off("shift")
         elif el in UPPER_SPECIAL:
+            key_on("shift")
             key_press_once(UPPER_SPECIAL[el])
+            key_off("shift")
         else:
-            key_press_once("el")
+            key_press_once(el)
+
 
 # 키를 계속 누르고 있도록 하는 함수입니다.
 def key_on(key):
     # 전역변수 KEYMAP에 접근할 것임을 선언합니다.
     global KEYMAP
+    # 입력받은 값을 소문자로 변환합니다.
+    key = str(key)
+    if key.isupper:
+        key = key.lower()
     try:
-        # 입력받은 값을 소문자로 변환한 뒤, 키맵에서 키 코드를 뽑아옵니다.
+        # 키맵에서 키 코드를 뽑아옵니다.
         key_code = KEYMAP[key.lower()]
         win32api.keybd_event(key_code, 0, 0x00, 0)
     except KeyError:
@@ -157,8 +164,12 @@ def key_on(key):
 def key_off(key):
     # 전역변수 KEYMAP에 접근할 것임을 선언합니다.
     global KEYMAP
+    # 입력받은 값을 소문자로 변환합니다.
+    key = str(key)
+    if key.isupper:
+        key = key.lower()
     try:
-        # 입력받은 값을 소문자로 변환한 뒤, 키맵에서 키 코드를 뽑아옵니다.
+        # 키맵에서 키 코드를 뽑아옵니다.
         key_code = KEYMAP[key.lower()]
         win32api.keybd_event(key_code, 0, 0x02, 0)
     except KeyError:

@@ -6,18 +6,20 @@ Last Modification : 2020.03.02.
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pywinmacro as pw
+import time
 
 
 # 각종 사이트들의 로그인 주소를 미리 저장해 둔 딕셔너리입니다.
 LOGIN_URLS = {
+    "twitter": "https://twitter.com/",
     "naver": "https://nid.naver.com/nidlogin.login?",
     "google": "https://accounts.google.com/signin",
     "daum": "https://logins.daum.net/accounts/signinform.do",
-    "twitter": "https://twitter.com/",
     "instagram": "https://www.instagram.com/accounts/login",
     "facebook": "https://facebook.com",
     "coupang": "https://login.coupang.com/login/login.pang"
 }
+
 
 class LoginBot:
     def __init__(self, site):
@@ -30,9 +32,14 @@ class LoginBot:
         # 로그인하려는 사이트로 이동해 로그인창을 켭니다.
         try:
             self.driver.get(LOGIN_URLS[site.lower()])
+            # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
+            time.sleep(5)
         except KeyError:
-            print(site + " is not listed on the LOGIN_URLS dictionary.")
-            exit(1)
+            # 미리 세팅되지 않은 주소입니다. 주소창에 바로 입력을 시도합니다.
+            self.driver.get(site)
+            # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
+            time.sleep(5)
+
 
     # 크롤러를 종료하는 메서드입니다.
     # 굳이 한줄짜리 코드를 함수로 만든 데에는 여러 이유가 있습니다만,
@@ -55,3 +62,9 @@ class LoginBot:
 
         # 엔터키를 눌러줍니다. 대부분의 사이트에서 로그인이 실행됩니다.
         pw.key_press_once("enter")
+
+        # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
+        time.sleep(5)
+
+    def save_screenshot(self):
+        self.driver.save_screenshot("test.png")
