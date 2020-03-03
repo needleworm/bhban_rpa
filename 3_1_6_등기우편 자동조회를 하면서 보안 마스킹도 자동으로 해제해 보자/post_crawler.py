@@ -8,8 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import time
 import win32api, win32con, win32gui
-import os
-
+import pyperclip
 
 # querry를 다듬어 URL로 만들어주는 함수입니다.
 # 반드시 필요한 것은 아니지만,
@@ -26,7 +25,7 @@ class PostCrawler:
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다. 해상도는 848x1500이며, 모니터를 90도 회전시켜 사용하면 적절합니다.
-        self.options.add_argument("window-size=848x1500")
+        self.options.add_argument("--window-size=848,1500")
         # 옵션을 입력해서 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
 
@@ -131,8 +130,8 @@ def click(location):
 # 입력하고 싶은 스트링을 클립보드에 집어넣고
 # Ctrl + V 를 입력해 붙여넣기 하겠습니다.
 def type_in(string):
-    # os모듈을 활용합니다. clip 명령어를 사용하면 클립보드에 스트링을 입력할 수 있습니다.
-    os.system('echo ' + string + '| clip')
+    # pyperclip 모듈의 copy() 명령어를 사용하면 클립보드에 스트링을 입력할 수 있습니다.
+    pyperclip.copy(string)
     # Ctrl 키와 V 키를 누릅니다.
     win32api.keybd_event(0x11, 0, 0x00, 0)
     win32api.keybd_event(0x56, 0, 0x00, 0)
