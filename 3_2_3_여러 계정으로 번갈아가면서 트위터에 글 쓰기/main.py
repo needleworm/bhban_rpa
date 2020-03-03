@@ -7,7 +7,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import twitter_automention as ta
+import twitter_sugunsugun as ts
 
 
 # 작업 시작 메시지를 출력합니다.
@@ -23,16 +23,16 @@ idfile = sys.argv[1]
 filename = sys.argv[2]
 
 # 트윗 입력 x좌표를 입력받습니다.
-mention_x = int(sys.argv[4].strip())
+mention_x = int(sys.argv[3].strip())
 
 # 트윗 입력 y좌표를 입력받습니다.
-mention_y = int(sys.argv[5].strip())
+mention_y = int(sys.argv[4].strip())
 
 # 아이디와 비밀번호를 세트로 저장해 둘 리스트를 만듭니다.
 IDs = []
 
 # 아이디가 기재된 파일을 불러옵니다.
-idfile = open(filename)
+idfile = open(idfile, encoding="utf-8")
 
 # 이걸 한 줄씩 읽어옵니다.
 for line in idfile:
@@ -45,23 +45,26 @@ for line in idfile:
     IDs.append((splt[0].strip(), splt[1].strip()))
 
 # 크롤러를 불러옵니다.
-BOT = ta.TwitterBot(filename, (mention_x, mention_y))
+BOT = ts.TwitterBot(filename, (mention_x, mention_y))
 
 # IDs에 저장된 계정을 하나씩 불러옵니다.
-for ids in IDs:
+for i in range(len(IDs)):
     # 로그인을 시도합니다.
-    BOT.login(ids)
+    ID, PS = IDs[i]
+    BOT.login(ID, PS)
     # 로그인에 성공했으니 스크린샷이나 한 번 찍어줍시다.
     BOT.save_screenshot(str(time.time) + ".png")
     # 트위터에 모든 멘션을 올립니다.
     BOT.tweet_all()
+    time.sleep(10)
     # 크롤러를 닫아줍니다.
     BOT.kill()
-    # 크롤러를 다시 켜서 트위터로 접속합니다.
-    BOT.go_to_twitter()
+    # 아직 작업이 덜 끝난 계정이 있다면
+    if i < len(IDs)-1:
+        # 크롤러를 다시 켜서 트위터로 접속합니다.
+        BOT.go_to_twitter()
+        time.sleep(3)
 
-# 결과 화면을 잠시 감상하기 위해 10초동안 방치합니다.
-time.sleep(10)
 
 # 크롤러를 닫아줍니다.
 BOT.kill()
