@@ -192,6 +192,19 @@ def r_click():
     win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0)
 
 
+# 마우스 스크롤을 올리는 함수
+def mouse_upscroll(number=1000):
+    x, y = get_mouse_position()
+    # 몇 칸이나 올릴지 number에 입력받습니다.
+    win32api.mouse_event(win32con.MOUSEEVENTF_WHEEL, x, y, number, 0)
+
+# 마우스 스크롤을 내리는 함수
+def mouse_downscroll(number=1000):
+    x, y = get_mouse_position()
+    # 몇 칸이나 내릴지 number에 입력받습니다. 기본은 한 칸 내립니다.
+    win32api.mouse_event(win32con.MOUSEEVENTF_WHEEL, x, y, -1*number, 0)
+
+
 # 드래그드롭 함수
 def drag_drop(frm, to):
     # 좌표값을 입력받습니다.

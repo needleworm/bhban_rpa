@@ -45,9 +45,6 @@ hashtags = "#코딩 #업무자동화 #로봇 이 #뉴스 를 #자동 #스크랩 합니다."
 # 긁어온 모든 뉴스를 업로드까지 합니다.
 BOT.tweet_all_news(keyword, hashtags)
 
-# 트위터에 모든 멘션을 올립니다.
-BOT.tweet_all()
-
 # 결과 화면을 잠시 감상하기 위해 10초동안 방치합니다.
 time.sleep(10)
 

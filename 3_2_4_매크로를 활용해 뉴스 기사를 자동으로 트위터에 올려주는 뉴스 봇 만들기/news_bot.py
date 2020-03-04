@@ -23,12 +23,10 @@ class NewsBot:
         #self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
-        # 정리된 뉴스를 저장할 리스트를 만듭니다.
+        # 정리된 뉴스를 저장할 변수를 만듭니다.
         self.news_list = []
+        self.news_text = []
         # 일단 트위터 로그인화면으로 갑니다.
-        self.go_to_twitter()
-        # 5초 정도 기다려줍니다.
-        time.sleep(5)
 
     # 크롤러를 종료하는 메서드입니다.
     # 굳이 한줄짜리 코드를 함수로 만든 데에는 여러 이유가 있습니다만,
@@ -49,6 +47,12 @@ class NewsBot:
     # 페이지의 모든 내용을 선택하고 클립보드에 복사합니다.
     def copy_all(self):
         pw.ctrl_a()
+        # 한 번 눌러서는 안 될 때도 있습니다. 한국인의 근성을 보여줍시다.
+        time.sleep(1)
+        pw.ctrl_c()
+        time.sleep(1)
+        pw.ctrl_c()
+        time.sleep(1)
         pw.ctrl_c()
 
     # 페이지의 모든 내용을 선택해 뉴스 기사만 뽑아내는 함수입니다.
@@ -58,9 +62,9 @@ class NewsBot:
         # 뉴스 리스트를 초기화합니다.
         self.news_list = []
         # 텍스트를 클립보드에서 추출해 스트링으로 따 옵니다.
-        full_text = pyperclip.paste()
+        self.news_text = pyperclip.paste()
         # 한 줄씩 쪼개줍니다.
-        split = full_text.split("\n")
+        split = self.news_text.split("\n")
 
         # 구글 뉴스는 이미지 정보, 헤드라인, 게시 시간, 본문 요약 순으로 정보가 제공됩니다.
         # 내용물을 한 줄씩 읽으면서 정보를 취합해 봅시다.
@@ -89,46 +93,51 @@ class NewsBot:
         # 트위터 홈페이지로 이동합니다.
         self.driver.get("http://twitter.com/")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
-        time.sleep(5)
+        time.sleep(2)
+
+    # 트위터 홈으로 이동하는 메서드입니다.
+    def twitter_home(self):
+        self.driver.get("https://twitter.com/home")
+        # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
+        time.sleep(2)
 
     # 로그인을 수행하는 메서드입니다.
     def login(self, id, ps):
+        self.go_to_twitter()
         # 아이디를 입력합니다.
         pw.typinrg(id)
         # tab 키를 눌러줍시다. 대부분의 사이트에서 암호창으로 이동합니다.
         pw.key_press_once("tab")
         # 비밀번호를 마저 입력합니다.
         pw.typinrg(ps)
-        # 1초 쉬어줍니다.
-        time.sleep(1)
         # 엔터키를 눌러줍니다. 대부분의 사이트에서 로그인이 실행됩니다.
         pw.key_press_once("enter")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
         time.sleep(5)
 
     # 트위터에 글을 올리는 함수입니다.
-    def tweet(self, mention):
-        # 멘션창을 몇 번 클릭해 줍니다. 한번만 해서는 안 될 때가 있습니다.
+    def tweet(self, text, interval):
+        # 트윗 입력창을 클릭합니다.
         pw.click(self.mention_location)
-        pw.click(self.mention_location)
-        pw.type_in(mention)
-        # 1초 쉬어줍니다.
-        time.sleep(1)
+        # 트윗 내용을 입력합니다.
+        pw.type_in(text)
         # 탭 키를 여섯 번 누릅니다.
         for i in range(6):
             pw.key_press_once("tab")
-        # 1초 쉬어줍니다.
-        time.sleep(1)
         # 엔터키를 칩니다.
         pw.key_press_once("enter")
+        # 로딩 될때까지 몇 초 기다립니다.
+        time.sleep(interval)
+        # 스크롤이 내려가는 경우가 있어 다시 올립니다.
+        pw.mouse_upscroll(3000)
+        time.sleep(1)
 
     # 스크랩한 모든 뉴스를 트위터에 올리는 함수입니다.
     # 15초 간격으로 뉴스를 올립니다. 시간 간격을 바꾸고 싶으면 함수를 호출할 때 시간을 초단위로 입력합니다.
     # 해시태그를 입력할 경우 함께 삽입합니다.
     def tweet_all(self, hashtags="", interval=15):
         for el in self.news_list:
-            time.sleep(interval)
-            self.tweet(el.strip() + " " + hashtags)
+            self.tweet(el.strip() + " " + hashtags, interval)
 
     # 구글에서 뉴스를 검색하고,
     # 트위터에 자동으로 로그인 한 뒤,
@@ -137,6 +146,6 @@ class NewsBot:
     # 해시태그를 입력할 경우 함께 삽입합니다.
     def tweet_all_news(self, keyword, hashtags="", interval=15):
         self.news_crawler(keyword)
-        self.go_to_twitter()
+        self.twitter_home()
         self.tweet_all(hashtags, interval)
         time.sleep(interval)
