@@ -7,15 +7,11 @@ Last Modification : 2020.03.02.
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pywinmacro as pw
-import pyautogui
 import time
 
 
-class LikeBot:
-    def __init__(self, like_button_filename, red_like_button_filename):
-        # 좋아요 버튼 파일 이름을 저장합니다.
-        self.like_button = like_button_filename
-        self.red_like_button = red_like_button_filename
+class CaptureBot:
+    def __init__(self):
         # 쿼리 베이스를 제작합니다.
         self.querry ="https://www.instagram.com/explore/tags/"
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
@@ -76,28 +72,10 @@ class LikeBot:
         # 잠시 기다립니다.
         time.sleep(5)
 
-    # 좋아요 버튼을 찾아서 누르는 함수입니다.
-    def press_like(self):
-        # 화면에서 좋아요버튼을 찾습니다.
-        find = find_on_screen(self.like_button)
-        # 화면에서 좋아요 버튼을 찾을 수 없는 경우를 처리합니다.
-        if not find:
-            # 이미 좋아요를 눌러 빨간 하트가 된 경우 아무것도 하지 않고 넘어갑니다.
-            if not find_on_screen(self.red_like_button):
-                return True
-            # 화면에서 하트를 찾을 수 없는 경우 에러 메시지를 False를 return합니다.
-            else:
-                return False
-        # 좋아요 버튼을 찾았으니 눌러봅니다.
-        pw.click(find)
-        # 로딩이 걸릴 수도 있으니 1초간 기다려 줍니다.
-        time.sleep(1)
-        return True
-
-    # 검색결과들을 돌아다니며 모조리 좋아요를 누릅니다.
-    # num에는 몇 개의 게시물에 좋아요를 누를지를 적어줍니다.
+    # 검색결과들을 돌아다니며 모조리 캡처합니다.
+    # num에는 몇 개의 게시물을 캡처할 지 입력합니다.
     # -1을 입력하면 사용자가 직접 종료하기 전까지 무한정 계속합니다.
-    def press_like_buttons(self, num):
+    def capture_pictures(self, num):
         # 반복 회수를 결정하기 위한 변수입니다.
         count = num
         # count 가 0이 될때까지 반복합니다.
@@ -107,16 +85,13 @@ class LikeBot:
             count -= 1
             # 좋아요 버튼을 찾아 클릭을 시도합니다.
             # self.press_like() 함수는 클릭을 시도하고 동시에 성공여부를 리턴하므로 if문 안에 넣어줍니다.
-            if not self.press_like():
-                # 화면에서 좋아요 버튼을 찾는 것을 실패한 경우 에러메시지를 출력하고 종료합니다.
-                print("Cannot find like button. Please check " + self.like_button + "file.")
-                exit(1)
+            self.save_screenshot(str(time.time()) + ".png")
             # 좋아요 버튼 클릭에 성공했으면 다음 게시물로 넘어갑니다. 오른쪽 화살표버튼만 누르면 됩니다.
             pw.key_press_once("right_arrow")
             # 로딩을 위해 5초가량 기다립니다.
             time.sleep(5)
 
-    # 코드 간소화를 위해 자기가 알아서 인스타 로그인하고, 검색하고, 좋아요도 다 누르는 메서드를 만듭시다.
+    # 코드 간소화를 위해 자기가 알아서 인스타 로그인하고, 검색하고, 캡처도 다 하는 메서드를 만듭시다.
     def insta_jungdok(self, id, ps, tag, num=100):
         # 로그인을 하고
         self.login(id, ps)
@@ -125,14 +100,4 @@ class LikeBot:
         # 사진 한 장을 선택한 다음
         self.select_picture()
         # 좋아요를 누르면서 사진을 샥 샥 넘깁니다.
-        self.press_like_buttons(num)
-
-
-# 이미지를 입력받아 화면에서 위치를 탐색합니다.
-# 화면에서 이미지가 발견되지 않을 경우 False를 리턴합니다.
-def find_on_screen(filename):
-    a = pyautogui.locateCenterOnScreen(filename)
-    if not a:
-        return False
-    else:
-        return a[0], a[1]
+        self.capture_pictures(num)

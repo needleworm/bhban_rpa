@@ -8,6 +8,7 @@ Last Modification : 2020.03.02.
 import sys
 import time
 import insta_jungdok as ij
+import os
 
 
 # 작업 시작 메시지를 출력합니다.
@@ -25,17 +26,18 @@ ps = sys.argv[2]
 # 검색할 태그를 입력받습니다.
 tag = sys.argv[3]
 
-# 좋아요 버튼 파일이름을 입력받습니다.
-like_button = sys.argv[4]
+# 결과물을 저장할 폴더 이름을 입력받습니다.
+directory = sys.argv[4]
 
-# 빨간색 좋아요 버튼 파일이름을 입력받습니다.
-red_like_button = sys.argv[5]
+# 결과물을 저장할 폴더를 생성합니다.
+if directory not in os.listdir():
+    os.mkdir(directory)
 
 # 반복 회수를 입력받습니다.
-NUMBER = int(sys.argv[6].strip())
+NUMBER = int(sys.argv[5].strip())
 
 # 크롤러를 불러옵니다.
-BOT = ij.LikeBot(like_button, red_like_button)
+BOT = ij.CaptureBot()
 
 # 작업을 수행합니다.
 BOT.insta_jungdok(id, ps, tag, NUMBER)
