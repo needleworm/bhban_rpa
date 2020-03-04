@@ -117,20 +117,15 @@ class NewsBot:
 
     # 트위터에 글을 올리는 함수입니다.
     def tweet(self, text, interval):
-        # 트윗 입력창을 클릭합니다.
-        pw.click(self.mention_location)
-        # 트윗 내용을 입력합니다.
+        # 글을 쉽게 작성하기 위해 작성 전용 페이지로 이동합니다.
+        self.driver.get("https://twitter.com/intent/tweet")
+        # 커서가 기본적으로 입력창에 가 있습니다. 트윗 내용을 입력합니다.
         pw.type_in(text)
-        # 탭 키를 여섯 번 누릅니다.
-        for i in range(6):
-            pw.key_press_once("tab")
-        # 엔터키를 칩니다.
-        pw.key_press_once("enter")
+        # 탭 키를 두 번 누르면 Tweet 버튼으로 커서가 이동합니다.
+        pw.key_press_once("tab")
+        pw.key_press_once("tab")
         # 로딩 될때까지 몇 초 기다립니다.
         time.sleep(interval)
-        # 스크롤이 내려가는 경우가 있어 다시 올립니다.
-        pw.mouse_upscroll(3000)
-        time.sleep(1)
 
     # 스크랩한 모든 뉴스를 트위터에 올리는 함수입니다.
     # 15초 간격으로 뉴스를 올립니다. 시간 간격을 바꾸고 싶으면 함수를 호출할 때 시간을 초단위로 입력합니다.

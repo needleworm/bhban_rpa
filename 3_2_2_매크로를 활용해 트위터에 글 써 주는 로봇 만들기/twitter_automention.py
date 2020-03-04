@@ -42,7 +42,6 @@ class TwitterBot:
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
         time.sleep(5)
 
-
     # 로그인을 수행하는 메서드입니다.
     def login(self, id, ps):
         # 아이디를 입력합니다.
@@ -51,8 +50,6 @@ class TwitterBot:
         pw.key_press_once("tab")
         # 비밀번호를 마저 입력합니다.
         pw.typing(ps)
-        # 1초 쉬어줍니다.
-        time.sleep(1)
         # 엔터키를 눌러줍니다. 대부분의 사이트에서 로그인이 실행됩니다.
         pw.key_press_once("enter")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
@@ -63,20 +60,16 @@ class TwitterBot:
         self.driver.save_screenshot(filename)
 
     # 트위터에 글을 올리는 함수입니다.
-    def tweet(self, mention):
-        #멘션창을 몇 번 클릭해 줍니다. 한번만 해서는 안 될 때가 있습니다.
-        pw.click(self.mention_location)
-        pw.click(self.mention_location)
-        pw.type_in(mention)
-        # 1초 쉬어줍니다.
-        time.sleep(1)
-        # 탭 키를 여섯 번 누릅니다.
-        for i in range(6):
-            pw.key_press_once("tab")
-        # 1초 쉬어줍니다.
-        time.sleep(1)
-        #엔터키를 칩니다.
-        pw.key_press_once("enter")
+    def tweet(self, text, interval):
+        # 글을 쉽게 작성하기 위해 작성 전용 페이지로 이동합니다.
+        self.driver.get("https://twitter.com/intent/tweet")
+        # 커서가 기본적으로 입력창에 가 있습니다. 트윗 내용을 입력합니다.
+        pw.type_in(text)
+        # 탭 키를 두 번 누르면 Tweet 버튼으로 커서가 이동합니다.
+        pw.key_press_once("tab")
+        pw.key_press_once("tab")
+        # 로딩 될때까지 몇 초 기다립니다.
+        time.sleep(interval)
 
     # 읽어온 모든 멘션들을 업로드하는 함수입니다.
     # 15초 간격으로 멘션을 올립니다. 시간 간격을 바꾸고 싶으면 함수를 호출할 때 시간을 초단위로 입력합니다.

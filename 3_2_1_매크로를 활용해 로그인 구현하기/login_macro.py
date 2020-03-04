@@ -56,8 +56,6 @@ class LoginBot:
         pw.key_press_once("tab")
         # 비밀번호를 마저 입력합니다.
         pw.typing(ps)
-        # 1초 쉬어줍니다.
-        time.sleep(1)
         # 엔터키를 눌러줍니다. 대부분의 사이트에서 로그인이 실행됩니다.
         pw.key_press_once("enter")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
