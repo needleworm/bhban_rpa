@@ -46,11 +46,11 @@ class TwitterBot:
     # 로그인을 수행하는 메서드입니다.
     def login(self, id, ps):
         # 아이디를 입력합니다.
-        pw.typinrg(id)
+        pw.typing(id)
         # tab 키를 눌러줍시다. 대부분의 사이트에서 암호창으로 이동합니다.
         pw.key_press_once("tab")
         # 비밀번호를 마저 입력합니다.
-        pw.typinrg(ps)
+        pw.typing(ps)
         # 1초 쉬어줍니다.
         time.sleep(1)
         # 엔터키를 눌러줍니다. 대부분의 사이트에서 로그인이 실행됩니다.

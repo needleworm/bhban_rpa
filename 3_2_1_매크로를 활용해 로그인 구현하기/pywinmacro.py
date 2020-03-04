@@ -124,7 +124,7 @@ def type_in(string):
 
 
 # 영어, 숫자, 특수문자로 된 스트링을 바로 입력하는 함수입니다.
-def typinrg(string):
+def typing(string):
     for el in string:
         if el.isupper():
             key_on("shift")
