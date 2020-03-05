@@ -8,10 +8,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
+import random
 
 
-class LikeBot:
-    def __init__(self):
+class ReplyBot:
+    def __init__(self, replyfile):
         # 쿼리 베이스를 제작합니다.
         self.querry ="https://www.instagram.com/explore/tags/"
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
@@ -20,6 +21,10 @@ class LikeBot:
         #self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
+        # 댓글 내용이 적힌 파일을 불러옵니다. 인코딩이 utf8이 아니면 바꿔주세요.
+        self.replyfile = open(replyfile, encoding="utf8")
+        # 댓글 내용 리스트를 만듭니다.
+        self.replylist = self.replyfile.read().split("\n")
 
     # 크롤러를 종료하는 메서드입니다.
     # 굳이 한줄짜리 코드를 함수로 만든 데에는 여러 이유가 있습니다만,
@@ -63,10 +68,10 @@ class LikeBot:
         # 최근 사진을 클릭합니다.
         recent_picture.click()
 
-    # 검색결과들을 돌아다니며 모조리 좋아요 누릅니다.
+    # 검색결과들을 돌아다니며 모조리 좋아요를 누르고 댓글도 답니다.
     # num에는 몇 개의 게시물을 좋아요 할지 입력합니다.
     # -1을 입력하면 사용자가 직접 종료하기 전까지 무한정 계속합니다.
-    def press_like(self, num):
+    def press_like_and_reply(self, num):
         # 반복 회수를 결정하기 위한 변수입니다.
         count = num
         # count 가 1개씩 깎이면서, 0이 될때까지 반복합니다.
@@ -83,12 +88,28 @@ class LikeBot:
                 # 태그 내부의 aria-label 어트리뷰트가 좋아요 인 경우만 잡아냅니다.
                 # 이미 좋아요가 눌려져 있는 경우 어트리뷰트 값이 "좋아요 취소" 로 변경됩니다.
                 # 따라서 이 방법은 이미 좋아요를 눌러 둔 게시물은 건너뛸 수 있다는 장점도 가집니다.
-                # 또한 이 과정에서 댓글의 좋아요도 모두 클릭합니다.
+                # 이미 좋아요를 누른 게시물은 건너뜁니다.
+                if el.get_attribute("aria-label") == "좋아요 취소":
+                    break
+                # 좋아요 버튼을 찾습니다.
                 if el.get_attribute("aria-label") == "좋아요":
-                    # 좋아요 버튼일경우 클릭합니다.
+                    # 좋아요 버튼을 클릭합니다.
                     el.click()
-                    # 댓글을 달았으니 for문을 종료합니다.
-                    # 아래 break를 지우면 댓글에도 모두 좋아요를 누릅니다.
+                    # 적당히 오래 기다려 줍니다.
+                    time.sleep(10)
+                    # 댓글 파일 중 랜덤으로 하나를 뽑아서 댓글을 달아줍시다.
+                    # 에러가 나면 두 번 더 시도합니다.
+                    # 어지간해선 3번이면 됩니다.
+                    # 이렇게 try except문을 겹쳐 쓰는건 원래는 절대 하지 말아야 할 코딩 방법입니다.
+                    try:
+                        self.send_reply(random.choice(self.replylist))
+                    except:
+                        time.sleep(5)
+                        try:
+                            self.send_reply(random.choice(self.replylist))
+                        except:
+                            time.sleep(5)
+                            self.send_reply(random.choice(self.replylist))
                     # 카운트를 한 개씩 깎아내립니다.
                     count -= 1
                     break
@@ -96,9 +117,19 @@ class LikeBot:
             next_button = self.driver.find_element_by_link_text("다음")
             # 클릭합니다.
             next_button.click()
+            # 댓글은 좀 긴 텀을 두고 달아야 합니다. 안 그러면 인스타 운영진들이 댓글 개제 중단 재제를 줍니다.
+            time.sleep(60)
 
-            # 로딩을 위해 5초정도 기다려 줍니다.
-            time.sleep(5)
+    # 댓글을 남기는 함수입니다.
+    def send_reply(self, text):
+        # 댓글 입력창은 <textarea> 라는 태그로 되어 있습니다.
+        textarea = self.driver.find_elements_by_tag_name("textarea")
+        # 태그를 위에서부터 읽어 옵니다. 댓글 입력창은 aria-label 이라는 어트리뷰트에 "댓글 달기..." 라고 적혀 있습니다.
+        for el in textarea:
+            if el.get_attribute("aria-label") == "댓글 달기...":
+                # 댓글 입력창에 댓글을 적어 줍시다. 댓글과 함께 엔터키도 입력해 바로 댓글을 올립니다.
+                el.send_keys(text, Keys.RETURN)
+                break
 
     # 코드 간소화를 위해 자기가 알아서 인스타 로그인하고, 검색하고, 캡처도 다 하는 메서드를 만듭시다.
     def insta_jungdok(self, id, ps, tag, num=100):
@@ -108,5 +139,5 @@ class LikeBot:
         self.search_tag(tag)
         # 사진 한 장을 선택한 다음
         self.select_picture()
-        # 좋아요를 누르면서 사진을 한 장씩 넘겨줍니다.
-        self.press_like(num)
+        # 좋아요를 누르고, 댓글을 달면서 사진을 한 장씩 넘겨줍니다.
+        self.press_like_and_reply(num)
