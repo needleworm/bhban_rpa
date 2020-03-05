@@ -39,8 +39,11 @@ NUMBER = int(sys.argv[5].strip())
 # 크롤러를 불러옵니다.
 BOT = ib.CaptureBot()
 
+# 인스타그램 로그인을 합니다.
+BOT.login(id, ps)
+
 # 작업을 수행합니다.
-BOT.insta_jungdok(id, ps, tag, directory, NUMBER)
+BOT.insta_jungdok(tag, directory, NUMBER)
 
 # 크롤러를 닫아줍니다.
 BOT.kill()

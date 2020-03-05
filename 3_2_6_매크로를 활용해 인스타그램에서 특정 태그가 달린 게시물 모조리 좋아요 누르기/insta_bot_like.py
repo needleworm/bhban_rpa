@@ -118,8 +118,6 @@ class LikeBot:
 
     # 코드 간소화를 위해 자기가 알아서 인스타 로그인하고, 검색하고, 좋아요도 다 누르는 메서드를 만듭시다.
     def insta_jungdok(self, id, ps, tag, num=100):
-        # 로그인을 하고
-        self.login(id, ps)
         # 태그도 검색하고
         self.search_tag(tag)
         # 사진 한 장을 선택한 다음
