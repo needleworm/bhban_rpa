@@ -7,7 +7,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import insta_jungdok as ij
+import insta_bot_capture as ib
 import os
 
 
@@ -37,10 +37,10 @@ if directory not in os.listdir():
 NUMBER = int(sys.argv[5].strip())
 
 # 크롤러를 불러옵니다.
-BOT = ij.CaptureBot()
+BOT = ib.CaptureBot()
 
 # 작업을 수행합니다.
-BOT.insta_jungdok(id, ps, tag, NUMBER)
+BOT.insta_jungdok(id, ps, tag, directory, NUMBER)
 
 # 크롤러를 닫아줍니다.
 BOT.kill()

@@ -7,7 +7,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import news_bot as nb
+import twitter_bot_news as tb
 
 
 # 작업 시작 메시지를 출력합니다.
@@ -30,7 +30,7 @@ keyword = sys.argv[3]
 endswith = "#뉴스 #수집 #봇"
 
 # 크롤러를 불러옵니다.
-BOT = nb.NewsBot(endswith)
+BOT = tb.NewsBot(endswith)
 
 # 트위터 로그인을 시도합니다.
 BOT.login(id, ps)

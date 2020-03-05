@@ -7,7 +7,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import twitter_sugunsugun as ts
+import twitter_bot_multi as tb
 
 
 # 작업 시작 메시지를 출력합니다.
@@ -45,7 +45,7 @@ for line in idfile:
     IDs.append((splt[0].strip(), splt[1].strip()))
 
 # 크롤러를 불러옵니다.
-BOT = ts.TwitterBot(filename, (mention_x, mention_y))
+BOT = tb.TwitterBot(filename, (mention_x, mention_y))
 
 # IDs에 저장된 계정을 하나씩 불러옵니다.
 for i in range(len(IDs)):

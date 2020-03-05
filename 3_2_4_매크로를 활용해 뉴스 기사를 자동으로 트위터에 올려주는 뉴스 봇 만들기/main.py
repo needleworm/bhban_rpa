@@ -7,7 +7,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import news_bot as nb
+import twitter_bot_news as tb
 
 
 # 작업 시작 메시지를 출력합니다.
@@ -32,7 +32,7 @@ mention_y = int(sys.argv[4].strip())
 keyword = sys.argv[5].strip()
 
 # 크롤러를 불러옵니다.
-BOT = nb.NewsBot((mention_x, mention_y))
+BOT = tb.NewsBot((mention_x, mention_y))
 
 # 로그인을 시도합니다.
 BOT.login(id, ps)

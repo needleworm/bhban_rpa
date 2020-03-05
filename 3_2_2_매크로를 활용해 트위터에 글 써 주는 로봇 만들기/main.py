@@ -7,7 +7,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import twitter_automention as ta
+import twitter_bot_tweet as tb
 
 
 # 작업 시작 메시지를 출력합니다.
@@ -32,7 +32,7 @@ mention_x = int(sys.argv[4].strip())
 mention_y = int(sys.argv[5].strip())
 
 # 크롤러를 불러옵니다.
-BOT = ta.TwitterBot(filename, (mention_x, mention_y))
+BOT = tb.TwitterBot(filename, (mention_x, mention_y))
 
 # 로그인을 시도합니다.
 BOT.login(id, ps)
