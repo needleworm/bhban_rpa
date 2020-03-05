@@ -56,6 +56,9 @@ class CaptureBot:
         recent_picture_xpath = '//*[@id="react-root"]/section/main/article/div[2]/div/div[1]/div[1]'
         # 최근 사진의 요소를 가져옵니다.
         recent_picture = self.driver.find_element_by_xpath(recent_picture_xpath)
+        # 최근 사진을 클릭합니다.
+        recent_picture.click()
+
 
 
     # 검색결과들을 돌아다니며 모조리 캡처합니다.

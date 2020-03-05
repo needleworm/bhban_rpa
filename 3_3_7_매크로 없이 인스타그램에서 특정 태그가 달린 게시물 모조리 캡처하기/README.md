@@ -3,7 +3,7 @@
 인스타그램을 돌면서, 특정 해시태그가 입력된 게시물을 모조리 캡처하는 자동화입니다.
 
 ## 사용 방법
-> python main.py <ID\> <PS\> <TAG\> <like_file\> <red_like_file\> <NUMBER\>
+> python main.py <ID\> <PS\> <TAG\> <NUMBER\>
 
 
 <ID\> <PS\>에는 ID와 비밀번호를 입력합니다.
