@@ -1,6 +1,7 @@
 #-*-coding:utf-8
 """
 Author : Byunghyun Ban
+GitHub : https://github.com/needleworm
 Book : 일반인을 위한 업무 자동화
 Last Modification : 2020.02.12.
 """
