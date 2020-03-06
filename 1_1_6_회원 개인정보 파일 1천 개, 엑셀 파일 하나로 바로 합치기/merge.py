@@ -44,7 +44,7 @@ for filename in input_files:
     # 텍스트 파일이 맞다면, 파일을 읽어옵니다.
     file = open(directory + "/" + filename)
 
-    # 내용을 저장할 딕셔너리를 만듭니다.
+    # 내용을 저장할 리스트를 만듭니다.
     contents = []
 
     # 파일의 내용물을 한 줄씩 읽어오면서 작업을 수행합니다.
