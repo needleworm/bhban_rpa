@@ -26,7 +26,8 @@ temp_file_name = "temp.csv"
 outfile_name = "merged_ID.xlsx"
 
 # 결과물 파일을 생성합니다. 텅 빈 텍스트파일이 생성됩니다.
-temp_file = open(temp_file_name, 'w')
+# 인코딩을 utf-8로 지정한 것에 주목하세요.
+temp_file = open(temp_file_name, 'w', encoding="utf-8")
 
 # 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
