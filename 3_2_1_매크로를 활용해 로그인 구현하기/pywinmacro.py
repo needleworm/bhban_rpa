@@ -1,6 +1,7 @@
 #-*-coding:euc-kr
 """
 Author : Byunghyun Ban
+GitHub : https://github.com/needleworm
 Book : 일반인을 위한 업무 자동화
 https://brunch.co.kr/@needleworm/200
 """
