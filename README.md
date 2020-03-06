@@ -90,26 +90,26 @@ PyAutoGui (35번 예제)
 >pip install pyautogui
 
 ## 5. 작가 프로필
-####반병현 (Byunghyun Ban)
+#### 반병현 (Byunghyun Ban)
 
-####Awards
+#### Awards
  - 정부혁신 유공포상 (2019.12. 행정안전부 장관)
  - 대구지방병무청장 표창 (2018)
  
-####Career
+#### Career
  - 대구지방노동청 안동지청 사회복무요원 (2018.06. ~ 2020.04.)
  - 농업회사법인 상상텃밭(주) CTO / CBO (2017.03. ~ )
  - 비법인사단 치즈케익스튜디오 前 대표 (2016.03. ~ 2017.09.)
  
-####Academic Background
+#### Academic Background
  - KAIST 바이오및뇌공학과 석사학위 (조기졸업)
  - KAIST 바이오및뇌공학과 학사학위
  - 안동 경안고등학교 (조기졸업)
  
-####Lecture
+#### Lecture
  - "리더십 3: 리스크 없는 학생창업" (2017 가을학기, KAIST 학부 교양필수 강사)
  
-####Speeches
+#### Speeches
  - "잔머리로 시스템을 가지고 노는 방법" (2019, 경안고등학교 초청강연)
  - "혁신의 장벽을 개발자스럽게 부수기" (2019, MASOCON 2019 기조연설)
  - "수필 두 편으로 50일만에 대한민국 움직이기" (2019, 계명대학교 초청강연)
@@ -123,13 +123,13 @@ PyAutoGui (35번 예제)
  - "아이디어에서 사업화까지" (2012, 제2회 KAIST 전국 발명대회 시상식 강연)
  - "뇌과학에 발을 들이면서" (2012, 안동 경안고등학교 과학동아리 초청)
  
- ####Publications
+ #### Publications
  - 코딩하는 공익 - 쇠사슬을 차고서도 세상을 바꿀 수 있을까, 세창출판사, 2020년 4월 출간예정
  - 법대로 합시다, 해피로라, 2017
  - 카이스트 공부벌레들, 살림FRIENDS, 2012
  
- ####Research
+ #### Research
  >https://scholar.google.com/citations?user=8TtI-yIAAAAJ
  
- ####Blog
+ #### Blog
  >https://brunch.co.kr/@needleworm/
