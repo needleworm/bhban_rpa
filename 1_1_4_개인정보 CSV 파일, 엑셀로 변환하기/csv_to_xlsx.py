@@ -22,6 +22,8 @@ start_time = time.time()
 input_file = sys.argv[1]
 result_file = sys.argv[2]
 
+# 엑셀 파일 하나로 합쳐주는 함수입니다.
+# 라이브러리가 기본적으로 제공해 주는 함수입니다.
 pc.merge_all_to_a_book([input_file], result_file)
 
 # 작업 종료 메시지를 출력합니다.
