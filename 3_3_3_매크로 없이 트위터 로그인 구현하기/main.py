@@ -23,17 +23,11 @@ id = sys.argv[1]
 # 패스워드를 입력받습니다.
 ps = sys.argv[2]
 
-# 게시할 게시물 파일 이름을 입력받습니다.
-filename = sys.argv[3]
-
 # 크롤러를 불러옵니다.
 BOT = tb.LoginBot()
 
 # 로그인을 시도합니다.
 BOT.login(id, ps)
-
-# 게시물을 게시합니다.
-BOT.tweet_all(filename)
 
 # 작업이 끝났으니 기념으로 스크린샷이나 한 번 찍어줍시다.
 BOT.save_screenshot()
