@@ -24,7 +24,6 @@ out_dir ="merged_" + directory
 if out_dir not in os.listdir():
     os.mkdir(out_dir)
 
-
 # 폴더의 내용물을 열람해 목록을 생성합니다.
 input_files = os.listdir(directory)
 
