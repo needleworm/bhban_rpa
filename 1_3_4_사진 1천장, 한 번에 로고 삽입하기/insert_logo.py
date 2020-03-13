@@ -54,7 +54,7 @@ for filename in input_files:
 
     # 이 경우 로고의 X축 길이가 이미지에 비해서 좀 깁니다.
     if logo_x / Xdim > logo_y / Ydim:
-        # 로고의 x축 길이를 이미지의 x축 길이의 5/10으로 조절합니다.
+        # 로고의 x축 길이를 이미지의 x축 길이의 1/5로 조절합니다.
         new_logo_x = int(Xdim/5)
         # 로고의 y축 길이는 비례식으로 계산합니다.
         # new_logo_y : logo_y = new_logo_x : logo_x
