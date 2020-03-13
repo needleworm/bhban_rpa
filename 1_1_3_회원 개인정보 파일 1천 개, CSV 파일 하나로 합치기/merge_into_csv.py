@@ -20,7 +20,7 @@ directory = "personal_info"
 # 결과물 파일의 이름을 정의합니다.
 outfile_name = "merged_ID.csv"
 
-# 결과물 파일을 생성합니다. 텅 빈 텍스트파일이 생성됩니다.
+# 결과물 파일을 생성합니다. 텅 빈 csv파일이 생성됩니다.
 out_file = open(outfile_name, 'w')
 
 # 폴더의 내용물을 열람해 목록을 생성합니다.
