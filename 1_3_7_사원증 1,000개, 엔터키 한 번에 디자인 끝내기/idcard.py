@@ -37,7 +37,7 @@ except:
 
 Xdim, Ydim = template.size
 
-# 명함에 삽입할 회사 정보를 기재합니다.
+# 사원증에 삽입할 회사 정보를 기재합니다.
 url = "http://sangsang.farm"
 
 # 결과물을 저장할 폴더를 생성합니다.
