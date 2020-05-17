@@ -43,7 +43,7 @@ for filename in input_files:
 
     # 딕셔너리에 헤더가 삽입되어 있는지 확인합니다.
     if header in HEADERS:
-        # 이미 삽입되어 있다면 키를 1개 증가시킵니다.
+        # 이미 삽입되어 있다면 값을 1개 증가시킵니다.
         HEADERS[header] += 1
     else:
         HEADERS[header] = 1
