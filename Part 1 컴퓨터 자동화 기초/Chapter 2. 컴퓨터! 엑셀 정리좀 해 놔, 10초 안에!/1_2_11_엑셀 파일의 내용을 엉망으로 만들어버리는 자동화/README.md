@@ -10,4 +10,4 @@
 
 책의 예제는 아래와 같습니다.
 
-python terrorist.py MERGED_personal_info 30
+python terrorist.py merged_personal_info 30
