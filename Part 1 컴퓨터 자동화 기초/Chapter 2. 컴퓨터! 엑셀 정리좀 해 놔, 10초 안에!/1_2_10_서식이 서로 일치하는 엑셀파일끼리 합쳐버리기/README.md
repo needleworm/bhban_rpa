@@ -4,4 +4,4 @@
 
 >python merge_correct_xlxs_files.py <DIRECTORY\>
 
-<TEMPLATE\> 에는 양식 견본이 될 엑셀파일 이름을 적어줍니다.
+<DIRECTORY\> 에는 엑셀 파일들이 저장된 폴더를 입력합니다.
