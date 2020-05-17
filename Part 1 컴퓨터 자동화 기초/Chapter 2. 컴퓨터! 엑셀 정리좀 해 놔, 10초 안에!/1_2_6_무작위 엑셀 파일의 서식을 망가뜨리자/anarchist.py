@@ -68,16 +68,16 @@ for filename in destroy_them:
 
     # 두 번째 재앙입니다.
     elif DESTROY_COUNT > shift_2:
+        # 선택된 열을 복제해 붙여넣어 버립니다.
+        file.column += file.column[victim].copy()
+
+    # 세 번째 재앙입니다.
+    else:
         # 바꿔치기할 열을 만듭니다. 내용물을 모두 '고양이'로 채워버립니다. 야옹.
         CAT = ["고양이" for i in range(file.number_of_rows())]
 
         # 원래 엑셀 파일의 내용물과 고양이를 바꿔치기합니다. 야옹.
         file.column[victim] = CAT
-
-    # 세 번째 재앙입니다.
-    else:
-        # 선택된 열을 복제해 붙여넣어 버립니다.
-        file.column += file.column[victim].copy()
 
     # 서식이 망가진 불쌍한 엑셀파일을 저장합니다.
     px.save_as(array=data_array, dest_file_name=directory + "/" + filename)
