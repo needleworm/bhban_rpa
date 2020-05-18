@@ -70,7 +70,7 @@ for filename in input_files:
 
     # 입력받은 사진에 로고를 삽입합니다. 적당한 위치에 말이죠.
     # 대충 여백을 2%정도 주면 적당하겠죠? 이건 여러분의 취향에 달려 있습니다.
-    image.paste(resized_logo, (int(Xdim/50), int(Ydim/50)))
+    image.paste(resized_logo, (int(Xdim/50), int(Ydim/50)), resized_logo)
 
     # 변경된 이미지를 저장합니다.
     image.save(out_dir + "/" + filename)
