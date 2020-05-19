@@ -1,4 +1,4 @@
-# 사원증 1,400개, 엔터키 한 번에 디자인 끝내기
+# 사원증 1,000개, 엔터키 한 번에 디자인 끝내기
 ### 아래 명령어를 입력하면 코드가 실행됩니다.
 
 > python idcard.py <DIRECTORY\> <PEOPLE\> <SAMPLE_LOGO\> <TEMPLATE\>
