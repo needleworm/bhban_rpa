@@ -4,7 +4,7 @@
 > python namecard.py <PEOPLE\> <SAMPLE_LOGO\>
 
 <PEOPLE\>에는 개인정보가 기재된 CSV파일을 입력합니다. 
-이 책의 예제 (1_1_1) 과 (1_1_3)의 결과물을 활용하세요.
+이 책의 챕터1의 4절의 결과물인 <merged_ID.csv> 파일을 활용하세요.
 
 <SAMPLE_LOGO\>에는 명함에 삽입할 로고를 입력합니다. 
 
