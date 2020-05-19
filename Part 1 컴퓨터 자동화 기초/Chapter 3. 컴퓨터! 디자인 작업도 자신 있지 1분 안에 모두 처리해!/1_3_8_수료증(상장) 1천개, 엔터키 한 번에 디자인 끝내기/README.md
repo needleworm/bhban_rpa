@@ -3,7 +3,6 @@
 
 > python congratulation.py <PERSONAL_ID\> <TEMPLATE\>
 
-<PERSONAL_ID\>에는 개인정보가 기재된 CSV파일을 입력합니다. 
-이 책의 예제 (1_1_1) 과 (1_1_3)의 결과물을 활용하세요.
+<PERSONAL_ID\>에는 개인정보가 기재된 CSV파일을 입력합니다. 이 책의 챕터1의 4장 예제코드 결과물을 활용하세요.
 
 <TEMPLATE\> 에는 템플릿 파일을 입력합니다.
