@@ -154,7 +154,6 @@ for line in IDs:
     idcard.close()
 
     COUNT += 1
-    idcard.close()
 
 # ≈€«√∏¥µµ ¥›æ∆¡›¥œ¥Ÿ.
 template.close()
