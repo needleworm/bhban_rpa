@@ -11,6 +11,7 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 import sys
+import datetime
 
 # 작업 시작 메시지를 출력합니다.
 print("Process Start.")
@@ -50,7 +51,8 @@ dateFont = ImageFont.truetype("font/gulim.ttc", 25)
 smallFont = ImageFont.truetype("font/gulim.ttc", 18)
 
 # 배경에 입력할 수여날자를 계산합니다.
-DATE = time.strftime(u"%Y년 %m월 %m일".encode('unicode-escape').decode(), time.localtime(time.time())).encode().decode("unicode-escape")
+date = str(datetime.datetime.today().date()).split("-")
+DATE = date[0] + "년 " + date[1] + "월 " + date[2] + "일"
 
 # 수여날짜를 배경에 입력합니다.
 # 좌우 여백은 가운데정렬입니다.
