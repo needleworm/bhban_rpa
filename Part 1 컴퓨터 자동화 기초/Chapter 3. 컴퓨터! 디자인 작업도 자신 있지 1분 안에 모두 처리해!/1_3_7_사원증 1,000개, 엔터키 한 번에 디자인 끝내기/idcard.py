@@ -81,7 +81,7 @@ IDs = open(personal_IDs)
 header = IDs.readline()
 
 # 빈 사원증 좌하단에 로고를 삽입하겠습니다.
-# 대충 여백을 10%정도 주면 적당하겠죠? 이건 여러분의 취향에 달려 있습니다.
+# 대충 여백을 10%, 5%정도 주면 적당하겠죠? 이건 여러분의 취향에 달려 있습니다.
 template.paste(resized_logo, (int(Xdim * 0.1), int(Ydim * 0.95 - new_logo_y)))
 
 # 로고를 닫아줍니다.
