@@ -51,7 +51,8 @@ dateFont = ImageFont.truetype("font/gulim.ttc", 25)
 smallFont = ImageFont.truetype("font/gulim.ttc", 18)
 
 # 배경에 입력할 수여날자를 계산합니다.
-date = str(datetime.datetime.today().date()).split("-")
+date = str(datetime.datetime.today().date())
+date = date.split("-")
 DATE = date[0] + "년 " + date[1] + "월 " + date[2] + "일"
 
 # 수여날짜를 배경에 입력합니다.
@@ -113,10 +114,10 @@ for line in IDs:
     # 수료증(상장)에 수여번호를 삽입합니다.
     ImageDraw.Draw(suryojung).text(xy=(x_offset, y_offset), text=suyeo, font=smallFont, fill="black")
 
-    # 완성된 사원증을 저장합니다.
+    # 완성된 증서를 저장합니다.
     suryojung.save(out_dir + "/" + str(COUNT) + ".png")
 
-    # 저장도 했으니 명함을 닫아줍니다.
+    # 저장도 했으니 이미지를 닫아줍니다.
     suryojung.close()
 
     COUNT += 1
