@@ -1,7 +1,6 @@
 #-*-coding:euc-kr
 """
 Author : Byunghyun Ban
-GitHub : https://github.com/needleworm
 Book : 일반인을 위한 업무 자동화
 https://brunch.co.kr/@needleworm/200
 """
@@ -240,7 +239,7 @@ def ctrl_c():
     key_off("c")
 
 
-# Ctrl V (복사)
+# Ctrl V (붙여넣기)
 def ctrl_v():
     # Ctrl을 누릅니다.
     key_on("control")
@@ -271,3 +270,26 @@ def ctrl_f():
     # 두 키를 모두 뗍니다.
     key_off("control")
     key_off("f")
+
+
+# Alt F4 (종료)
+def alt_f4():
+    # Alt를 누릅니다.
+    key_on("alt")
+    # F4도 누릅니다.
+    key_on("f4")
+    # 두 키를 모두 뗍니다.
+    key_off("alt")
+    key_off("f4")
+
+
+# Alt Tab (화면 전환)
+def alt_tab():
+    # Alt를 누릅니다.
+    key_on("alt")
+    # F4도 누릅니다.
+    key_on("tab")
+    # 두 키를 모두 뗍니다.
+    key_off("alt")
+    key_off("tab")
+
