@@ -87,7 +87,7 @@ for line in csv:
         # 성공하면 True가, 실패하면 False가 리턴됩니다.
         # 스크린샷 저장에 실패한 경우 False가 리턴되는데, 앞에 not이 붙었으므로
         # 아래 if문의 조건은 스크린 샷 저장이 실패했을때만 True가 되어 실행됩니다.
-        if not crawler.save_screenshot_withhout_masking(querry, out_dir, key1, key2):
+        if not crawler.save_screenshot_without_masking(querry, out_dir, key1, key2):
             # 마스킹 해제 조회에 실패한 쿼리 정보를 출력합니다.
             print(str(querry) + " has wrong information")
             # 실패한 쿼리의 상세 정보를 출력합니다.

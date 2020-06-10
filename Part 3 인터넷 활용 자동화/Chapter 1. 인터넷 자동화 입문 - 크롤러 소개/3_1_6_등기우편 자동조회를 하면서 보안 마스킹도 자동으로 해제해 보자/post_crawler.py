@@ -48,7 +48,7 @@ class PostCrawler:
     # 마스킹을 해제하면서 스크린샷을 찍는 함수입니다.
     # 쿼리, 스크린샷을 저장할 폴더, 그리고 두 개의 키를 입력받습니다.
     # 키는 각각 발신인과 수신인의 이름 두 번째 글자입니다.
-    def save_screenshot_withhout_masking(self, querry, out_dir, key1, key2):
+    def save_screenshot_without_masking(self, querry, out_dir, key1, key2):
         # querry를 입력받아 URL로 만들어 줍니다.
         url = make_url(querry)
         # rul을 주소창에 입력하고, 이동하는 기능이라고 생각하시면 됩니다.
