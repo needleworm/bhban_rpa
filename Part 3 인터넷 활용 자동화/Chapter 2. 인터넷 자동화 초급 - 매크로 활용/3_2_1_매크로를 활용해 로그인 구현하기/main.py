@@ -35,12 +35,6 @@ crawler.login(id, ps)
 # 로그인에 성공했으니 스크린샷이나 한 번 찍어줍시다.
 crawler.save_screenshot()
 
-# 결과를 확인하기 위해 10초정도 대기합니다.
-time.sleep(10)
-
-# 크롤러를 닫아줍니다.
-crawler.kill()
-
 # 작업 종료 메세지를 출력합니다.
 print("Process Done.")
 
