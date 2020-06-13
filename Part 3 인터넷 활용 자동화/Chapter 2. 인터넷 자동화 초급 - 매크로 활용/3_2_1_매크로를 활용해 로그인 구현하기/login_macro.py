@@ -16,9 +16,7 @@ LOGIN_URLS = {
     "naver": "https://nid.naver.com/nidlogin.login?",
     "google": "https://accounts.google.com/signin",
     "daum": "https://logins.daum.net/accounts/signinform.do",
-    "instagram": "https://www.instagram.com/accounts/login",
-    "facebook": "https://facebook.com",
-    "coupang": "https://login.coupang.com/login/login.pang"
+    "facebook": "https://facebook.com"
 }
 
 
@@ -48,9 +46,7 @@ class LoginBot:
         self.driver.quit()
 
     # 로그인을 수행하는 메서드입니다.
-    def login(self, id, ps, x, y):
-        # 로그인창을 클릭합니다.
-        pw.click((x, y))
+    def login(self, id, ps):
         # 아이디를 입력합니다.
         pw.typing(id)
         # tab 키를 눌러줍시다. 대부분의 사이트에서 암호창으로 이동합니다.

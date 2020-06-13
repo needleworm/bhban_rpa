@@ -26,17 +26,11 @@ id = sys.argv[2]
 # 패스워드를 입력받습니다.
 ps = sys.argv[3]
 
-# id 입력 x좌표를 입력받습니다.
-id_x = int(sys.argv[4].strip())
-
-# id 입력 y좌표를 입력받습니다.
-id_y = int(sys.argv[5].strip())
-
 # 크롤러를 불러옵니다.
 crawler = lm.LoginBot(site)
 
 # 로그인을 시도합니다.
-crawler.login(id, ps, id_x, id_y)
+crawler.login(id, ps)
 
 # 로그인에 성공했으니 스크린샷이나 한 번 찍어줍시다.
 crawler.save_screenshot()
