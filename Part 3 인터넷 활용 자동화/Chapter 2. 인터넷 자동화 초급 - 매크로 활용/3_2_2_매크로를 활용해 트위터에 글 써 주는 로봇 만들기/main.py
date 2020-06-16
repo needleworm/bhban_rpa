@@ -26,12 +26,6 @@ ps = sys.argv[2]
 # 트윗할 내용들이 적힌 파일을 입력받습니다.
 filename = sys.argv[3]
 
-# 트윗 입력 x좌표를 입력받습니다.
-mention_x = int(sys.argv[4].strip())
-
-# 트윗 입력 y좌표를 입력받습니다.
-mention_y = int(sys.argv[5].strip())
-
 # 크롤러를 불러옵니다.
 BOT = tb.TwitterBot(filename, (mention_x, mention_y))
 

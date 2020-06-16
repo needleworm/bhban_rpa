@@ -12,13 +12,13 @@ import time
 
 
 class TwitterBot:
-    def __init__(self, contents, mention_location, encoding="utf-8"):
+    def __init__(self, contents, encoding="utf-8"):
         # 멘션 좌표를 튜플로 저장합니다.
         self.mention_location = mention_location
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        #self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1024,768")
         # 트위터 홈페이지로 이동합니다.
         self.go_to_twitter()
 
@@ -61,14 +61,16 @@ class TwitterBot:
         self.driver.save_screenshot(filename)
 
     # 트위터에 글을 올리는 함수입니다.
-    def tweet(self, text, interval):
+    def tweet(self, text, interval=15):
         # 글을 쉽게 작성하기 위해 작성 전용 페이지로 이동합니다.
         self.driver.get("https://twitter.com/intent/tweet")
         # 커서가 기본적으로 입력창에 가 있습니다. 트윗 내용을 입력합니다.
         pw.type_in(text)
-        # 탭 키를 두 번 누르면 Tweet 버튼으로 커서가 이동합니다.
-        pw.key_press_once("tab")
-        pw.key_press_once("tab")
+        # 컨트롤 키와 엔터키를 누르면 트윗이 입력됩니다.
+        pw.key_on("control")
+        pw.key_on("enter")
+        pw.key_off("control")
+        pw.key_off("enter")
         # 로딩 될때까지 몇 초 기다립니다.
         time.sleep(interval)
 
@@ -76,5 +78,5 @@ class TwitterBot:
     # 15초 간격으로 멘션을 올립니다. 시간 간격을 바꾸고 싶으면 함수를 호출할 때 시간을 초단위로 입력합니다.
     def tweet_all(self, interval=15):
         for el in self.contents:
-            time.sleep(interval)
-            self.tweet(el.strip())
+            time.sleep(5)
+            self.tweet(el.strip(), interval)
