@@ -13,7 +13,7 @@ import time
 # 각종 사이트들의 로그인 주소를 미리 저장해 둔 딕셔너리입니다.
 LOGIN_URLS = {
     "twitter": "https://twitter.com/login",
-    "daum": "https://logins.daum.net/accounts/signinform.do",
+    "daum": "https://logins.daum.net/accounts/signinform.do"
 }
 
 
