@@ -13,8 +13,6 @@ import time
 
 class TwitterBot:
     def __init__(self, contents, encoding="utf-8"):
-        # 멘션 좌표를 튜플로 저장합니다.
-        self.mention_location = mention_location
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
