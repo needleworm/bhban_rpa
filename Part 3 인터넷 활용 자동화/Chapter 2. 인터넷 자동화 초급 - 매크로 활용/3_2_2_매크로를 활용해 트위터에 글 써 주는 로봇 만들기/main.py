@@ -27,7 +27,7 @@ ps = sys.argv[2]
 filename = sys.argv[3]
 
 # 크롤러를 불러옵니다.
-BOT = tb.TwitterBot(filename, (mention_x, mention_y))
+BOT = tb.TwitterBot(filename)
 
 # 로그인을 시도합니다.
 BOT.login(id, ps)
