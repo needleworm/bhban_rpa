@@ -12,13 +12,11 @@ import time
 
 
 class TwitterBot:
-    def __init__(self, contents, mention_location, encoding="utf-8"):
-        # 멘션 좌표를 튜플로 저장합니다.
-        self.mention_location = mention_location
+    def __init__(self, contents, encoding="utf-8"):
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        #self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1024,768")
         # 트위터 홈페이지로 이동합니다.
         self.go_to_twitter()
 

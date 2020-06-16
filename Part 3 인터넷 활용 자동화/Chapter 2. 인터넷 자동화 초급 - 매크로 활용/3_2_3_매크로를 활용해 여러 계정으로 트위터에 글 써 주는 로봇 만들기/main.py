@@ -23,12 +23,6 @@ idfile = sys.argv[1]
 # 트윗할 내용들이 적힌 파일을 입력받습니다.
 filename = sys.argv[2]
 
-# 트윗 입력 x좌표를 입력받습니다.
-mention_x = int(sys.argv[3].strip())
-
-# 트윗 입력 y좌표를 입력받습니다.
-mention_y = int(sys.argv[4].strip())
-
 # 아이디와 비밀번호를 세트로 저장해 둘 리스트를 만듭니다.
 IDs = []
 
@@ -46,7 +40,7 @@ for line in idfile:
     IDs.append((splt[0].strip(), splt[1].strip()))
 
 # 크롤러를 불러옵니다.
-BOT = tb.TwitterBot(filename, (mention_x, mention_y))
+BOT = tb.TwitterBot(filename)
 
 # IDs에 저장된 계정을 하나씩 불러옵니다.
 for i in range(len(IDs)):
