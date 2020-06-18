@@ -62,6 +62,7 @@ class TwitterBot:
     def tweet(self, text, interval):
         # 글을 쉽게 작성하기 위해 작성 전용 페이지로 이동합니다.
         self.driver.get("https://twitter.com/intent/tweet")
+        time.sleep(2)
         # 커서가 기본적으로 입력창에 가 있습니다. 트윗 내용을 입력합니다.
         pw.type_in(text)
         time.sleep(1)
