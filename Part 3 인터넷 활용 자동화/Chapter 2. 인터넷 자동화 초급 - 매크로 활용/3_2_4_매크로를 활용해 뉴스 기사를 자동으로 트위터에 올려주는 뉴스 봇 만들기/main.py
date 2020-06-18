@@ -23,23 +23,17 @@ id = sys.argv[1]
 # 패스워드를 입력받습니다.
 ps = sys.argv[2]
 
-# 트윗 입력 x좌표를 입력받습니다.
-mention_x = int(sys.argv[3].strip())
-
-# 트윗 입력 y좌표를 입력받습니다.
-mention_y = int(sys.argv[4].strip())
-
 # 검색어를 입력받습니다.
-keyword = sys.argv[5].strip()
+keyword = sys.argv[3].strip()
 
 # 크롤러를 불러옵니다.
-BOT = tb.NewsBot((mention_x, mention_y))
+BOT = tb.NewsBot()
 
 # 로그인을 시도합니다.
 BOT.login(id, ps)
 
 # 뉴스와 함께 삽입할 해시태그를 입력합니다.
-hashtags = "#코딩 #업무자동화 #로봇 이 #뉴스 를 #자동 #스크랩 합니다."
+hashtags = "#뉴스 #스크랩 하는 #자동화 #코드"
 
 # 구글에서 뉴스를 검색하고,
 # 트위터에 자동으로 로그인 한 뒤,
