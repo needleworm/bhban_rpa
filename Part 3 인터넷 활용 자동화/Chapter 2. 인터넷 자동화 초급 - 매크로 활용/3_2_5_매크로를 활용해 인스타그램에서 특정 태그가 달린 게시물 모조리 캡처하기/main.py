@@ -8,7 +8,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import insta_bot_capture.py as ib
+import insta_bot_capture as ib
 import os
 
 
