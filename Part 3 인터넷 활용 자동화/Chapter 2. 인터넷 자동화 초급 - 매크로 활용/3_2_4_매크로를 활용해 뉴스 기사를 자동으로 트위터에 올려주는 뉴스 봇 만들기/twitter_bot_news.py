@@ -13,15 +13,13 @@ import pyperclip
 
 
 class NewsBot:
-    def __init__(self, mention_location):
-        # 멘션 좌표를 튜플로 저장합니다.
-        self.mention_location = mention_location
+    def __init__(self):
         # 쿼리 베이스를 제작합니다.
         self.querry ="https://www.google.com/search?tbm=nws&q="
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        #self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 정리된 뉴스를 저장할 변수를 만듭니다.
@@ -110,7 +108,7 @@ class NewsBot:
         # tab 키를 눌러줍시다. 대부분의 사이트에서 암호창으로 이동합니다.
         pw.key_press_once("tab")
         # 비밀번호를 마저 입력합니다.
-        pw.typinrg(ps)
+        pw.typing(ps)
         # 엔터키를 눌러줍니다. 대부분의 사이트에서 로그인이 실행됩니다.
         pw.key_press_once("enter")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
@@ -120,11 +118,16 @@ class NewsBot:
     def tweet(self, text, interval):
         # 글을 쉽게 작성하기 위해 작성 전용 페이지로 이동합니다.
         self.driver.get("https://twitter.com/intent/tweet")
+        time.sleep(2)
         # 커서가 기본적으로 입력창에 가 있습니다. 트윗 내용을 입력합니다.
         pw.type_in(text)
-        # 탭 키를 두 번 누르면 Tweet 버튼으로 커서가 이동합니다.
-        pw.key_press_once("tab")
-        pw.key_press_once("tab")
+        time.sleep(1)
+        # 컨트롤 키와 엔터키를 누르면 트윗이 입력됩니다.
+        pw.key_on("control")
+        pw.key_on("enter")
+        pw.key_off("control")
+        pw.key_off("enter")
+
         # 로딩 될때까지 몇 초 기다립니다.
         time.sleep(interval)
 
