@@ -64,6 +64,7 @@ class TwitterBot:
         self.driver.get("https://twitter.com/intent/tweet")
         # 커서가 기본적으로 입력창에 가 있습니다. 트윗 내용을 입력합니다.
         pw.type_in(text)
+        time.sleep(1)
         # 컨트롤 키와 엔터키를 누르면 트윗이 입력됩니다.
         pw.key_on("control")
         pw.key_on("enter")
@@ -73,8 +74,8 @@ class TwitterBot:
         time.sleep(interval)
 
     # 읽어온 모든 멘션들을 업로드하는 함수입니다.
-    # 15초 간격으로 멘션을 올립니다. 시간 간격을 바꾸고 싶으면 함수를 호출할 때 시간을 초단위로 입력합니다.
-    def tweet_all(self, interval=15):
+    # 3초 간격으로 멘션을 올립니다. 시간 간격을 바꾸고 싶으면 함수를 호출할 때 시간을 초단위로 입력합니다.
+    def tweet_all(self, interval=3):
         for el in self.contents:
-            time.sleep(5)
+            time.sleep(interval)
             self.tweet(el.strip(), interval)
