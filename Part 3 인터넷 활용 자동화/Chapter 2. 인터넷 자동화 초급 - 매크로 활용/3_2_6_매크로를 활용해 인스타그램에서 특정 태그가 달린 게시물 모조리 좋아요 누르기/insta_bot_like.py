@@ -84,7 +84,7 @@ class LikeBot:
         # 화면에서 좋아요 버튼을 찾을 수 없는 경우를 처리합니다.
         if not find:
             # 이미 좋아요를 눌러 빨간 하트가 된 경우 아무것도 하지 않고 넘어갑니다.
-            if not find_on_screen(self.red_like_button):
+            if find_on_screen(self.red_like_button):
                 return True
             # 화면에서 하트를 찾을 수 없는 경우 에러 메시지를 False를 return합니다.
             else:
@@ -110,7 +110,7 @@ class LikeBot:
             # self.press_like() 함수는 클릭을 시도하고 동시에 성공여부를 리턴하므로 if문 안에 넣어줍니다.
             if not self.press_like():
                 # 화면에서 좋아요 버튼을 찾는 것을 실패한 경우 에러메시지를 출력하고 종료합니다.
-                print("Cannot find like button. Please check " + self.like_button + "file.")
+                print("Cannot find like button. Please check " + self.like_button + " file.")
                 exit(1)
             # 좋아요 버튼 클릭에 성공했으면 다음 게시물로 넘어갑니다. 오른쪽 화살표버튼만 누르면 됩니다.
             pw.key_press_once("right_arrow")
