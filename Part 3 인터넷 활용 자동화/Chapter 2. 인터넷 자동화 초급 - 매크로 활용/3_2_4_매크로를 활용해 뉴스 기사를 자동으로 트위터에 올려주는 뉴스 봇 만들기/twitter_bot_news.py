@@ -24,7 +24,7 @@ class NewsBot:
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 정리된 뉴스를 저장할 변수를 만듭니다.
         self.news_list = []
-        self.news_text = []
+        self.news_text = ""
         # 일단 트위터 로그인화면으로 갑니다.
 
     # 크롤러를 종료하는 메서드입니다.
