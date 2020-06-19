@@ -63,18 +63,18 @@ class NewsBot:
         # 텍스트를 클립보드에서 추출해 스트링으로 따 옵니다.
         self.news_text = pyperclip.paste()
         # 한 줄씩 쪼개줍니다.
-        split = self.news_text.split("\n")
+        splt = self.news_text.split("\n")
 
         # 구글 뉴스는 이미지 정보, 헤드라인, 게시 시간, 본문 요약 순으로 정보가 제공됩니다.
         # 내용물을 한 줄씩 읽으면서 정보를 취합해 봅시다.
 
         # 글자들을 한 줄씩 불러옵니다.
-        for i, line in enumerate(split):
+        for i, line in enumerate(splt):
             # 라인을 죽 넘기다가 읽으며 '스토리 이미지'라는 글자가 없는 줄은 넘깁니다.
             if "스토리 이미지" not in line:
                 continue
             # '스토리 이미지' 라는 단어가 발견되면 그 다음에 오는 3줄을 뭉쳐 하나의 스트링으로 만듭니다.
-            new_news = "\n".join(split[i+1:i+4])
+            new_news = "\n".join(splt[i+1:i+4])
             # 만들어진 뉴스를 news_list에 삽입합니다.
             self.news_list.append(new_news)
 
