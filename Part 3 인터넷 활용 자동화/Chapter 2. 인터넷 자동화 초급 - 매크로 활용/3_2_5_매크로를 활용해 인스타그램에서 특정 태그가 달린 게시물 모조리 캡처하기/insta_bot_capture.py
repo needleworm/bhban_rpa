@@ -18,7 +18,7 @@ class CaptureBot:
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        #self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
 
@@ -39,7 +39,7 @@ class CaptureBot:
     # 인스타그램 로그인 함수입니다.
     def login(self, id, ps):
         # 로그인 페이지로 이동합니다.
-        self.driver.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
+        self.driver.get("https://www.instagram.com/accounts/login")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
         time.sleep(5)
         # 탭 키를 한 번 누르면 아이디 입력창으로 이동합니다.
