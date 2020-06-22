@@ -63,7 +63,7 @@ class TwitterBot:
         # 트윗 멘션을 쉽게 입력할 수 있게 전용 페이지로 이동합니다.
         self.driver.get("https://twitter.com/intent/tweet")
         time.sleep(5)
-        # 메시지 입력창 요소를 찾습니다. id="status" 입니다.
+        # 메시지 입력창 요소를 찾습니다. xpath를 복사합니다.
         board = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
         # 메시지 입력창에 메시지를 보냅니다.
         board.send_keys(string)
