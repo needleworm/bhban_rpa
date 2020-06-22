@@ -63,15 +63,11 @@ class TwitterBot:
         # 트윗 멘션을 쉽게 입력할 수 있게 전용 페이지로 이동합니다.
         self.driver.get("https://twitter.com/intent/tweet")
         # 메시지 입력창 요소를 찾습니다. id="status" 입니다.
-        board = self.driver.find_element_by_id("status")
+        board = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
         # 메시지 입력창에 메시지를 보냅니다.
         board.send_keys(string)
-        # Tweet 버튼 요소를 가져옵니다. 우선 하단 영역을 긁어옵시다. 하단 영역은 ft 라는 이름의 클래스입니다.
-        lower_menu = self.driver.find_element_by_class_name("ft")
-        # 버튼은 lower_menu 내부에 input 이라는 태그로 감싸져 있습니다. 요소를 가져옵시다.
-        button = lower_menu.find_element_by_tag_name("input")
-        # 버튼을 클릭합니다.
-        button.click()
+        # Ctrl + Enter를 눌러 메시지를 게시합니다.
+        board.send_keys(Keys.LEFT_CONTROL + Keys.RETURN)
 
     # self.contents에 저장된 모든 메시지를 하나씩 트윗하는 매서드입니다.
     def tweet_all(self, interval):
