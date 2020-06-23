@@ -62,12 +62,12 @@ class NewsBot:
         for el in news_elements:
             # 기사 제목을 추출합니다. <h3> 태그로 작성되었습니다.
             headline = el.find_element_by_tag_name("h3").text
-            # 신문사 정보를 추출합니다. "slp"라는 클래스 이름으로 저장되어 있습니다.
-            reference = el.find_element_by_class_name("slp").text
-            # 뉴스 앞 부분을 추출해 냅니다. "st"라는 클래스로 기록되어 있습니다.
-            head = el.find_element_by_class_name("st").text
             # 기사 하이퍼링크 태그를 추출합니다.
             hyperlink = el.find_element_by_tag_name("a")
+            # 신문사 정보를 추출합니다. "dhIWpd"라는 클래스 이름으로 저장되어 있습니다.
+            reference = el.find_element_by_class_name("dhIWPd").text
+            # 뉴스 앞 부분을 추출해 냅니다. "st"라는 클래스로 기록되어 있습니다.
+            head = el.find_element_by_class_name("st").text
             # 기사 하이퍼링크 태그에서 기사 주소를 추출합니다.
             news_url = hyperlink.get_attribute("href")
             # 트윗에 올릴 기사 요약을 만듭니다.
@@ -78,10 +78,9 @@ class NewsBot:
     def tweet(self, string):
         # 트윗 멘션을 쉽게 입력할 수 있게 전용 페이지로 이동합니다.
         self.driver.get("https://twitter.com/intent/tweet")
+        time.sleep(5)
         # 메시지 입력창 요소를 찾습니다. xpath를 복사합니다.
         board = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
-        # 메시지 입력창에 메시지를 보냅니다.
-        board.send_keys(string)
         # 메시지 입력창에 메시지를 보냅니다.
         board.send_keys(string)
         # Ctrl + Enter를 눌러 메시지를 게시합니다.
