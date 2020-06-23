@@ -64,12 +64,12 @@ class NewsBot:
             headline = el.find_element_by_tag_name("h3").text
             # 기사 하이퍼링크 태그를 추출합니다.
             hyperlink = el.find_element_by_tag_name("a")
+            # 기사 하이퍼링크 태그에서 기사 주소를 추출합니다.
+            news_url = hyperlink.get_attribute("href")
             # 신문사 정보를 추출합니다. "dhIWpd"라는 클래스 이름으로 저장되어 있습니다.
             reference = el.find_element_by_class_name("dhIWPd").text
             # 뉴스 앞 부분을 추출해 냅니다. "st"라는 클래스로 기록되어 있습니다.
             head = el.find_element_by_class_name("st").text
-            # 기사 하이퍼링크 태그에서 기사 주소를 추출합니다.
-            news_url = hyperlink.get_attribute("href")
             # 트윗에 올릴 기사 요약을 만듭니다.
             news_summary = "\n".join((headline, reference, head, self.endswith, news_url))
             self.contents.append(news_summary)
