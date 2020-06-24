@@ -35,7 +35,7 @@ class CaptureBot:
     # 인스타그램 로그인 함수입니다.
     def login(self, id, ps):
         # 로그인 페이지로 이동합니다.
-        self.driver.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
+        self.driver.get("https://www.instagram.com/accounts/login")
         time.sleep(5)
         # ID, PS 입력 요소는 <input> 태그입니다. 요소를 찾아줍시다.
         input_field = self.driver.find_elements_by_tag_name("input")
