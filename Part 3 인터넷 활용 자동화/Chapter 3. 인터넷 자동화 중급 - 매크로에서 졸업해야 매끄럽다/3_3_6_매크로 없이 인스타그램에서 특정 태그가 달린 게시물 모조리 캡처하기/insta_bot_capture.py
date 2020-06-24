@@ -35,7 +35,7 @@ class CaptureBot:
     # 인스타그램 로그인 함수입니다.
     def login(self, id, ps):
         # 로그인 페이지로 이동합니다.
-        self.driver.get("https://www.instagram.com/accounts/login")
+        self.driver.get("https://www.instagram.com/accounts/login/")
         time.sleep(5)
         # ID, PS 입력 요소는 <input> 태그입니다. 요소를 찾아줍시다.
         input_field = self.driver.find_elements_by_tag_name("input")
@@ -56,7 +56,7 @@ class CaptureBot:
     # 태그 검색 화면에서 최근에 게시된 첫 번째 사진을 골라 클릭합니다.
     def select_picture(self):
         # 최근 사진의 xpath는 아래와 같습니다.
-        recent_picture_xpath = '//*[@id="react-root"]/section/main/article/div[2]/div/div[1]/div[1]'
+        recent_picture_xpath = '//*[@id="react-root"]/section/main/article/div[2]/div/div[1]/div[1]/a/div[1]/div[2]'
         # 최근 사진의 요소를 가져옵니다.
         recent_picture = self.driver.find_element_by_xpath(recent_picture_xpath)
         # 최근 사진을 클릭합니다.
