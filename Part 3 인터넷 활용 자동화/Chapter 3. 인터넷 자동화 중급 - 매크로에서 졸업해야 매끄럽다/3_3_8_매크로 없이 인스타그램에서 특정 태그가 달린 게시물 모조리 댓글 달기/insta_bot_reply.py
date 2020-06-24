@@ -19,7 +19,7 @@ class ReplyBot:
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        #self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 댓글 내용이 적힌 파일을 불러옵니다. 인코딩이 utf8이 아니면 바꿔주세요.
@@ -41,8 +41,8 @@ class ReplyBot:
     def login(self, id, ps):
         # 로그인 페이지로 이동합니다.
         self.driver.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
-        # 로딩을 위해 10초 정도 기다려 줍니다.
-        time.sleep(10)
+        # 로딩을 위해 5초 정도 기다려 줍니다.
+        time.sleep(5)
         # ID, PS 입력 요소는 <input> 태그입니다. 요소를 찾아줍시다.
         input_field = self.driver.find_elements_by_tag_name("input")
         # 첫 번째 요소가 아이디입니다. 아이디를 입력합니다.
@@ -52,7 +52,7 @@ class ReplyBot:
         # 엔터키를 쳐서 로그인을 마무리합니다.
         input_field[1].send_keys(Keys.RETURN)
         # 10초 정도 기다려 줍니다.
-        time.sleep(10)
+        time.sleep(5)
 
     # 인스타그램에서 태그를 검색하는 함수입니다.
     def search_tag(self, tag):
@@ -97,7 +97,7 @@ class ReplyBot:
                     # 좋아요 버튼을 클릭합니다.
                     el.click()
                     # 적당히 오래 기다려 줍니다.
-                    time.sleep(10)
+                    time.sleep(5)
                     # 댓글 파일 중 랜덤으로 하나를 뽑아서 댓글을 달아줍시다.
                     # 에러가 나면 두 번 더 시도합니다.
                     # 어지간해선 3번이면 됩니다.
@@ -119,7 +119,7 @@ class ReplyBot:
             # 클릭합니다.
             next_button.click()
             # 댓글은 좀 긴 텀을 두고 달아야 합니다. 안 그러면 인스타 운영진들이 댓글 개제 중단 재제를 줍니다.
-            time.sleep(60)
+            time.sleep(30)
 
     # 댓글을 남기는 함수입니다.
     def send_reply(self, text):
