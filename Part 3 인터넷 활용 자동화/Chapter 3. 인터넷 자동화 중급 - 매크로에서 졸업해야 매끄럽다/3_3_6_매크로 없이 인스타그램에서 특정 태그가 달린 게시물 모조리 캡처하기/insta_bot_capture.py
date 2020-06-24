@@ -45,6 +45,7 @@ class CaptureBot:
         input_field[1].send_keys(ps)
         # 엔터키를 쳐서 로그인을 마무리합니다.
         input_field[1].send_keys(Keys.RETURN)
+        time.sleep(5)
 
     # 인스타그램에서 태그를 검색하는 함수입니다.
     def search_tag(self, tag):
@@ -60,6 +61,7 @@ class CaptureBot:
         recent_picture = self.driver.find_element_by_xpath(recent_picture_xpath)
         # 최근 사진을 클릭합니다.
         recent_picture.click()
+        time.sleep(5)
 
     # 검색결과들을 돌아다니며 모조리 캡처합니다.
     # num에는 몇 개의 게시물을 캡처할 지 입력합니다.
