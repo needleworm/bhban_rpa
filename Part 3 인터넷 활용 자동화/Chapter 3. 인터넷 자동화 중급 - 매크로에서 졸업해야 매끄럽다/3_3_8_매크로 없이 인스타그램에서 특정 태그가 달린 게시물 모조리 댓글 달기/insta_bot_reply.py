@@ -124,13 +124,8 @@ class ReplyBot:
     # 댓글을 남기는 함수입니다.
     def send_reply(self, text):
         # 댓글 입력창은 <textarea> 라는 태그로 되어 있습니다.
-        textarea = self.driver.find_elements_by_tag_name("textarea")
-        # 태그를 위에서부터 읽어 옵니다. 댓글 입력창은 aria-label 이라는 어트리뷰트에 "댓글 달기..." 라고 적혀 있습니다.
-        for el in textarea:
-            if el.get_attribute("aria-label") == "댓글 달기...":
-                # 댓글 입력창에 댓글을 적어 줍시다. 댓글과 함께 엔터키도 입력해 바로 댓글을 올립니다.
-                el.send_keys(text, Keys.RETURN)
-                break
+        textarea = self.driver.find_element_by_tag_name("textarea")
+        textarea.send_keys(text + Keys.RETURN)
 
     # 코드 간소화를 위해 자기가 알아서 인스타 로그인하고, 검색하고, 캡처도 다 하는 메서드를 만듭시다.
     def insta_jungdok(self, tag, num=100):
