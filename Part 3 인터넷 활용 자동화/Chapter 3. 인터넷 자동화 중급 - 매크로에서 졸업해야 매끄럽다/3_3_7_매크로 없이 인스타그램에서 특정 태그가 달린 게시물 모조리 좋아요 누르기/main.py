@@ -36,7 +36,7 @@ BOT = ib.LikeBot()
 BOT.login(id, ps)
 
 # 작업을 수행합니다.
-BOT.insta_jungdok(id, ps, tag, NUMBER)
+BOT.insta_jungdok(tag, NUMBER)
 
 # 크롤러를 닫아줍니다.
 BOT.kill()
