@@ -18,7 +18,7 @@ class LikeBot:
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        #self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
 
@@ -35,9 +35,9 @@ class LikeBot:
     # 인스타그램 로그인 함수입니다.
     def login(self, id, ps):
         # 로그인 페이지로 이동합니다.
-        self.driver.get("https://www.instagram.com/accounts/login/?source=auth_switcher")
+        self.driver.get("https://www.instagram.com/accounts/login/")
         # 로딩을 위해 10초 정도 기다려 줍니다.
-        time.sleep(10)
+        time.sleep(5)
         # ID, PS 입력 요소는 <input> 태그입니다. 요소를 찾아줍시다.
         input_field = self.driver.find_elements_by_tag_name("input")
         # 첫 번째 요소가 아이디입니다. 아이디를 입력합니다.
@@ -47,7 +47,7 @@ class LikeBot:
         # 엔터키를 쳐서 로그인을 마무리합니다.
         input_field[1].send_keys(Keys.RETURN)
         # 10초 정도 기다려 줍니다.
-        time.sleep(10)
+        time.sleep(5)
 
     # 인스타그램에서 태그를 검색하는 함수입니다.
     def search_tag(self, tag):
@@ -63,6 +63,7 @@ class LikeBot:
         recent_picture = self.driver.find_element_by_xpath(recent_picture_xpath)
         # 최근 사진을 클릭합니다.
         recent_picture.click()
+        time.sleep(5)
 
     # 검색결과들을 돌아다니며 모조리 좋아요 누릅니다.
     # num에는 몇 개의 게시물을 좋아요 할지 입력합니다.
@@ -88,6 +89,7 @@ class LikeBot:
                 if el.get_attribute("aria-label") == "좋아요":
                     # 좋아요 버튼일경우 클릭합니다.
                     el.click()
+                    time.sleep(1)
                     # 댓글을 달았으니 for문을 종료합니다.
                     # 아래 break를 지우면 댓글에도 모두 좋아요를 누릅니다.
                     # 카운트를 한 개씩 깎아내립니다.
@@ -97,7 +99,6 @@ class LikeBot:
             next_button = self.driver.find_element_by_link_text("다음")
             # 클릭합니다.
             next_button.click()
-
             # 로딩을 위해 5초정도 기다려 줍니다.
             time.sleep(5)
 
