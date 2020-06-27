@@ -20,11 +20,15 @@ start_time = time.time()
 # 계정 정보가 입력된 파일 이름을 입력받습니다.
 id_filename = sys.argv[1]
 
-# 트윗할 컨텐츠가 저장된 파일을 입력받습니다.
-filename = sys.argv[2]
+# 뉴스 검색을 할 키워드를 입력받는다.
+keyword = sys.argv[2]
+
+# 트윗 말미에 입력할 문구를 작성합니다.
+# 너무 길면 트윗이 입력이 안 됩니다. 짧게 입력합시다.
+endswith = "#뉴스 #수집 #봇"
 
 # 크롤러를 불러옵니다.
-BOT = tb.TwitterBot()
+BOT = tb.TwitterBot(endswith)
 
 # id가 기록된 파일을 열어 옵니다.
 IDS = open(id_filename)
@@ -42,7 +46,7 @@ for line in IDS:
     # 로그인을 시도합니다.
     BOT.login(id, ps)
     # 작업을 수행합니다.
-    BOT.twitter_jungdok(filename)
+    BOT.news_go_go(keyword)
     # 브라우저를 껐다가 켭니다.
     # 사실 이렇게 코드를 짜면 불필요한 리로드가 발생합니다.
     # 작업이 끝나면 창을 바로 닫으면 되는데, 이렇게 코딩하면 마지막 순서가 끝난 뒤 굳이 창을 한 번 껐다가 켠 다음 다시 끕니다.
