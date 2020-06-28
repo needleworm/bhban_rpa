@@ -127,7 +127,7 @@ class ReplyBot:
         textarea = self.driver.find_element_by_tag_name("textarea")
         textarea.send_keys(text + Keys.RETURN)
 
-    # 코드 간소화를 위해 자기가 알아서 인스타 로그인하고, 검색하고, 캡처도 다 하는 메서드를 만듭시다.
+    # 코드 간소화를 위해 자기가 알아서 인스타 로그인하고, 검색하고, 댓글도 다 달아주는 메서드를 만듭시다.
     def insta_jungdok(self, tag, num=100):
         # 태그도 검색하고
         self.search_tag(tag)
