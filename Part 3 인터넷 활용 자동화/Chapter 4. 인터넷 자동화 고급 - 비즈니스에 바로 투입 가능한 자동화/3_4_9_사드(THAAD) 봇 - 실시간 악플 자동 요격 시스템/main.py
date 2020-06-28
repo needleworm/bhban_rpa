@@ -7,7 +7,6 @@ Last Modification : 2020.03.02.
 """
 
 import sys
-import os
 import time
 import thaad
 

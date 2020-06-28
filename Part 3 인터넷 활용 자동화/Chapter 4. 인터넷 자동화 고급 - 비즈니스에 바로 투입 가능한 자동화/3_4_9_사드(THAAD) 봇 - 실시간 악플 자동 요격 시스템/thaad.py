@@ -16,7 +16,7 @@ class Thaad:
         # 셀레늄 드라이버에 들어갈 옵션을 지정합니다.
         self.options = Options()
         # 필요한 경우 브라우저 창 크기를 지정해 줍니다.
-        # self.options.add_argument("--window-size=848,1500")
+        self.options.add_argument("--window-size=848,1500")
         # 옵션을 반영해 크롬드라이버를 열어 줍니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 로그인을 수행합니다.
