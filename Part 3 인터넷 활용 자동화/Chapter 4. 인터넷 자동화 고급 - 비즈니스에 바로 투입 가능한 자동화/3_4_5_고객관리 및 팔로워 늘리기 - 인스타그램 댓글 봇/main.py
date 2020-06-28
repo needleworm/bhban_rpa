@@ -23,8 +23,11 @@ id_filename = sys.argv[1]
 # 검색할 태그가 기록된 파일을 입력받습니다.
 tag_filename = sys.argv[2]
 
+# 댓글 예시들이 입력된 파일 이름을 입력받습니다.
+rep_filename = sys.argv[3]
+
 # 크롤러를 불러옵니다.
-BOT = ib.LikeBot()
+BOT = ib.ReplyBot(rep_filename)
 
 # id 파일을 불러옵니다.
 id_file = open(id_filename)
