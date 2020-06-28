@@ -17,7 +17,7 @@ class ImgCrawler:
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        #self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 결과물을 저장할 디렉터리를 기록합니다.
@@ -51,8 +51,8 @@ class ImgCrawler:
     # 이미지 검색창의 확대샷이 열린 상태에서 이미지를 저장하고, 다음 사진으로 넘어가는 함수입니다.
     def crawl_one_image(self):
         # 확대된 이미지에서 이미지 요소를 뽑아옵니다.
-        # 이 요소의 xpath는 '//*[@id="Sva75c"]/div/div/div[3]/div[2]/div/div[1]/div[1]/div/div[2]/a/img' 입니다.
-        img_xpath = '//*[@id="Sva75c"]/div/div/div[3]/div[2]/div/div[1]/div[1]/div/div[2]/a/img'
+        # 이 요소의 xpath는 '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[2]/a/img' 입니다.
+        img_xpath = '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[2]/a/img'
         # 이미지 요소를 가져옵니다.
         image_element = self.driver.find_element_by_xpath(img_xpath)
         # 이미지를 저장합니다.
@@ -61,8 +61,8 @@ class ImgCrawler:
     # 다음 이미지로 넘어가는 함수입니다.
     def next_image(self):
         # 다음 이미지로 넘어가기 위해 다음 버튼을 찾습니다.
-        # 이 버튼의 xpath는 '//*[@id="Sva75c"]/div/div/div[3]/div[2]/div/div[1]/div[1]/div/div[1]/a[2]/div' 입니다.
-        button_xpath = '//*[@id="Sva75c"]/div/div/div[3]/div[2]/div/div[1]/div[1]/div/div[1]/a[2]/div'
+        # 이 버튼의 xpath는 '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[1]/a[2]/div' 입니다.
+        button_xpath = '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[1]/a[2]/div'
         # 버튼 요소를 가져옵시다.
         next_button = self.driver.find_element_by_xpath(button_xpath)
         # 버튼을 눌러 다음 이미지로 넘어갑니다.
