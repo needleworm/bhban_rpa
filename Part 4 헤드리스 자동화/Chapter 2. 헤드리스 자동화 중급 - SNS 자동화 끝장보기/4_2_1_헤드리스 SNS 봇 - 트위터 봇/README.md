@@ -8,4 +8,3 @@
  
  <CONTENTS\> 에는 트위터에 업로드할 내용물이 기록된 파일을 입력합니다.
  
- > python main.py bot_automation <PS\> contents.txt
