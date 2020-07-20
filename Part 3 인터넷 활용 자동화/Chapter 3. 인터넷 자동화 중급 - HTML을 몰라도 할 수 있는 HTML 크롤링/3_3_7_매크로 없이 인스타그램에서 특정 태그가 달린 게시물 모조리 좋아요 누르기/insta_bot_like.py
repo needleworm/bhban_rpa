@@ -17,6 +17,8 @@ class LikeBot:
         self.querry ="https://www.instagram.com/explore/tags/"
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
+        # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
+        # self.options.add_argument("headless")
         # 옵션에 해상도를 입력합니다.
         self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.

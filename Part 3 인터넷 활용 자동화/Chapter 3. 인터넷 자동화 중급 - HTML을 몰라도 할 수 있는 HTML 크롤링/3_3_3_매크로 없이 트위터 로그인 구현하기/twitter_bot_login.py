@@ -16,6 +16,8 @@ class LoginBot:
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
         self.options.add_argument("--window-size=1024,768")
+        # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
+        # self.options.add_argument("headless")
         # 옵션을 입력해서 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
 
