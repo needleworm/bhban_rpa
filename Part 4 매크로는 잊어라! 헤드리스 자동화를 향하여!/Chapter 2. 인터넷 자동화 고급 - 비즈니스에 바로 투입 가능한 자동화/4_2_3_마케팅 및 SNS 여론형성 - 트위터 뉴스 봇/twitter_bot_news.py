@@ -14,10 +14,10 @@ class NewsBot:
     def __init__(self, endswith):
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
-        # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
-        # self.options.add_argument("headless")
         # 옵션에 해상도를 입력합니다.
         self.options.add_argument("--window-size=1024,768")
+        # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
+        # self.options.add_argument("headless")
         # 옵션을 입력해서 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 트윗할 메시지들을 저장할 공간을 만듭니다.
@@ -32,15 +32,6 @@ class NewsBot:
     # 쉽게 설명하자면 클래스 외부에서 클래스 내부 자료에 너무 깊게 관여하는 상황을 원하지 않기 때문입니다.
     def kill(self):
         self.driver.quit()
-
-    # 크롤러를 껐다가 다시 켜는 메서드입니다.
-    def driver_refresh(self):
-        # 드라이버를 종료합니다.
-        self.kill()
-        # 드라이버를 다시 켭니다.
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
-        # 트윗할 메시지들을 저장할 공간을 초기화합니다.
-        self.contents = []
 
     # 로그인을 수행하는 메서드입니다.
     def login(self, id, ps):

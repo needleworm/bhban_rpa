@@ -8,7 +8,7 @@ Last Modification : 2020.03.02.
 
 import sys
 import time
-import twitter_bot_tweet as tb
+import twitter_bot_news as tb
 
 
 # 작업 시작 메시지를 출력합니다.
