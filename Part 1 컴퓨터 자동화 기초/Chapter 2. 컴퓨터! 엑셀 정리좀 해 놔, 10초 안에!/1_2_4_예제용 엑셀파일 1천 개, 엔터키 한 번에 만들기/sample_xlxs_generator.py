@@ -2,7 +2,7 @@
 """
 Author : Byunghyun Ban
 GitHub : https://github.com/needleworm
-Book : ì¼ë°˜ì¸ì„ ìœ„í•œ ì—…ë¬´ ìžë™í™”
+Book : ÀÏ¹ÝÀÎÀ» À§ÇÑ ¾÷¹« ÀÚµ¿È­
 Last Modification : 2020.02.12.
 """
 import time
@@ -11,20 +11,20 @@ import os
 import pyexcel as px
 
 
-# ìž‘ì—… ì‹œìž‘ ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+# ÀÛ¾÷ ½ÃÀÛ ¸Þ½ÃÁö¸¦ Ãâ·ÂÇÕ´Ï´Ù.
 print("Process Start.")
 
-# ì‹œìž‘ ì‹œì ì˜ ì‹œê°„ì„ ê¸°ë¡í•©ë‹ˆë‹¤.
+# ½ÃÀÛ ½ÃÁ¡ÀÇ ½Ã°£À» ±â·ÏÇÕ´Ï´Ù.
 start_time = time.time()
 
-# ìƒì„±í•  ê°œì¸ì •ë³´ íŒŒì¼ ê°œìˆ˜ë¥¼ ì •ì˜í•©ë‹ˆë‹¤.
+# »ý¼ºÇÒ °³ÀÎÁ¤º¸ ÆÄÀÏ °³¼ö¸¦ Á¤ÀÇÇÕ´Ï´Ù.
 NUM_SAMPLES = 1000
 
-# ì´ë©”ì¼ ìƒì„±ì— ì‚¬ìš©í•  ìƒ˜í”Œ ê¸€ìžë“¤ì„ ì •ì˜í•©ë‹ˆë‹¤.
+# ÀÌ¸ÞÀÏ »ý¼º¿¡ »ç¿ëÇÒ »ùÇÃ ±ÛÀÚµéÀ» Á¤ÀÇÇÕ´Ï´Ù.
 alphabet_samples = "abcdefghizklmnopqrstuvwxyz1234567890"
 
 
-# ë¬´ìž‘ìœ„ë¡œ ì„ íƒëœ ì˜ì–´ ê¸€ìžë¥¼ ìƒì„±í•˜ëŠ” í•¨ìˆ˜ìž…ë‹ˆë‹¤.
+# ¹«ÀÛÀ§·Î ¼±ÅÃµÈ ¿µ¾î ±ÛÀÚ¸¦ »ý¼ºÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
 def random_string(length):
     result = ""
     for i in range(length):
@@ -32,13 +32,13 @@ def random_string(length):
     return result
 
 
-# ì´ë¦„ ìƒì„±ì— ì‚¬ìš©í•  ìƒ˜í”Œ ê¸€ìžë“¤ì„ ì •ì˜í•©ë‹ˆë‹¤.
-first_name_samples = "ê¹€ì´ë°•ìµœì •ê°•ì¡°ìœ¤ìž¥ìž„"
-middle_name_samples = "ë¯¼ì„œì˜ˆì§€ë„í•˜ì£¼ìœ¤ì±„í˜„ì§€"
-last_name_samples = "ì¤€ìœ¤ìš°ì›í˜¸í›„ì„œì—°ì•„ì€ì§„"
+# ÀÌ¸§ »ý¼º¿¡ »ç¿ëÇÒ »ùÇÃ ±ÛÀÚµéÀ» Á¤ÀÇÇÕ´Ï´Ù.
+first_name_samples = "±èÀÌ¹ÚÃÖÁ¤°­Á¶À±ÀåÀÓ"
+middle_name_samples = "¹Î¼­¿¹ÁöµµÇÏÁÖÀ±Ã¤ÇöÁö"
+last_name_samples = "ÁØÀ±¿ì¿øÈ£ÈÄ¼­¿¬¾ÆÀºÁø"
 
 
-# ë¬´ìž‘ìœ„ë¡œ ì‚¬ëžŒ ì´ë¦„ì„ ìƒì„±í•˜ëŠ” í•¨ìˆ˜ìž…ë‹ˆë‹¤.
+# ¹«ÀÛÀ§·Î »ç¶÷ ÀÌ¸§À» »ý¼ºÇÏ´Â ÇÔ¼öÀÔ´Ï´Ù.
 def random_name():
     result = ""
     result += random.choice(first_name_samples)
@@ -47,53 +47,53 @@ def random_name():
     return result
 
 
-# ê²°ê³¼ë¬¼ì„ ì €ìž¥í•  í´ë”ë¥¼ ìƒì„±í•©ë‹ˆë‹¤.
+# °á°ú¹°À» ÀúÀåÇÒ Æú´õ¸¦ »ý¼ºÇÕ´Ï´Ù.
 os.mkdir("personal_info")
 
-# í—¤ë”ë¥¼ ì •ì˜í•©ë‹ˆë‹¤.
+# Çì´õ¸¦ Á¤ÀÇÇÕ´Ï´Ù.
 HEADER = ["name", "age", "e-mail", "division", "telephone", "sex"]
 
 
-# ê°œì¸ì •ë³´ íŒŒì¼ì„ ìžë™ìœ¼ë¡œ ìƒì„±í•˜ëŠ” ë¶€ë¶„ìž…ë‹ˆë‹¤.
-# NUM_SAMPLES íšŒìˆ˜ë§Œí¼ ë°˜ë³µí•©ë‹ˆë‹¤.
-# ì´ë¥¼í…Œë©´, NUM_SAMPLESê°€ 100ì´ë©´ ë¬´ìž‘ìœ„ ê°œì¸ì •ë³´ ìƒì„±ì„ 100íšŒ ë°˜ë³µí•©ë‹ˆë‹¤.
+# °³ÀÎÁ¤º¸ ÆÄÀÏÀ» ÀÚµ¿À¸·Î »ý¼ºÇÏ´Â ºÎºÐÀÔ´Ï´Ù.
+# NUM_SAMPLES È¸¼ö¸¸Å­ ¹Ýº¹ÇÕ´Ï´Ù.
+# ÀÌ¸¦Å×¸é, NUM_SAMPLES°¡ 100ÀÌ¸é ¹«ÀÛÀ§ °³ÀÎÁ¤º¸ »ý¼ºÀ» 100È¸ ¹Ýº¹ÇÕ´Ï´Ù.
 for i in range(NUM_SAMPLES):
-    # ë¬´ìž‘ìœ„ë¡œ ì‚¬ëžŒ ì´ë¦„ì„ ìƒì„±í•©ë‹ˆë‹¤.
+    # ¹«ÀÛÀ§·Î »ç¶÷ ÀÌ¸§À» »ý¼ºÇÕ´Ï´Ù.
     name = random_name()
 
-    # ê²°ê³¼ë¬¼ íŒŒì¼ì˜ ì´ë¦„ì„ ì •ì˜í•©ë‹ˆë‹¤.
+    # °á°ú¹° ÆÄÀÏÀÇ ÀÌ¸§À» Á¤ÀÇÇÕ´Ï´Ù.
     filename = "personal_info/" + str(i) + "_" + name + ".xlsx"
 
-    # ì—‘ì…€íŒŒì¼ë¡œ ì €ìž¥í•  ë°ì´í„°ë¥¼ ë‹´ì•„ ë‘˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ë§Œë“­ë‹ˆë‹¤.
+    # ¿¢¼¿ÆÄÀÏ·Î ÀúÀåÇÒ µ¥ÀÌÅÍ¸¦ ´ã¾Æ µÑ ¸®½ºÆ®¸¦ ¸¸µì´Ï´Ù.
     contents = []
 
-    # ì´ë¦„ì„ ê¸°ìž¬í•©ë‹ˆë‹¤.
+    # ÀÌ¸§À» ±âÀçÇÕ´Ï´Ù.
     contents.append(name)
 
-    # ë¬´ìž‘ìœ„ë¡œ ìƒì„±ëœ ë‚˜ì´ë¥¼ ê¸°ìž¬í•©ë‹ˆë‹¤.
+    # ¹«ÀÛÀ§·Î »ý¼ºµÈ ³ªÀÌ¸¦ ±âÀçÇÕ´Ï´Ù.
     contents.append(str(time.time())[-2:])
 
-    # ë¬´ìž‘ìœ„ë¡œ ìƒì„±ëœ ì´ë©”ì¼ì„ ê¸°ìž¬í•©ë‹ˆë‹¤.
+    # ¹«ÀÛÀ§·Î »ý¼ºµÈ ÀÌ¸ÞÀÏÀ» ±âÀçÇÕ´Ï´Ù.
     contents.append(random_string(8) + "@bhban.com")
 
-    # ë¬´ìž‘ìœ„ë¡œ ìƒì„±ëœ ë¶€ì„œëª…ì„ ê¸°ìž¬í•©ë‹ˆë‹¤.
+    # ¹«ÀÛÀ§·Î »ý¼ºµÈ ºÎ¼­¸íÀ» ±âÀçÇÕ´Ï´Ù.
     contents.append(random_string(3))
 
-    # ë¬´ìž‘ìœ„ë¡œ ìƒì„±ëœ í•¸ë“œí° ë²ˆí˜¸ë¥¼ ê¸°ìž¬í•©ë‹ˆë‹¤.
+    # ¹«ÀÛÀ§·Î »ý¼ºµÈ ÇÚµåÆù ¹øÈ£¸¦ ±âÀçÇÕ´Ï´Ù.
     contents.append("010-" + str(time.time())[-4:] + "-" + str(time.time())[-6:-2])
 
-    # ë¬´ìž‘ìœ„ë¡œ ì„ ì •ëœ ì„±ë³„ì„ ê¸°ìž¬í•©ë‹ˆë‹¤.
+    # ¹«ÀÛÀ§·Î ¼±Á¤µÈ ¼ºº°À» ±âÀçÇÕ´Ï´Ù.
     contents.append(random.choice(["male", "female"]))
 
-    # í—¤ë”ì™€ ë°ì´í„°ë¥¼ í•©ì³ì„œ ì €ìž¥í•  ë°ì´í„°ë¥¼ ì™„ì„±í•©ë‹ˆë‹¤.
+    # Çì´õ¿Í µ¥ÀÌÅÍ¸¦ ÇÕÃÄ¼­ ÀúÀåÇÒ µ¥ÀÌÅÍ¸¦ ¿Ï¼ºÇÕ´Ï´Ù.
     RESULT = [HEADER, contents]
 
-    # ì™„ì„±ëœ ì—‘ì…€íŒŒì¼ì„ ì €ìž¥í•©ë‹ˆë‹¤.
+    # ¿Ï¼ºµÈ ¿¢¼¿ÆÄÀÏÀ» ÀúÀåÇÕ´Ï´Ù.
     px.save_as(array=RESULT, dest_file_name=filename)
 
-# ìž‘ì—… ì¢…ë£Œ ë©”ì„¸ì§€ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
+# ÀÛ¾÷ Á¾·á ¸Þ¼¼Áö¸¦ Ãâ·ÂÇÕ´Ï´Ù.
 print("Process Done.")
 
-# ìž‘ì—…ì— ì´ ëª‡ ì´ˆê°€ ê±¸ë ¸ëŠ”ì§€ ì¶œë ¥í•©ë‹ˆë‹¤.
+# ÀÛ¾÷¿¡ ÃÑ ¸î ÃÊ°¡ °É·È´ÂÁö Ãâ·ÂÇÕ´Ï´Ù.
 end_time = time.time()
 print("The Job Took " + str(end_time - start_time) + " seconds.")
