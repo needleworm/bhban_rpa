@@ -13,7 +13,7 @@ filename = sys.argv[1]
 in_file = open(filename, encoding="euc-kr")
 
 # utf-8로 저장할 파일을 실행합니다.
-out_file = open("utf8_" + filename, 'w', encoding="utf8")
+out_file = open("utf8_" + filename, 'w', encoding="utf-8")
 
 content = in_file.read()
 

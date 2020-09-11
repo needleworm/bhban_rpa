@@ -21,7 +21,7 @@ class TwitterBot:
         self.go_to_twitter()
 
         # 컨텐츠 파일을 읽어옵니다. 인코딩이 utf-8이 아닌 파일을 읽으면 에러가 날겁니다.
-        # 이때는 인코딩을 명시해 주시면 됩니다. 기본값은 utf8입니다.
+        # 이때는 인코딩을 명시해 주시면 됩니다. 기본값은 utf-8입니다.
         self.contents_file = open(contents, encoding=encoding)
         # 읽어온 파일을 쪼개 리스트로 만듭니다.
         self.contents = self.contents_file.read().split("\n")
@@ -59,7 +59,7 @@ class TwitterBot:
         self.driver.save_screenshot(filename)
 
     # 트위터에 글을 올리는 함수입니다.
-    def tweet(self, text, interval):
+    def tweet(self, text, interval=15):
         # 글을 쉽게 작성하기 위해 작성 전용 페이지로 이동합니다.
         self.driver.get("https://twitter.com/intent/tweet")
         time.sleep(2)
