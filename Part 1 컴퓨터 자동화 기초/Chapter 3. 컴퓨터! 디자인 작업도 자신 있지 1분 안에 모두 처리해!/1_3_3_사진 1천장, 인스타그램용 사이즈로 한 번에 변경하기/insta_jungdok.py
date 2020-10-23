@@ -33,7 +33,7 @@ input_files = os.listdir(directory)
 # input_files에 저장된 파일 이름을 한 번에 하나씩 불러옵니다.
 for filename in input_files:
     # 간혹 이미지 파일이 아닌 파일이 섞여있을 수 있습니다. 이걸 걸러냅니다.
-    name, exp = filename.strip().split('.')
+    exp = filename.strip().split('.')[-1]
     if exp not in "JPG jpg JPEG jpeg PNG png BMP bmp":
         continue
 
@@ -63,7 +63,7 @@ for filename in input_files:
     new_image.paste(image, (x_offset, y_offset))
 
     # 변경된 이미지를 저장합니다.
-    new_image.save(out_dir + "/" + name + ".png")
+    new_image.save(out_dir + "/" + filename)
 
     # 이미지들을 닫아줍니다.
     image.close()
