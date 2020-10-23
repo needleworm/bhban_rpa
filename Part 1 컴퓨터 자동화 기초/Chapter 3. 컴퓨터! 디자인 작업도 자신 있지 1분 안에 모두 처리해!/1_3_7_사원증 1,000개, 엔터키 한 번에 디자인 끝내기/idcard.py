@@ -38,7 +38,7 @@ except:
 Xdim, Ydim = template.size
 
 # 사원증에 삽입할 회사 정보를 기재합니다.
-url = "http://sangsang.farm"
+url = "https://bit.ly/2FqKtba"
 
 # 결과물을 저장할 폴더를 생성합니다.
 out_dir ="idcards"
