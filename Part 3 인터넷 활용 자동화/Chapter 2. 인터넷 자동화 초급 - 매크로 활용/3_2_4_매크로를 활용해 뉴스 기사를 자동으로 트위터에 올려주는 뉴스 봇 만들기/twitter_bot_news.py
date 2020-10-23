@@ -19,7 +19,7 @@ class NewsBot:
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
         # 옵션에 해상도를 입력합니다.
-        self.options.add_argument("--window-size=1024,768")
+        self.options.add_argument("--window-size=1600,900")
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 정리된 뉴스를 저장할 변수를 만듭니다.
@@ -90,7 +90,7 @@ class NewsBot:
     # 트위터 페이지에 접속하는 메서드입니다.
     def go_to_twitter(self):
         # 트위터 홈페이지로 이동합니다.
-        self.driver.get("http://twitter.com/")
+        self.driver.get("http://twitter.com/login")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
         time.sleep(2)
 
