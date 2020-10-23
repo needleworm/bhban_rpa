@@ -37,7 +37,7 @@ class TwitterBot:
         # 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 트위터 홈페이지로 이동합니다.
-        self.driver.get("https://twitter.com/")
+        self.driver.get("https://twitter.com/login")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
         time.sleep(5)
 
