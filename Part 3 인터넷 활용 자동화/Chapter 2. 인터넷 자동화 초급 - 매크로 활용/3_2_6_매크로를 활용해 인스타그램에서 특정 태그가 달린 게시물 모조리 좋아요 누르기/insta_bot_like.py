@@ -43,7 +43,7 @@ class LikeBot:
     # 인스타그램 로그인 함수입니다.
     def login(self, id, ps):
         # 로그인 페이지로 이동합니다.
-        self.driver.get("https://www.instagram.com/")
+        self.driver.get("https://www.instagram.com/accounts/login")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
         time.sleep(5)
         # 탭 키를 한 번 누르면 아이디 입력창으로 이동합니다.
