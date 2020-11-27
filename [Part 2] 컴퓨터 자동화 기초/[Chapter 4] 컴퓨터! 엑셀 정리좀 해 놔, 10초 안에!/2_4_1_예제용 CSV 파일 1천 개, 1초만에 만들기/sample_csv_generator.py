@@ -2,7 +2,7 @@
 """
 Author : Byunghyun Ban
 GitHub : https://github.com/needleworm
-Book : 일반인을 위한 업무 자동화
+Book : 파이썬으로 6개월치 업무를 하루만에 끝내기
 Last Modification : 2020.02.12.
 """
 import time
@@ -84,7 +84,7 @@ for i in range(NUM_SAMPLES):
     outfile.write("010-" + str(time.time())[-4:] + "-" + str(time.time())[-6:-2] + ', ')
 
     # 결과물 파일에 무작위로 선정된 성별을 기재합니다.
-    outfile.write(random.choice(["male", "female"]) )
+    outfile.write(random.choice(["male", "female"]))
 
     # 결과물 파일 수정을 마무리합니다.
     outfile.close()

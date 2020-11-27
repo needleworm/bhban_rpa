@@ -2,7 +2,7 @@
 """
 Author : Byunghyun Ban
 GitHub : https://github.com/needleworm
-Book : 일반인을 위한 업무 자동화
+Book : 파이썬으로 6개월치 업무를 하루만에 끝내기
 Last Modification : 2020.03.02.
 """
 from selenium import webdriver
@@ -70,13 +70,14 @@ class NewsBot:
 
         # 글자들을 한 줄씩 불러옵니다.
         for i, line in enumerate(splt):
-            # 라인을 죽 넘기다가 읽으며 '스토리 이미지'라는 글자가 없는 줄은 넘깁니다.
-            if "스토리 이미지" not in line:
+            # 길이가 너무 짧은 줄은 건너뜁니다. 공백일 가능성이 큽니다.
+            if len(line.strip()) < 3:
                 continue
-            # '스토리 이미지' 라는 단어가 발견되면 그 다음에 오는 3줄을 뭉쳐 하나의 스트링으로 만듭니다.
-            new_news = "\n".join(splt[i+1:i+4])
-            # 만들어진 뉴스를 news_list에 삽입합니다.
-            self.news_list.append(new_news)
+            # 뉴스의 작성 시점을 알려주는 문자가 등장하면 앞의 3개 줄을 뽑아와 하나로 합쳐 줍니다.
+            elif line.strip()[-3:] in "달 전  주 전  일 전  시간 전  분 전  초 전":
+                new_news = "\n".join(splt[i - 3:i])
+                # 만들어진 뉴스를 news_list에 삽입합니다.
+                self.news_list.append(new_news)
 
     # 뉴스 기사를 구글에서 검색한 뒤, 리스트로 다듬는 함수입니다.
     def news_crawler(self, keyword):

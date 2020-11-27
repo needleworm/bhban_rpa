@@ -77,6 +77,12 @@ Pillow
 pyWin32
 >pip install pywin32
 
+PyperClip
+>pip install pyperclip
+
+PyAutoGui
+>pip install pyautogui
+
 #### (5) 웹(인터넷) 관련 예제를 위해 필요한 도구
 Selenium
 >pip install selenium

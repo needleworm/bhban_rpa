@@ -1,8 +1,7 @@
 #-*-coding:euc-kr
 """
 Author : Byunghyun Ban
-Book : 일반인을 위한 업무 자동화
-https://brunch.co.kr/@needleworm/200
+Book : 파이썬으로 6개월치 업무를 하루만에 끝내기
 """
 
 import win32api

@@ -2,7 +2,7 @@
 """
 Author : Byunghyun Ban
 GitHub : https://github.com/needleworm
-Book : 일반인을 위한 업무 자동화
+Book : 파이썬으로 6개월치 업무를 하루만에 끝내기
 Last Modification : 2020.02.14.
 """
 import time
@@ -25,8 +25,8 @@ personal_IDs= sys.argv[1]
 logo_filename = sys.argv[2]
 
 # 명함에 삽입할 회사 정보를 기재합니다.
-location = "경상북도 안동시 남후면 광음원당길36"
-url = "http://sangsang.farm"
+location = "경기도 파주시 문발동 광인사길 143"
+url = "https://bit.ly/2FqKtba"
 
 # 결과물을 저장할 폴더를 생성합니다.
 out_dir ="namecards"

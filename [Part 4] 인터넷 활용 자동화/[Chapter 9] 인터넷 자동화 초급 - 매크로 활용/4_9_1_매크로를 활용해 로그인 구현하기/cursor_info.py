@@ -1,7 +1,7 @@
 """
 Author : Byunghyun Ban
 GitHub : https://github.com/needleworm
-Book : 일반인을 위한 업무 자동화
+Book : 파이썬으로 6개월치 업무를 하루만에 끝내기
 Last Modification : 2020.03.02.
 """
 
