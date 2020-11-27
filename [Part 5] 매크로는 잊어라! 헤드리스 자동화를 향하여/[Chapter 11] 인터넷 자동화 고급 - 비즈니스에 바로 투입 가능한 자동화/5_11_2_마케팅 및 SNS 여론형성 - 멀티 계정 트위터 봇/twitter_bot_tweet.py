@@ -14,10 +14,10 @@ class TwitterBot:
     def __init__(self):
         # 셀레늄 웹드라이버에 입력할 옵션을 지정합니다.
         self.options = Options()
-        # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
-        # self.options.add_argument("headless")
         # 옵션에 해상도를 입력합니다.
         self.options.add_argument("--window-size=1024,768")
+        # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
+        # self.options.add_argument("headless")
         # 옵션을 입력해서 크롬 웹드라이버를 불러옵니다.
         self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
         # 트윗할 메시지들을 저장할 공간을 만듭니다.
@@ -66,7 +66,7 @@ class TwitterBot:
         self.driver.get("https://twitter.com/intent/tweet")
         time.sleep(5)
         # 메시지 입력창 요소를 찾습니다. xpath를 복사합니다.
-        board = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
+        board = self.driver.find_element_by_xpath('//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
         # 메시지 입력창에 메시지를 보냅니다.
         board.send_keys(string)
         # Ctrl + Enter를 눌러 메시지를 게시합니다.

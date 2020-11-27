@@ -77,10 +77,8 @@ class CaptureBot:
             # num이 -1인 경우 계속 0보다 작아지기만 하고 0이 되지는 않으므로 영원히 실행됩니다.
             count -= 1
             # 화면을 통째로 캡처하는건 의미가 없으니 사진과 게시물 부분만 캡쳐합시다.
-            # 이 영역의 xpath는 '/html/body/div[4]/div[2]/div/article' 입니다.
-            article_xpath = '/html/body/div[4]/div[2]/div/article'
-            # 요소를 찾아 줍니다.
-            article_element = self.driver.find_element_by_xpath(article_xpath)
+            # 요소를 찾아 줍니다. article 태그에 들어있습니다.
+            article_element = self.driver.find_element_by_tag_name("article")
             # 요소별로 스크린샷을 찍을 수 있습니다. 찍어 줍시다.
             article_element.screenshot(directory + "/" + str(time.time()) + ".png")
             # 잠시 기다려 줍시다.

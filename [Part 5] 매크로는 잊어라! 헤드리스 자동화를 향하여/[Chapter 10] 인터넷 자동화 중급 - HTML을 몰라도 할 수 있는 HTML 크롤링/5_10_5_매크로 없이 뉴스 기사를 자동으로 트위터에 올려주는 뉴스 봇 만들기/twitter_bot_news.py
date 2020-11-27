@@ -58,20 +58,20 @@ class NewsBot:
         # 검색을 수행합니다.
         self.driver.get(self.query + keyword)
         # 뉴스 기사와 관련된 엘레먼트를 한번에 다 따겠습니다.
-        # 구글 뉴스 검색 결과는 'g' 라는 이름의 클래스로 제공됩니다.
-        news_elements = self.driver.find_elements_by_class_name("g")
+        # 구글 뉴스 검색 결과는 'dbsr' 라는 이름의 클래스로 제공됩니다.
+        news_elements = self.driver.find_elements_by_class_name("dbsr")
         # 모든 엘레멘트로부터 정보를 추출하겠습니다.
         for el in news_elements:
-            # 기사 제목을 추출합니다. <h3> 태그로 작성되었습니다.
-            headline = el.find_element_by_tag_name("h3").text
+            # 기사 제목을 추출합니다. <JheGif.nDgy9d> 태그로 작성되었습니다.
+            headline = el.find_element_by_class_name("JheGif.nDgy9d").text
             # 기사 하이퍼링크 태그를 추출합니다.
             hyperlink = el.find_element_by_tag_name("a")
             # 기사 하이퍼링크 태그에서 기사 주소를 추출합니다.
             news_url = hyperlink.get_attribute("href")
-            # 신문사 정보를 추출합니다. "dhIWpd"라는 클래스 이름으로 저장되어 있습니다.
-            reference = el.find_element_by_class_name("dhIWPd").text
-            # 뉴스 앞 부분을 추출해 냅니다. "st"라는 클래스로 기록되어 있습니다.
-            head = el.find_element_by_class_name("st").text
+            # 신문사 정보를 추출합니다. "XTjFC.WF4CUc"라는 클래스 이름으로 저장되어 있습니다.
+            reference = el.find_element_by_class_name("XTjFC.WF4CUc").text
+            # 뉴스 앞 부분을 추출해 냅니다. "Y3v8qd"라는 클래스로 기록되어 있습니다.
+            head = el.find_element_by_class_name("Y3v8qd").text
             # 트윗에 올릴 기사 요약을 만듭니다.
             news_summary = "\n".join((headline, reference, head, self.endswith, news_url))
             self.contents.append(news_summary)
@@ -82,7 +82,7 @@ class NewsBot:
         self.driver.get("https://twitter.com/intent/tweet")
         time.sleep(5)
         # 메시지 입력창 요소를 찾습니다. xpath를 복사합니다.
-        board = self.driver.find_element_by_xpath('//*[@id="react-root"]/div/div/div[1]/div[2]/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
+        board = self.driver.find_element_by_xpath('//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[1]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div[2]/div/div/div/div')
         # 메시지 입력창에 메시지를 보냅니다.
         board.send_keys(string)
         # Ctrl + Enter를 눌러 메시지를 게시합니다.
