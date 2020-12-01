@@ -3,7 +3,7 @@
 
 > python idcard.py <DIRECTORY\> <PEOPLE\> <SAMPLE_LOGO\> <TEMPLATE\>
 
-<DIRECTORY\> 에는 사원들의 증명사진이 들어있는 폴더명을 적어줍니다. 7절의 예제 결과 폴더를 활용합시다.
+<DIRECTORY\> 에는 사원들의 증명사진이 들어있는 폴더명을 적어줍니다. 6절의 예제 결과 폴더를 활용합시다.
 
 <PEOPLE\>에는 개인정보가 기재된 CSV파일을 입력합니다. 
 이 책의 챕터1의 4절 예제 결과물을 이용하세요.
