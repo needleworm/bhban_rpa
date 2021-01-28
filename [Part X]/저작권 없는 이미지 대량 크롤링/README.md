@@ -2,6 +2,9 @@
 Pixabay 저작권 없는 이미지 크롤링
 
 # Dependenceis
+크롬이 설치되어 있어야 합니다.
+폴더 내에 버전이 맞는 크롬 드라이버를 위치시켜야 합니다.
+
 > pip install selenium
 
 # 사용방법
