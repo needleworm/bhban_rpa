@@ -4,7 +4,7 @@ PDF파일에서 이미지만 추출합니다.
 
 
 ## Dependnecy
-> pip install pymupdf
+> pip install pillow pymupdf
 
 
 ## ussage

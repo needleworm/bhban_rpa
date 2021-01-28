@@ -26,7 +26,6 @@ for j in range(len(doc)):
     pix = page.getPixmap(alpha=False, matrix=fitz.Matrix(4.0, 4.0))
     pix.writePNG("temp.png")
     img = Image.open("temp.png")
-    print(img.size)
     for i in range(len(imgblocks)):
         x0, y0, x1, y1 = imgblocks[i]["bbox"]
         x0 *= 4
@@ -34,5 +33,5 @@ for j in range(len(doc)):
         x1 *= 4
         y1 *= 4
         cropped_img = img.crop((x0, y0, x1, y1))
-        cropped_img.save("results/page_" + str(j) + "_image_" + str(i) + ".png")
+        cropped_img.save(outdir + "/page_" + str(j) + "_image_" + str(i) + ".png")
     os.remove("temp.png")
