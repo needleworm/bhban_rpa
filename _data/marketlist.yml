@@ -1,0 +1,11 @@
+markets:
+    section: clients
+    max-height: 40px
+    horizontal-scrolling: "no" #"yes/no"
+    list:
+      - title: "Coinone"
+        url: https://coinone.com
+        logo: img/markets/coinone.png
+      - title: "Bithumb"
+        url: https://www.bithumb.com/
+        logo: img/markets/bithumb.png

@@ -1,0 +1,94 @@
+url: https://needleworm.github.io/
+baseurl: /bhban_rpa
+
+# Site settings
+title: 6개월치 업무를 하루 만에 끝내는 업무자동화
+email: bhban@kakao.com
+description: 코알못도 할 수 있는 업무 자동화!
+
+
+books:
+
+- title: 코딩하는 공익
+  pic: 7.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=16340073
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8955866119&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/90081924
+    - shop: kyobo
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788955866117
+
+- title: 공학자의 지혜묵상
+  pic: 3.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=16369629
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K452639642&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/90392271
+    - shop: kyobo
+      url: http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000378984
+
+      
+- title: 공학자의 오경묵상
+  pic: 2.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=17469780
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K112735243&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/95590656
+    - shop: kyobo
+      url: http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000403693
+
+      
+- title: 실전 민사소송법
+  pic: 6.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=16357665
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K572639625&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/90250538
+    - shop: kyobo
+      url: http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000377208
+
+      
+- title: 법대로 합시다
+  pic: 5.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=10236421
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/30660689
+    - shop: kyobo
+      url: http://digital.kyobobook.co.kr/digital/ebook/ebookDetail.ink?LINK=NVE&category=001&barcode=4801159610081
+
+      
+- title: 나는 아직 잊힐 준비가 되지 않았어요
+  pic: 4.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=16629718
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=K622632023&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/92154589
+    - shop: kyobo
+      url: http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000388044
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  - title: github
+    url: http://github.com/needleworm
+
+
+# Build settings
+markdown: kramdown
+permalink: pretty
