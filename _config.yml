@@ -9,8 +9,32 @@ description: 코알못도 할 수 있는 업무 자동화!
 
 books:
 
+- title: 수학.통계를 몰라도 이해할 수 있는 쉬운 딥러닝
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/8.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=19007726
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=269891239
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/99552196
+    - shop: kyobo
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788970504872&orderClick=LAG&Kc=
+
+- title: 6개월 치 업무를 하루 만에 끝내는 업무자동화
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/1.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=17665326
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8970504745&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/96360166
+    - shop: kyobo
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkclassName=&barcode=9788970504742
+
 - title: 코딩하는 공익
-  pic: 7.jpg
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/7.jpg
   stores:
     - shop: naver
       url: https://book.naver.com/bookdb/book_detail.nhn?bid=16340073
@@ -22,7 +46,7 @@ books:
       url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788955866117
 
 - title: 공학자의 지혜묵상
-  pic: 3.jpg
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/3.jpg
   stores:
     - shop: naver
       url: https://book.naver.com/bookdb/book_detail.nhn?bid=16369629
@@ -35,7 +59,7 @@ books:
 
       
 - title: 공학자의 오경묵상
-  pic: 2.jpg
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/2.jpg
   stores:
     - shop: naver
       url: https://book.naver.com/bookdb/book_detail.nhn?bid=17469780
@@ -48,7 +72,7 @@ books:
 
       
 - title: 실전 민사소송법
-  pic: 6.jpg
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/6.jpg
   stores:
     - shop: naver
       url: https://book.naver.com/bookdb/book_detail.nhn?bid=16357665
@@ -61,7 +85,7 @@ books:
 
       
 - title: 법대로 합시다
-  pic: 5.jpg
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/5.jpg
   stores:
     - shop: naver
       url: https://book.naver.com/bookdb/book_detail.nhn?bid=10236421
@@ -72,7 +96,7 @@ books:
 
       
 - title: 나는 아직 잊힐 준비가 되지 않았어요
-  pic: 4.jpg
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/4.jpg
   stores:
     - shop: naver
       url: https://book.naver.com/bookdb/book_detail.nhn?bid=16629718
