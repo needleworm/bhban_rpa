@@ -694,7 +694,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url('{{ site.baseurl }}/img/map-image.png');
+    background-image: url('https://cdn.jsdelivr.net/gh/needleworm/bhban_rpa@web/img/map-image.png');
     background-position: center;
     background-repeat: no-repeat;
 }
