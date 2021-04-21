@@ -11,7 +11,7 @@
                 {% for book in site.books %}
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <img src="img/books/{{ book.pic }}" class="img-responsive bookcover" alt="">
+                        <img src="{{ book.pic }}" class="img-responsive bookcover" alt="">
                         <h5>{{ book.title }}</h5 >
                         <ul class="list-inline ">
                             {% for store in book.stores %}
