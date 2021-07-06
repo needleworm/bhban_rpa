@@ -9,6 +9,31 @@ description: 코알못도 할 수 있는 업무 자동화!
 
 books:
 
+
+- title: 비전공자가 업무에서 자주 물어보는 101가지 컴퓨터 활용팁
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/10.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=19007726
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=269891239
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/99552196
+    - shop: kyobo
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788970504872&orderClick=LAG&Kc=
+
+- title: 내 자산 자동으로 관리하기
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/9.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=19007726
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=269891239
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/99552196
+    - shop: kyobo
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788970504872&orderClick=LAG&Kc=
+
 - title: 수학.통계를 몰라도 이해할 수 있는 쉬운 딥러닝
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/8.jpg
   stores:
