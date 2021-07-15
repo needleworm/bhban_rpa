@@ -14,13 +14,13 @@ books:
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/10.jpg
   stores:
     - shop: naver
-      url: https://book.naver.com/bookdb/book_detail.nhn?bid=19007726
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=20739091
     - shop: aladdin
-      url: https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=275049420
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=897050494X&start=pnaver_02
     - shop: yes24
       url: http://www.yes24.com/Product/Goods/102593399
     - shop: kyobo
-      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=330303&barcode=9788970504940
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788970504940
 
 - title: 내 자산 자동으로 관리하기
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/9.jpg
@@ -32,7 +32,7 @@ books:
     - shop: yes24
       url: http://www.yes24.com/Product/Goods/99552196
     - shop: kyobo
-      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788970504872&orderClick=LAG&Kc=
+      url: http://m.kyobobook.co.kr/digital/ebook/ebookContents.ink?barcode=480D210717470
 
 - title: 쉬운 딥러닝
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/8.jpg
