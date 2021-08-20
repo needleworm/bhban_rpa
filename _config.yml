@@ -26,13 +26,11 @@ books:
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/9.jpg
   stores:
     - shop: naver
-      url: https://book.naver.com/bookdb/book_detail.nhn?bid=19007726
-    - shop: aladdin
-      url: https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=269891239
-    - shop: yes24
-      url: http://www.yes24.com/Product/Goods/99552196
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=20764734
     - shop: kyobo
-      url: http://m.kyobobook.co.kr/digital/ebook/ebookContents.ink?barcode=480D210717470
+      url: https://digital.kyobobook.co.kr/digital/ebook/ebookDetail.ink?LINK=NVE&category=001&barcode=480D210717470
+    - shop: ridi
+      url: https://ridibooks.com/books/4638000001
 
 - title: 쉬운 딥러닝
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/8.jpg
