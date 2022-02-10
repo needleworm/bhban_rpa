@@ -8,6 +8,31 @@ description: 코알못도 할 수 있는 업무 자동화!
 
 
 books:
+
+- title: 142가지 데이터셋
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/13.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=21508184
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8970505350&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/107036705
+    - shop: kyobo
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788970505350
+      
+- title: HTML, CSS, 자바스크립트
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/12.jpg
+  stores:
+    - shop: naver
+      url: https://book.naver.com/bookdb/book_detail.nhn?bid=21499497
+    - shop: aladdin
+      url: https://www.aladin.co.kr/shop/wproduct.aspx?ISBN=8970505369&start=pnaver_02
+    - shop: yes24
+      url: http://www.yes24.com/Product/Goods/107010853
+    - shop: kyobo
+      url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788970505367
+      
 - title: CheeseCake Vol 01. 봄 여름 가을 겨울 그리고 봄
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/11.jpeg
   stores:
