@@ -8,7 +8,18 @@ description: 코알못도 할 수 있는 업무 자동화!
 
 
 books:
-
+- title: 돈이 복사되는 가상자산 수업
+  pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/14.jpg
+  stores:
+    - shop: naver
+      url: #
+    - shop: aladdin
+      url: #
+    - shop: yes24
+      url: #
+    - shop: kyobo
+      url: #
+      
 - title: 142가지 데이터셋
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/13.jpg
   stores:
@@ -20,7 +31,7 @@ books:
       url: http://www.yes24.com/Product/Goods/107036705
     - shop: kyobo
       url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788970505350
-      
+
 - title: HTML, CSS, 자바스크립트
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/12.jpg
   stores:
@@ -32,8 +43,8 @@ books:
       url: http://www.yes24.com/Product/Goods/107010853
     - shop: kyobo
       url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788970505367
-      
-- title: CheeseCake Vol 01. 봄 여름 가을 겨울 그리고 봄
+
+- title: 봄 여름 가을 겨울 그리고 봄
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/11.jpeg
   stores:
     - shop: naver
@@ -44,7 +55,6 @@ books:
       url: http://www.yes24.com/Product/Goods/105138391
     - shop: kyobo
       url: http://pod.kyobobook.co.kr/podBook/podBookDetailView.ink?ejkGb=KOR&barcode=1400000474846
-
 
 - title: 101가지 컴퓨터 활용팁
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/10.jpg
@@ -58,6 +68,7 @@ books:
     - shop: kyobo
       url: http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&linkClass=&barcode=9788970504940
 
+
 - title: 내 자산 자동으로 관리하기
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/9.jpg
   stores:
@@ -68,6 +79,7 @@ books:
     - shop: ridi
       url: https://ridibooks.com/books/4638000001
 
+      
 - title: 쉬운 딥러닝
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/8.jpg
   stores:
@@ -80,7 +92,7 @@ books:
     - shop: kyobo
       url: http://www.kyobobook.co.kr/product/detailViewKor.laf?ejkGb=KOR&mallGb=KOR&barcode=9788970504872&orderClick=LAG&Kc=
 
-- title: 6개월 치 업무를 하루 만에 끝내는 업무자동화
+- title: 업무 자동화
   pic: https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/images/books/covers/1.jpg
   stores:
     - shop: naver
@@ -173,5 +185,7 @@ social:
 
 
 # Build settings
+highlighter: true
 markdown: kramdown
 permalink: pretty
+
