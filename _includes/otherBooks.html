@@ -1,31 +1,24 @@
 <!-- Other Books Section -->
-    <section id="otherBooks" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">작가의 책들</h2>
-                </div>
-            </div>
-            
-            <div class="row">
-                {% for book in site.books %}
-                <div class="col-sm-4">
-                    <div class="team-member">
-                        <img src="{{ book.pic }}" class="img-responsive bookcover" alt="">
-                        <h5>{{ book.title }}</h5 >
-                        <ul class="list-inline ">
-                            {% for store in book.stores %}
-                            <li>
-                                <a href="{{ store.url }}" target="_blank" rel="noreferrer">
-                                    <img src="img/stores/{{store.shop}}.png" class="bookstore"/>
-                                </a>
-                            </li>
-                            {% endfor %}
 
-                        </ul>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+<div data-include-path="https://cdn.jsdelivr.net/gh/needleworm/needleworm.github.io/src/resource_forward/otherBooks.html"></div>
+
+<script>
+
+    window.addEventListener('load', function() {
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function(el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
+
+</script>
