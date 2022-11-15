@@ -7,8 +7,19 @@ Last Modification : 2020.02.12.
 """
 import time
 import os
-import pyexcel.cookbook as PC
 import sys
+
+try:
+    import pyexcel.cookbook as pc
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'pyexcel'])
+    pip.main(['install', 'pyexcel-xlsx'])
+    try:
+        import pyexcel.cookbook as pc
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import pyexcel.cookbook as pc
 
 # 작업 시작 메시지를 출력합니다.
 print("Process Start")

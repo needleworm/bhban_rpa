@@ -8,7 +8,17 @@ Last Modification : 2020.02.12.
 import time
 import random
 import os
-import pyexcel as px
+try:
+    import pyexcel as px
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'pyexcel'])
+    pip.main(['install', 'pyexcel-xlsx'])
+    try:
+        import pyexcel as px
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import pyexcel as px
 
 
 # 작업 시작 메시지를 출력합니다.

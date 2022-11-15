@@ -7,9 +7,19 @@ Last Modification : 2020.02.13.
 """
 import time
 import os
-import pyexcel as px
 import sys
 import random
+try:
+    import pyexcel as px
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'pyexcel'])
+    pip.main(['install', 'pyexcel-xlsx'])
+    try:
+        import pyexcel as px
+    except ModuleNotFoundError:
+        time.sleep(2)
+        import pyexcel as px
 
 # 작업 시작 메시지를 출력합니다.
 print("Process Start")

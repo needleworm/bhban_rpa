@@ -8,7 +8,17 @@ Last Modification : 2020.02.13.
 import time
 import os
 import numpy as np
-from PIL import Image
+
+try:
+    from PIL import Image
+except ModuleNotFoundError:
+    import pip
+    pip.main(['install', 'pillow'])
+    try:
+        from PIL import Image
+    except ModuleNotFoundError:
+        time.sleep(2)
+        from PIL import Image
 
 
 # 작업 시작 메시지를 출력합니다.
