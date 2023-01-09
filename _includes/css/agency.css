@@ -269,8 +269,16 @@ fieldset[disabled] .btn-xl.active {
     color: #fff;
     background-color: #{{ site.data.template.color.secondary }};
 }
+.logo {
+    width:40vw;
+    padding-top:8px;
+}
+
 
 @media(min-width:768px) {
+    .logo {
+        height:100%;
+    }
     .navbar-default {
         padding: 25px 0;
         border: 0;
