@@ -1,7 +1,5 @@
 {
-
-  "short_name": "업무자동화",
-  "name": "6개월 치 업무를 하루 만에 끝내는 업무자동화",
+ "name": "App",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
