@@ -269,11 +269,12 @@ fieldset[disabled] .btn-xl.active {
     color: #fff;
     background-color: #{{ site.data.template.color.secondary }};
 }
-.logo {
-    width:40vw;
-    padding-top:8px;
+@media(min-width:768px) {
+    .logo {
+        width:40vw;
+        padding-top:8px;
+    }
 }
-
 
 @media(min-width:768px) {
     .logo {
