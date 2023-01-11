@@ -1,7 +1,8 @@
 {
+  "manifest_version": 2,
+ "display": "fullscreen",
+ "start_url": "/bhban_rpa/?fullscreen=true",
  "name": "업무 자동화",
- "start_url": "/?standalone=true",
- "display": "standalone",
  "theme_color": "#000000",
  "background_color": "#ffffff",
  "icons": [
