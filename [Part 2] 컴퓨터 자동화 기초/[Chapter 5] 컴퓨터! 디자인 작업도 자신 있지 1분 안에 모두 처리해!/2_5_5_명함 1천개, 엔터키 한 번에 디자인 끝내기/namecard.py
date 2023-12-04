@@ -97,19 +97,28 @@ smallFont = ImageFont.truetype("font/gulim.ttc", 40)
 # 나머지 정보들은 적당한 크기로 작성합니다.
 infoFont = ImageFont.truetype("font/gulim.ttc", 50)
 
+
 # 명함 우측 최상단에 URL을 삽입합니다.
 # 좌우 여백은 맨 우측 5%를 띄울겁니다.
-x_offset = int(Xdim * 0.95 - smallFont.getsize(url)[0])
+left, top, right, bottom = smallFont.getbbox(url)
+text_width = right - left
+text_height = bottom - top
+
+x_offset = int(Xdim * 0.95 - text_width[0])
 # 상단 여백은 5%정도면 충분할 것 같습니다.
 y_offset = int(Ydim * 0.05)
 # 명함에 홈페이지 주소를 삽입합니다.
 ImageDraw.Draw(image).text(xy=(x_offset, y_offset), text=url, font=smallFont, fill="black")
 
 # 명함 하단에 사무실 주소를 입력합니다.
+left, top, right, bottom = smallFont.getbbox(location)
+text_width = right - left
+text_height = bottom - top
+
 # 좌우 여백은 우측 5%를 띄울겁니다.
-x_offset = int(Xdim * 0.95 - smallFont.getsize(location)[0])
+x_offset = int(Xdim * 0.95 - text_width)
 # 하단 여백도 마찬가지로 5%정도면 예쁠 것 같군요.
-y_offset = int(Ydim * 0.95 - smallFont.getsize(location)[1])
+y_offset = int(Ydim * 0.95 - text_height)
 # 명함에 사무실 주소를 삽입합니다.
 ImageDraw.Draw(image).text(xy=(x_offset, y_offset), text=location, font=smallFont, fill="black")
 
@@ -133,34 +142,48 @@ for line in IDs:
     for el in name:
         temp_name += el + " "
     name = temp_name[:-1]
+
+    left, top, right, bottom = nameFont.getbbox(name)
+    text_width = right - left
+    text_height = bottom - top
+
     # 이름은 우측 여백을 10% 줍시다.
-    x_offset = int(Xdim * 0.9 - nameFont.getsize(name)[0])
+    x_offset = int(Xdim * 0.9 - text_width)
     # 상하 여백은 60%쯤 줍시다.
-    y_offset = int(Ydim * 0.4 - nameFont.getsize(name)[1])
+    y_offset = int(Ydim * 0.4 - text_height)
     # 명함에 이름을 삽입합니다.
     ImageDraw.Draw(namecard).text(xy=(x_offset, y_offset), text=name, font=nameFont, fill="black")
 
     # 이름 밑에 부서명을 삽입할겁니다.
+    left, top, right, bottom = infoFont.getbbox(division)
+    text_width = right - left
+    text_height = bottom - top
     # 부서도 우측 여백을 10% 줍시다.
-    x_offset = int(Xdim * 0.9 - infoFont.getsize(division)[0])
+    x_offset = int(Xdim * 0.9 - text_width)
     # 상하 여백은 50%쯤 줍시다.
-    y_offset = int(Ydim * 0.5 - infoFont.getsize(division)[1])
+    y_offset = int(Ydim * 0.5 - text_height)
     # 명함에 이름을 삽입합니다.
     ImageDraw.Draw(namecard).text(xy=(x_offset, y_offset), text=division, font=infoFont, fill="black")
 
     # 그 밑에 전화번호를 삽입할겁니다.
+    left, top, right, bottom = infoFont.getbbox(telephone)
+    text_width = right - left
+    text_height = bottom - top
     # 우측 여백을 10% 줍시다.
-    x_offset = int(Xdim * 0.9 - infoFont.getsize(telephone)[0])
+    x_offset = int(Xdim * 0.9 - text_width)
     # 상하 여백은 35%쯤 줍시다.
-    y_offset = int(Ydim * 0.65 - infoFont.getsize(telephone)[1])
+    y_offset = int(Ydim * 0.65 - text_height)
     # 명함에 이름을 삽입합니다.
     ImageDraw.Draw(namecard).text(xy=(x_offset, y_offset), text=telephone, font=infoFont, fill="black")
 
     # 그 밑에 이메일을 삽입할겁니다.
+    left, top, right, bottom = infoFont.getbbox(e_mail)
+    text_width = right - left
+    text_height = bottom - top
     # 우측 여백을 10% 줍시다.
-    x_offset = int(Xdim * 0.9 - infoFont.getsize(e_mail)[0])
+    x_offset = int(Xdim * 0.9 - text_width)
     # 상하 여백은 25%쯤 줍시다.
-    y_offset = int(Ydim * 0.75 - infoFont.getsize(e_mail)[1])
+    y_offset = int(Ydim * 0.75 - text_height)
     # 명함에 이름을 삽입합니다.
     ImageDraw.Draw(namecard).text(xy=(x_offset, y_offset), text=e_mail, font=infoFont, fill="black")
 

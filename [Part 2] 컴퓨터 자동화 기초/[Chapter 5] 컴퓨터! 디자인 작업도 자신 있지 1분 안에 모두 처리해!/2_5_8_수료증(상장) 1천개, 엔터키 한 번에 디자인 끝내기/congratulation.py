@@ -69,9 +69,13 @@ date = str(datetime.datetime.today().date())
 date = date.split("-")
 DATE = date[0] + "년 " + date[1] + "월 " + date[2] + "일"
 
+left, top, right, bottom = dateFont.getbbox(DATE)
+text_width = right - left
+text_height = bottom - top
+
 # 수여날짜를 배경에 입력합니다.
 # 좌우 여백은 가운데정렬입니다.
-x_offset = int(Xdim / 2 - dateFont.getsize(DATE)[0]/2)
+x_offset = int(Xdim / 2 - text_width/2)
 # 상하 여백은 대충 30% 가량 잡아봅니다.
 y_offset = int(Ydim * .7)
 # 배경에 수여날짜를 기재합니다.
@@ -116,8 +120,12 @@ for line in IDs:
     # 수료증(상장)에 이름을 삽입합니다.
     ImageDraw.Draw(suryojung).text(xy=(x_offset, y_offset), text=name, font=nameFont, fill="black")
 
+    left, top, right, bottom = nameFont.getbbox(name)
+    text_width = right - left
+    text_height = bottom - top
+
     # 부서명은 이름보다 좀 더 아래에 삽입해야겠죠.
-    y_offset += nameFont.getsize(name)[1]*1.5
+    y_offset += text_height*1.5
     # 수료증(상장)에 부서명을 삽입합니다.
     ImageDraw.Draw(suryojung).text(xy=(x_offset, y_offset), text=division, font=nameFont, fill="black")
 
