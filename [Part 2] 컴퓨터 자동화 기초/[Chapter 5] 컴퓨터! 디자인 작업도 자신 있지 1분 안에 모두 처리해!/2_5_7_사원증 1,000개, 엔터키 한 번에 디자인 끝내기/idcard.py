@@ -167,7 +167,7 @@ for line in IDs:
     # 부서도 가운데정렬입니다.
     x_offset = int(Xdim * 0.5 - text_width/2)
     # 상하 여백은 15%쯤 줍시다.
-    y_offset = int(Ydim * 0.85 - text_height])
+    y_offset = int(Ydim * 0.85 - text_height)
     # 명함에 이름을 삽입합니다.
     ImageDraw.Draw(idcard).text(xy=(x_offset, y_offset), text=division, font=infoFont, fill="black")
 

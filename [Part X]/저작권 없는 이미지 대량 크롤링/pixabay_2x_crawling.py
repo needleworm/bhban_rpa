@@ -6,12 +6,14 @@ https://github.com/needleworm/pixabay_crawling
 """
 
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 import time
 
 
 def crawling(keyword, numImages, result_dir):
     # 웹드라이버 실행
-    driver = webdriver.Chrome(executable_path="chromedriver.exe")
+    driver = webdriver.Chrome(service=Service(executable_path="chromedriver.exe"))
 
     # 이미지 검색 url
     url = 'https://pixabay.com/ko/images/search/'
@@ -24,15 +26,15 @@ def crawling(keyword, numImages, result_dir):
 
     # 100장 이하 이미지를 요구받은 경우
     if numImages <= 100:
-        image_area = driver.find_element_by_xpath(xpath)
-        image_elements = image_area.find_elements_by_tag_name("img")
+        image_area = driver.find_element(By.XPATH, xpath)
+        image_elements = image_area.find_elements(By.TAG_NAME, "img")
         for i in range(numImages):
             x2_image_url = image_elements[i].get_attribute("srcset").split(" ")[2]
             driver.execute_script("window.open(' ');")
             new_tab = driver.window_handles[-1]
             driver.switch_to.window(new_tab)
             driver.get(x2_image_url)
-            image_element = driver.find_element_by_tag_name("img")
+            image_element = driver.find_element(By.TAG_NAME, "img")
             image_element.screenshot(result_dir + "/" + str(time.time()) + ".png")
             driver.close()
             original_tab = driver.window_handles[0]
@@ -41,15 +43,15 @@ def crawling(keyword, numImages, result_dir):
     # 100장 이상을 요구받은 경우
     else:
         while numImages > 0:
-            image_area = driver.find_element_by_xpath(xpath)
-            image_elements = image_area.find_elements_by_tag_name("img")
+            image_area = driver.find_element(By.XPATH, xpath)
+            image_elements = image_area.find_elements(By.TAG_NAME, "img")
             for i in range(len(image_elements)):
                 x2_image_url = image_elements[i].get_attribute("srcset").split(" ")[2]
                 driver.execute_script("window.open(' ');")
                 new_tab = driver.window_handles[-1]
                 driver.switch_to.window(new_tab)
                 driver.get(x2_image_url)
-                image_element = driver.find_element_by_tag_name("img")
+                image_element = driver.find_element(By.TAG_NAME, "img")
                 image_element.screenshot(result_dir + "/" + str(time.time()) + ".png")
                 driver.close()
                 original_tab = driver.window_handles[0]
@@ -57,6 +59,6 @@ def crawling(keyword, numImages, result_dir):
 
                 numImages -= 1
                 if i == len(image_elements) - 1:
-                    next_button = driver.find_element_by_partial_link_text("다음 페이지")
+                    next_button = driver.find_element(By.PARTIAL_LINK_TEXT, "다음 페이지")
                     next_button.click()
                     time.sleep(3)

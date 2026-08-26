@@ -5,6 +5,8 @@ Book : 6개월 치 업무를 하루 만에 끝내는 업무 자동화
 Last Modification : 2020.03.02.
 """
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
@@ -19,7 +21,7 @@ class LoginBot:
         # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
         # self.options.add_argument("headless")
         # 옵션을 입력해서 크롬 웹드라이버를 불러옵니다.
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
+        self.driver = webdriver.Chrome(service=Service(executable_path="chromedriver.exe"), options=self.options)
 
     # 크롤러를 종료하는 메서드입니다.
     # 굳이 한줄짜리 코드를 함수로 만든 데에는 여러 이유가 있습니다만,
@@ -35,13 +37,13 @@ class LoginBot:
         time.sleep(3)
         # 아이디를 입력하기 위해 아이디 입력창 요소를 찾아옵니다.
         # 트위터의 경우 아이디 입력창은 session[username_or_email] 이라는 이름을 갖고 있습니다.
-        id_input = self.driver.find_element_by_name("session[username_or_email]")
+        id_input = self.driver.find_element(By.NAME, "session[username_or_email]")
         # id를 입력합니다.
         id_input.send_keys(id)
 
         # 비밀번호를 입력합니다.
         # 트위터의 경우 비밀번호 입력창은 session[password] 라는 이름을 갖고 있습니다.
-        ps_input = self.driver.find_element_by_name("session[password]")
+        ps_input = self.driver.find_element(By.NAME, "session[password]")
         ps_input.send_keys(ps)
         ps_input.send_keys(Keys.RETURN)
 

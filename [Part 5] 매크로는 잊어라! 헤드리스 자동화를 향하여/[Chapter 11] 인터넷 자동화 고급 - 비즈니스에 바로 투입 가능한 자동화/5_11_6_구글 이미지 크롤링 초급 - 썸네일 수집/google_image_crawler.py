@@ -6,6 +6,8 @@ Book : 6개월 치 업무를 하루 만에 끝내는 업무 자동화
 Last Modification : 2020.03.02.
 """
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
@@ -22,7 +24,7 @@ class ImgCrawler:
         # 옵션에 해상도를 입력합니다.
         self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
+        self.driver = webdriver.Chrome(service=Service(executable_path="chromedriver.exe"), options=self.options)
         # 결과물을 저장할 디렉터리를 기록합니다.
         self.out_dir = out_dir
 
@@ -45,7 +47,7 @@ class ImgCrawler:
     # 이미지 검색 화면을 스크롤 다운하는 함수입니다.
     def scroll_down(self):
         # 사이트의 뼈대인 <body> 태그를 찾습니다.
-        body = self.driver.find_element_by_tag_name("body")
+        body = self.driver.find_element(By.TAG_NAME, "body")
         # 대충 많이 스크롤질 합시다.
         for i in range(50):
             body.send_keys(Keys.END)
@@ -60,7 +62,7 @@ class ImgCrawler:
         # 저자의 컴퓨터 기준으로 총 400개의 사진이 표기됩니다.
         self.scroll_down()
         # <img> 태그를 갖고있는 모든 요소를 불러옵시다.
-        img_elements = self.driver.find_elements_by_tag_name("img")
+        img_elements = self.driver.find_elements(By.TAG_NAME, "img")
         # for 문을 이용해 위 요소들을 하나하나 다운받습니다.
         for i, el in enumerate(img_elements):
             # 초기 세팅한 개수만큼 사진을 다운받았다면 루프를 끝내 줍니다.

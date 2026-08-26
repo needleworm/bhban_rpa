@@ -6,6 +6,8 @@ Book : 6개월 치 업무를 하루 만에 끝내는 업무 자동화
 Last Modification : 2020.03.02.
 """
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 import time
@@ -22,7 +24,7 @@ class CaptureBot:
         # 옵션에 헤드리스를 명시합니다. 주석을 해제하면 헤드리스로 작업이 수행됩니다.
         # self.options.add_argument("headless")
         # 크롬 웹드라이버를 불러옵니다.
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
+        self.driver = webdriver.Chrome(service=Service(executable_path="chromedriver.exe"), options=self.options)
 
     # 크롤러를 종료하는 메서드입니다.
     # 굳이 한줄짜리 코드를 함수로 만든 데에는 여러 이유가 있습니다만,
@@ -40,7 +42,7 @@ class CaptureBot:
         self.driver.get("https://www.instagram.com/accounts/login/")
         time.sleep(5)
         # ID, PS 입력 요소는 <input> 태그입니다. 요소를 찾아줍시다.
-        input_field = self.driver.find_elements_by_tag_name("input")
+        input_field = self.driver.find_elements(By.TAG_NAME, "input")
         # 첫 번째 요소가 아이디입니다. 아이디를 입력합니다.
         input_field[0].send_keys(id)
         # 비밀번호 입력 요소는 두 번째입니다. 비밀번호를 입력합니다.
@@ -60,7 +62,7 @@ class CaptureBot:
         # 최근 사진의 xpath는 아래와 같습니다.
         recent_picture_xpath = '//*[@id="react-root"]/section/main/article/div[2]/div/div[1]/div[1]/a/div[1]/div[2]'
         # 최근 사진의 요소를 가져옵니다.
-        recent_picture = self.driver.find_element_by_xpath(recent_picture_xpath)
+        recent_picture = self.driver.find_element(By.XPATH, recent_picture_xpath)
         # 최근 사진을 클릭합니다.
         recent_picture.click()
         time.sleep(5)
@@ -78,13 +80,13 @@ class CaptureBot:
             count -= 1
             # 화면을 통째로 캡처하는건 의미가 없으니 사진과 게시물 부분만 캡쳐합시다.
             # 요소를 찾아 줍니다. article 태그에 들어있습니다.
-            article_element = self.driver.find_element_by_tag_name("article")
+            article_element = self.driver.find_element(By.TAG_NAME, "article")
             # 요소별로 스크린샷을 찍을 수 있습니다. 찍어 줍시다.
             article_element.screenshot(directory + "/" + str(time.time()) + ".png")
             # 잠시 기다려 줍시다.
             time.sleep(2)
             # 다음 게시물로 넘어갑시다. 다음 버튼에는 link text가 "다음"으로 기재되어 있습니다. 요소를 찾습니다.
-            next_button = self.driver.find_element_by_link_text("다음")
+            next_button = self.driver.find_element(By.LINK_TEXT, "다음")
             # 클릭합니다.
             next_button.click()
             # 로딩을 위해 5초정도 기다려 줍니다.

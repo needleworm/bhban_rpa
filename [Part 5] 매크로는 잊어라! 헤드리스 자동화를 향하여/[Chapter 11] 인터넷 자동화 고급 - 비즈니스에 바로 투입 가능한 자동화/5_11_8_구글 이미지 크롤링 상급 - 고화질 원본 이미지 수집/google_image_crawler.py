@@ -6,6 +6,8 @@ Book : 6개월 치 업무를 하루 만에 끝내는 업무 자동화
 Last Modification : 2020.03.02.
 """
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import time
 
@@ -21,7 +23,7 @@ class ImgCrawler:
         # 옵션에 해상도를 입력합니다.
         self.options.add_argument("--window-size=1024,768")
         # 크롬 웹드라이버를 불러옵니다.
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
+        self.driver = webdriver.Chrome(service=Service(executable_path="chromedriver.exe"), options=self.options)
         # 결과물을 저장할 디렉터리를 기록합니다.
         self.out_dir = out_dir
 
@@ -44,7 +46,7 @@ class ImgCrawler:
     # 이미지 검색 화면에서 첫 번째 이미지를 클릭해 미리보기 창을 띄우는 함수입니다.
     def select_picture(self):
         # 구글 검색의 이미지들은 <img> 태그로 감싸져 있습니다. 이 중 맨 위의 태그를 골라버립시다.
-        picture_element = self.driver.find_element_by_tag_name("img")
+        picture_element = self.driver.find_element(By.TAG_NAME, "img")
         # 클릭합니다. 확대 이미지 창이 뜰겁니다.
         picture_element.click()
         # 5초 기다립니다.
@@ -56,7 +58,7 @@ class ImgCrawler:
         # 이 요소의 xpath는 '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[2]/a/img' 입니다.
         img_xpath = '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[2]/a/img'
         # 이미지 요소를 가져옵니다.
-        image_element = self.driver.find_element_by_xpath(img_xpath)
+        image_element = self.driver.find_element(By.XPATH, img_xpath)
         # 이미지에서 원본 출처 링크를 뽑아냅니다.
         image_url = image_element.get_attribute("src")
         # 이미지만 새 창에 따로 불러와서 작업합시다.
@@ -73,7 +75,7 @@ class ImgCrawler:
         # 로딩 되기까지 좀 기다립니다.
         time.sleep(5)
         # 큰 이미지가 창에 떠 있습니다. 이 창에서 이미지 태그만 긁어옵시다.
-        image = self.driver.find_element_by_tag_name("img")
+        image = self.driver.find_element(By.TAG_NAME, "img")
         # 이미지를 저장합니다.
         image.screenshot(self.out_dir + "/" + str(time.time()) + ".png")
         # 볼 일이 끝났으니 이 탭은 닫아줍니다.
@@ -87,7 +89,7 @@ class ImgCrawler:
         # 이 버튼의 xpath는 '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[1]/a[2]/div' 입니다.
         button_xpath = '//*[@id="Sva75c"]/div/div/div[3]/div[2]/c-wiz/div[1]/div[1]/div/div[1]/a[2]/div'
         # 버튼 요소를 가져옵시다.
-        next_button = self.driver.find_element_by_xpath(button_xpath)
+        next_button = self.driver.find_element(By.XPATH, button_xpath)
         # 버튼을 눌러 다음 이미지로 넘어갑니다.
         next_button.click()
         # 로딩을 위해 잠시 기다립니다.

@@ -6,6 +6,7 @@ Book : 6개월 치 업무를 하루 만에 끝내는 업무 자동화
 Last Modification : 2020.03.02.
 """
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import pywinmacro as pw
 import time
@@ -35,7 +36,7 @@ class TwitterBot:
     # 트위터 페이지에 접속하는 메서드입니다.
     def go_to_twitter(self):
         # 크롬 웹드라이버를 불러옵니다.
-        self.driver = webdriver.Chrome(executable_path="chromedriver.exe", chrome_options=self.options)
+        self.driver = webdriver.Chrome(service=Service(executable_path="chromedriver.exe"), options=self.options)
         # 트위터 홈페이지로 이동합니다.
         self.driver.get("https://twitter.com/login")
         # 로딩이 오래 걸릴 수 있으니 잠시 대기합니다.
